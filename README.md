@@ -12,5 +12,3 @@ Povezava do mysql baze lokalno je:
 
 Dostop do lokalne strani:
   * http://localhost:8080/
-
-test
