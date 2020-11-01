@@ -12,3 +12,7 @@ Povezava do mysql baze lokalno je:
 
 Dostop do lokalne strani:
   * http://localhost:8080/
+
+Vsakic k se spremeni kj na controllerju je treba v Maven nardit clean in package, da se nardi nov .war
+To lahko nardis v Intelliju na desni strani al pa nardis Run/Debug configuracijo in jo samo zaženes.
+![2015-09-20 17 02 28](https://i.imgur.com/qIwe4VN.pngA)
