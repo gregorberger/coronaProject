@@ -4,6 +4,6 @@
     <title>Druga stran</title>
 </head>
 <body>
-    <h1>Bye </h1>
+    <h1>Bye ${baza}</h1>
 </body>
 </html>
