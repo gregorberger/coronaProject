@@ -15,17 +15,8 @@
         stroke-width: .5px;
     }
 
-    circle {
-        fill: #fff;
-        fill-opacity: 0.4;
-        stroke: #111;
-    }
-
     path:hover {
         fill: pink;
-    }
-    circle.active {
-        fill: blue;
     }
 
 
@@ -47,7 +38,7 @@
 
 </nav>
 
-<div id="main" class="container-fluid text-center bg-dark">
+<div id="main" class="container-fluid text-center pt-5 bg-dark h-100">
 
 </div>
 
@@ -61,14 +52,6 @@
         .append("svg")
         .attr("width",width)
         .attr("height",height);
-
-    // var rect = svg.append("rect")
-    //     .attr('x', 800)
-    //     .attr('y', 100)
-    //     .attr('width', 200)
-    //     .attr('height', 200)
-    //     .attr('stroke', 'none')
-    //     .attr('fill', 'none');
 
     d3.selection.prototype.moveToFront = function() {
         return this.each(function(){
@@ -89,6 +72,9 @@
 
     var path = d3.geoPath(projection);
 
+    var todaysData;
+    var region;
+
     d3.json("./static/SR.geojson", function(err, geojson) {
         projection.fitSize([width,height],geojson);
 
@@ -101,22 +87,127 @@
 
         svg.select("rect").raise()
         svg.selectAll("path").on('mouseover', function (d, i) {
+            svg.selectAll("text").remove()
+
             var x = d3.mouse(this)[0];
             var y = d3.mouse(this)[1];
 
-            //to mi izpisuje v konzolo
-            console.log(d.properties.SR_UIME)
 
             svg.select("rect")
-                .attr('fill', 'lightblue')
+                .attr('fill', '#ffa458')
+                .attr('opacity', 0.7)
                 .attr('x', x + 10)
                 .attr('y', y + 10)
 
             svg.append("text")
                 .attr('fill', 'black')
-                .attr('x', x + 30)
+                .attr('class', 'font-weight-bold')
+                .attr('x', x + 40)
                 .attr('y', y + 30)
                 .text(d.properties.SR_UIME)
+
+            // Data from today
+            d3.json('https://api.sledilnik.org/api/municipalities')
+                .then(function (data) {
+                    let todayData = data[data.length - 1];
+                    let regionsData = todayData.regions;
+                    var regionsMap = new Map();
+
+                    const regionsDataMap = new Map(Object.entries(regionsData));
+                    for (var mapElement of regionsDataMap) {
+                        var regionName = mapElement[0];
+                        var obcineInRegion = mapElement[1];
+
+                        var activeCases = 0;
+                        var confirmedToDate = 0;
+                        var deceasedToDate = 0;
+                        regionsMap[regionName] = obcineInRegion;
+
+                        const obcinaDataMap = new Map(Object.entries(obcineInRegion));
+                        for (var obcinaElement of obcinaDataMap) {
+                            var singleEl = obcinaElement[1];
+                            if (singleEl.activeCases != null) {
+                                activeCases += singleEl.activeCases;
+                            }
+
+                            if (singleEl.confirmedToDate != null) {
+                                confirmedToDate += singleEl.confirmedToDate;
+                            }
+
+                            if (singleEl.deceasedToDate != null) {
+                                deceasedToDate += singleEl.deceasedToDate;
+                            }
+                        }
+                        var regionData = {};
+                        regionData.activeCases = activeCases;
+                        regionData.confirmedToDate = confirmedToDate;
+                        regionData.deceasedToDate = deceasedToDate;
+
+                        regionsMap[regionName] = regionData;
+
+                    }
+
+                    switch (d.properties.SR_UIME) {
+                        case "Pomurska":
+                            region = 'ms';
+                            break;
+                        case "Podravska":
+                            region = 'mb';
+                            break;
+                        case "Savinjska":
+                            region = 'ce';
+                            break;
+                        case "Posavska":
+                            region = 'kk';
+                            break;
+                        case "Zasavska":
+                            region = 'za';
+                            break;
+                        case "Koroška":
+                            region = 'sg';
+                            break;
+                        case "Jugovzhodna Slovenija":
+                            region = 'nm';
+                            break;
+                        case "Osrednjeslovenska":
+                            region = 'lj';
+                            break;
+                        case "Primorsko-notranjska":
+                            region = 'po';
+                            break;
+                        case "Obalno-kraška":
+                            region = 'kp';
+                            break;
+                        case "Goriška":
+                            region = 'ng';
+                            break;
+                        case "Gorenjska":
+                            region = 'kr';
+                            break;
+
+                    }
+
+                    svg.append("text")
+                        .attr('fill', 'black')
+                        .attr('x', x + 30)
+                        .attr('y', y + 60)
+                        .text("Aktivni primeri: " + regionsMap[region].activeCases);
+
+                    svg.append("text")
+                        .attr('fill', 'black')
+                        .attr('x', x + 30)
+                        .attr('y', y + 80)
+                        .text("Potrjeni do danes: " + regionsMap[region].confirmedToDate);
+
+                    svg.append("text")
+                        .attr('fill', 'black')
+                        .attr('x', x + 30)
+                        .attr('y', y + 100)
+                        .text("Smrti do danes: " + regionsMap[region].deceasedToDate);
+
+                });
+
+
 
 
         })
@@ -124,14 +215,14 @@
 
         svg.selectAll("path").on('mouseout', function (d, i) {
             svg.select("rect").attr('fill', 'none')
-            svg.select("text").remove()
+            svg.selectAll("text").remove()
         })
     })
     var rect = svg.append("rect")
         .attr('x', 10)
         .attr('y', 120)
         .attr('width', 200)
-        .attr('height', 200)
+        .attr('height', 100)
         .attr('stroke', 'none')
         .attr('fill', 'none');
 
