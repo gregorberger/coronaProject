@@ -22,7 +22,7 @@ public class RestController {
             " zasedeni: "+Integer.toString(h.getPerHospital().ukclj.getVents().getFree());
             vent+="\r\n";
         }
-        //model.addAllAttributes(hospitals);
+        model.addAttribute("bolnisnice", hospitals);
         return vent;
     }
 }
