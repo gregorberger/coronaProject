@@ -109,112 +109,83 @@
                 .text(d.properties.SR_UIME);
 
             // Data from today
-            d3.json('https://api.sledilnik.org/api/municipalities')
-                .then(function (data) {
-                    let todayData = data[data.length - 1];
-                    let regionsData = todayData.regions;
-                    var regionsMap = new Map();
-                    const regionsDataMap = new Map(Object.entries(regionsData));
-                    for (var mapElement of regionsDataMap) {
-                        var regionName = mapElement[0];
-                        var obcineInRegion = mapElement[1];
-                        var activeCases = 0;
-                        var confirmedToDate = 0;
-                        var deceasedToDate = 0;
-                        regionsMap[regionName] = obcineInRegion;
-                        const obcinaDataMap = new Map(Object.entries(obcineInRegion));
-                        for (var obcinaElement of obcinaDataMap) {
-                            var singleEl = obcinaElement[1];
-                            if (singleEl.activeCases != null) {
-                                activeCases += singleEl.activeCases;
-                            }
-                            if (singleEl.confirmedToDate != null) {
-                                confirmedToDate += singleEl.confirmedToDate;
-                            }
-                            if (singleEl.deceasedToDate != null) {
-                                deceasedToDate += singleEl.deceasedToDate;
-                            }
-                        }
-                        var regionData = {};
-                        regionData.activeCases = activeCases;
-                        regionData.confirmedToDate = confirmedToDate;
-                        regionData.deceasedToDate = deceasedToDate;
-                        regionsMap[regionName] = regionData;
-                    }
-                    switch (d.properties.SR_UIME) {
-                        case "Pomurska":
-                            region = 'ms';
-                            break;
-                        case "Podravska":
-                            region = 'mb';
-                            break;
-                        case "Savinjska":
-                            region = 'ce';
-                            break;
-                        case "Posavska":
-                            region = 'kk';
-                            break;
-                        case "Zasavska":
-                            region = 'za';
-                            break;
-                        case "Koroška":
-                            region = 'sg';
-                            break;
-                        case "Jugovzhodna Slovenija":
-                            region = 'nm';
-                            break;
-                        case "Osrednjeslovenska":
-                            region = 'lj';
-                            break;
-                        case "Primorsko-notranjska":
-                            region = 'po';
-                            break;
-                        case "Obalno-kraška":
-                            region = 'kp';
-                            break;
-                        case "Goriška":
-                            region = 'ng';
-                            break;
-                        case "Gorenjska":
-                            region = 'kr';
-                            break;
-                    }
-                    infoBox.append("text")
-                        .attr('id', 'activeCases')
-                        .attr('fill', 'black')
-                        .attr('class', 'h5')
-                        .attr('x', 10)
-                        .attr('y', 70)
-                        .text("Aktivni primeri: ");
-                    document.getElementById("activeCases").innerHTML += "<a class='font-weight-bold'>"+regionsMap[region].activeCases+"</a>";
+            var regionsMap = getRegionsData();
 
-                    infoBox.append("text")
-                        .attr('id', 'confirmedToDate')
-                        .attr('fill', 'black')
-                        .attr('class', 'h5')
-                        .attr('x', 10)
-                        .attr('y', 100)
-                        .text("Potrjeni do danes: ");
-                    document.getElementById("confirmedToDate").innerHTML += "<a class='font-weight-bold'>"+regionsMap[region].confirmedToDate+"</a>";
+            switch (d.properties.SR_UIME) {
+                case "Pomurska":
+                    region = 'ms';
+                    break;
+                case "Podravska":
+                    region = 'mb';
+                    break;
+                case "Savinjska":
+                    region = 'ce';
+                    break;
+                case "Posavska":
+                    region = 'kk';
+                    break;
+                case "Zasavska":
+                    region = 'za';
+                    break;
+                case "Koroška":
+                    region = 'sg';
+                    break;
+                case "Jugovzhodna Slovenija":
+                    region = 'nm';
+                    break;
+                case "Osrednjeslovenska":
+                    region = 'lj';
+                    break;
+                case "Primorsko-notranjska":
+                    region = 'po';
+                    break;
+                case "Obalno-kraška":
+                    region = 'kp';
+                    break;
+                case "Goriška":
+                    region = 'ng';
+                    break;
+                case "Gorenjska":
+                    region = 'kr';
+                    break;
+            }
+            infoBox.append("text")
+                .attr('id', 'activeCases')
+                .attr('fill', 'black')
+                .attr('class', 'h5')
+                .attr('x', 10)
+                .attr('y', 70)
+                .text("Aktivni primeri: ");
+            document.getElementById("activeCases").innerHTML += "<a class='font-weight-bold'>"+regionsMap[region].activeCases+"</a>";
 
-                    infoBox.append("text")
-                        .attr('id', 'deceasedToDate')
-                        .attr('fill', 'black')
-                        .attr('class', 'h5')
-                        .attr('x', 10)
-                        .attr('y', 130)
-                        .text("Smrti do danes: ");
-                    document.getElementById("deceasedToDate").innerHTML += "<a class='font-weight-bold'>"+regionsMap[region].deceasedToDate+"</a>";
+            infoBox.append("text")
+                .attr('id', 'confirmedToDate')
+                .attr('fill', 'black')
+                .attr('class', 'h5')
+                .attr('x', 10)
+                .attr('y', 100)
+                .text("Potrjeni do danes: ");
+            document.getElementById("confirmedToDate").innerHTML += "<a class='font-weight-bold'>"+regionsMap[region].confirmedToDate+"</a>";
 
-                    infoBox.append("text")
-                        .attr('id', 'hospitalBeds')
-                        .attr('fill', 'black')
-                        .attr('class', 'h5')
-                        .attr('x', 10)
-                        .attr('y', 160)
-                        .text("Postelje (Z/P): ");
-                    document.getElementById("hospitalBeds").innerHTML += "<a class='text-danger'>"+getData().get(d.properties.SR_UIME).occupied+"</a>/<a class='font-weight-bold'>"+getData().get(d.properties.SR_UIME).max+"</a>";
-                });
+            infoBox.append("text")
+                .attr('id', 'deceasedToDate')
+                .attr('fill', 'black')
+                .attr('class', 'h5')
+                .attr('x', 10)
+                .attr('y', 130)
+                .text("Smrti do danes: ");
+            document.getElementById("deceasedToDate").innerHTML += "<a class='font-weight-bold'>"+regionsMap[region].deceasedToDate+"</a>";
+
+            infoBox.append("text")
+                .attr('id', 'hospitalBeds')
+                .attr('fill', 'black')
+                .attr('class', 'h5')
+                .attr('x', 10)
+                .attr('y', 160)
+                .text("Postelje (Z/P): ");
+            document.getElementById("hospitalBeds").innerHTML += "<a class='text-danger'>"+getData().get(d.properties.SR_UIME).occupied+"</a>" +
+                "/<a class='font-weight-bold'>"+getData().get(d.properties.SR_UIME).max+"</a>";
+
             });
 
         map.selectAll("path").on('mouseout', function (d, i) {
