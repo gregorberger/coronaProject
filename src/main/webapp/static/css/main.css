@@ -1,3 +1,27 @@
 .navbar-bg {
     background-color: #e69c24 !important;
 }
+
+.cases400 {
+    fill: #E6A480;
+}
+
+.cases600 {
+    fill: #E6904C;
+}
+
+.cases800 {
+    fill: #E6805B;
+}
+
+.cases1000 {
+    fill: #E6604B;
+}
+
+.cases1200 {
+    fill: #E6494C;
+}
+
+.cases1400 {
+    fill: #E62129;
+}

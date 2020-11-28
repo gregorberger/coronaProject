@@ -73,6 +73,7 @@
     var path = d3.geoPath(projection);
     var todaysData;
     var region;
+    var regionsMapData;
 
     var rect = infoBox
         .append("rect")
@@ -80,13 +81,20 @@
         .attr('height', 180)
         .attr('fill', 'none');
 
+
     d3.json("./static/SR.geojson", function(err, geojson) {
+        // Data from today
+        regionsMapData = getRegionsData();
         projection.fitSize([width,height],geojson);
+
+
         map.append("g")
             .selectAll("path")
             .data(geojson.features)
             .enter()
             .append("path")
+            .attr("id", function(d) { return d.properties.SR_UIME; })
+            .attr("class", function(d) { return pathColor(regionsMapData, d.properties.SR_UIME); })
             .attr("d", path);
 
         map.selectAll("path").on('mouseover', function (d, i) {
@@ -107,9 +115,6 @@
                 .attr('x', 10)
                 .attr('y', 30)
                 .text(d.properties.SR_UIME);
-
-            // Data from today
-            var regionsMap = getRegionsData();
 
             switch (d.properties.SR_UIME) {
                 case "Pomurska":
@@ -156,7 +161,7 @@
                 .attr('x', 10)
                 .attr('y', 70)
                 .text("Aktivni primeri: ");
-            document.getElementById("activeCases").innerHTML += "<a class='font-weight-bold'>"+regionsMap[region].activeCases+"</a>";
+            document.getElementById("activeCases").innerHTML += "<a class='font-weight-bold'>"+regionsMapData[region].activeCases+"</a>";
 
             infoBox.append("text")
                 .attr('id', 'confirmedToDate')
@@ -165,7 +170,7 @@
                 .attr('x', 10)
                 .attr('y', 100)
                 .text("Potrjeni do danes: ");
-            document.getElementById("confirmedToDate").innerHTML += "<a class='font-weight-bold'>"+regionsMap[region].confirmedToDate+"</a>";
+            document.getElementById("confirmedToDate").innerHTML += "<a class='font-weight-bold'>"+regionsMapData[region].confirmedToDate+"</a>";
 
             infoBox.append("text")
                 .attr('id', 'deceasedToDate')
@@ -174,7 +179,7 @@
                 .attr('x', 10)
                 .attr('y', 130)
                 .text("Smrti do danes: ");
-            document.getElementById("deceasedToDate").innerHTML += "<a class='font-weight-bold'>"+regionsMap[region].deceasedToDate+"</a>";
+            document.getElementById("deceasedToDate").innerHTML += "<a class='font-weight-bold'>"+regionsMapData[region].deceasedToDate+"</a>";
 
             infoBox.append("text")
                 .attr('id', 'hospitalBeds')
