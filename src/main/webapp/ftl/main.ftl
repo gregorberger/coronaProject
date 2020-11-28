@@ -1,16 +1,22 @@
 <html lang="en">
 <head>
-    <title>Corona project</title>
+    <title>Corona Project</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/css/main.css">
 
 </head>
 
 <style>
+    * {
+        font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
+        font-size: 15px;
+    }
+
     path {
         fill: #ccc;
         stroke: #fff;
         stroke-width: .5px;
+        margin: 20px;
     }
     path:hover {
         fill: pink;
@@ -19,8 +25,10 @@
 <body>
 <script src="https://d3js.org/d3.v5.js"></script>
 <script src="./static/js/bolnisnice.js"></script>
+<script src="./static/js/regionsData.js"></script>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="//d3js.org/topojson.v1.min.js"></script>
+<script src="./static/js/main.js"></script>
 <nav class="navbar navbar-dark navbar-bg">
     <div class="container">
         <div class="row">
@@ -37,58 +45,69 @@
 </nav>
 
 <div id="main" class="container-fluid text-center pt-5 bg-dark h-100">
-
+    <div class="row">
+        <div id="infoBox" class="col-2">
+            <div id="titleInfoBox" class="h4 text-white collapse">
+            </div>
+        </div>
+        <div id="mapDiv" class="col-10"></div>
+    </div>
 </div>
 
 
 <script>
-    var width = 1400;
+    insertBoxInfoTitle();
+
+    var width = 1350;
     var height = 700;
-    var svg = d3.select("#main")
+    var map = d3.select("#mapDiv")
         .append("svg")
         .attr("width",width)
         .attr("height",height);
-    d3.selection.prototype.moveToFront = function() {
-        return this.each(function(){
-            this.parentNode.appendChild(this);
-        });
-    };
-    d3.selection.prototype.moveToBack = function() {
-        return this.each(function() {
-            var firstChild = this.parentNode.firstChild;
-            if (firstChild) {
-                this.parentNode.insertBefore(this, firstChild);
-            }
-        });
-    };
+
+    var infoBox = d3.select("#infoBox").append("svg")
+        .attr("width",300)
+        .attr("height",500);
+
     var projection = d3.geoIdentity().reflectY(true);
     var path = d3.geoPath(projection);
     var todaysData;
     var region;
+
+    var rect = infoBox
+        .append("rect")
+        .attr('width', 276)
+        .attr('height', 180)
+        .attr('fill', 'none');
+
     d3.json("./static/SR.geojson", function(err, geojson) {
         projection.fitSize([width,height],geojson);
-        svg.append("g")
+        map.append("g")
             .selectAll("path")
             .data(geojson.features)
             .enter()
             .append("path")
-            .attr("d", path)
-        svg.select("rect").raise()
-        svg.selectAll("path").on('mouseover', function (d, i) {
-            svg.selectAll("text").remove()
+            .attr("d", path);
+
+        map.selectAll("path").on('mouseover', function (d, i) {
             var x = d3.mouse(this)[0];
             var y = d3.mouse(this)[1];
-            svg.select("rect")
+
+            document.getElementById("titleInfoBox").classList.remove("collapse");
+
+            infoBox.select("rect")
                 .attr('fill', '#ffa458')
-                .attr('opacity', 0.7)
-                .attr('x', x + 10)
-                .attr('y', y + 10)
-            svg.append("text")
+                .attr('stroke', 'black')
+                .attr('stroke-width', '3')
+                .attr('opacity', 1);
+
+            infoBox.append("text")
                 .attr('fill', 'black')
-                .attr('class', 'font-weight-bold')
-                .attr('x', x + 40)
-                .attr('y', y + 30)
-                .text(d.properties.SR_UIME)
+                .attr('class', 'font-weight-bold h4')
+                .attr('x', 10)
+                .attr('y', 30)
+                .text(d.properties.SR_UIME);
+
             // Data from today
             d3.json('https://api.sledilnik.org/api/municipalities')
                 .then(function (data) {
@@ -160,40 +179,51 @@
                             region = 'kr';
                             break;
                     }
-                    svg.append("text")
+                    infoBox.append("text")
+                        .attr('id', 'activeCases')
                         .attr('fill', 'black')
-                        .attr('x', x + 30)
-                        .attr('y', y + 60)
-                        .text("Aktivni primeri: " + regionsMap[region].activeCases);
-                    svg.append("text")
+                        .attr('class', 'h5')
+                        .attr('x', 10)
+                        .attr('y', 70)
+                        .text("Aktivni primeri: ");
+                    document.getElementById("activeCases").innerHTML += "<a class='font-weight-bold'>"+regionsMap[region].activeCases+"</a>";
+
+                    infoBox.append("text")
+                        .attr('id', 'confirmedToDate')
                         .attr('fill', 'black')
-                        .attr('x', x + 30)
-                        .attr('y', y + 80)
-                        .text("Potrjeni do danes: " + regionsMap[region].confirmedToDate);
-                    svg.append("text")
+                        .attr('class', 'h5')
+                        .attr('x', 10)
+                        .attr('y', 100)
+                        .text("Potrjeni do danes: ");
+                    document.getElementById("confirmedToDate").innerHTML += "<a class='font-weight-bold'>"+regionsMap[region].confirmedToDate+"</a>";
+
+                    infoBox.append("text")
+                        .attr('id', 'deceasedToDate')
                         .attr('fill', 'black')
-                        .attr('x', x + 30)
-                        .attr('y', y + 100)
-                        .text("Smrti do danes: " + regionsMap[region].deceasedToDate);
-                    svg.append("text")
+                        .attr('class', 'h5')
+                        .attr('x', 10)
+                        .attr('y', 130)
+                        .text("Smrti do danes: ");
+                    document.getElementById("deceasedToDate").innerHTML += "<a class='font-weight-bold'>"+regionsMap[region].deceasedToDate+"</a>";
+
+                    infoBox.append("text")
+                        .attr('id', 'hospitalBeds')
                         .attr('fill', 'black')
-                        .attr('x', x + 30)
-                        .attr('y', y + 120)
-                        .text("Postelje (P/Z): " + getData().get(d.properties.SR_UIME).max+ " / "+getData().get(d.properties.SR_UIME).occupied);
+                        .attr('class', 'h5')
+                        .attr('x', 10)
+                        .attr('y', 160)
+                        .text("Postelje (Z/P): ");
+                    document.getElementById("hospitalBeds").innerHTML += "<a class='text-danger'>"+getData().get(d.properties.SR_UIME).occupied+"</a>/<a class='font-weight-bold'>"+getData().get(d.properties.SR_UIME).max+"</a>";
                 });
+            });
+
+        map.selectAll("path").on('mouseout', function (d, i) {
+            infoBox.select("rect").attr('fill', 'none');
+            infoBox.select("rect").attr('stroke', 'none');
+            infoBox.selectAll("text").remove();
+            infoBox.selectAll("br").remove();
+            document.getElementById("titleInfoBox").classList.add("collapse");
         })
-        svg.selectAll("path").on('mouseout', function (d, i) {
-            svg.select("rect").attr('fill', 'none')
-            svg.selectAll("text").remove()
-        })
-    })
-    var rect = svg.append("rect")
-        .attr('x', 10)
-        .attr('y', 120)
-        .attr('width', 200)
-        .attr('height', 120)
-        .attr('stroke', 'none')
-        .attr('fill', 'none');
+    });
 </script>
 <script src="https://d3js.org/d3.v5.js"></script>
-<script src="./static/js/main.js"></script>
