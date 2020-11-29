@@ -21,6 +21,12 @@ function parseData(todayData) {
 
         if (hospitalStuff.beds.max === undefined || hospitalStuff.beds.occupied === undefined){
             regionBeds[hospitalName] = null;
+            const dataNotranjska = {};
+            if (!regionBeds.has("Primorsko-notranjska")) {
+                dataNotranjska.max = 0;
+                dataNotranjska.occupied = 0;
+                regionBeds.set("Primorsko-notranjska", dataNotranjska);
+            }
         }
         else{
             const hospitalData = {};
@@ -80,8 +86,6 @@ function parseData(todayData) {
                     break;
             }
         }
-
     }
-    console.log(regionBeds)
     return regionBeds;
 }

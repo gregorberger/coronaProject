@@ -25,6 +25,7 @@
 <body>
 <script src="https://d3js.org/d3.v5.js"></script>
 <script src="./static/js/bolnisnice.js"></script>
+<script src="./static/js/brezposelni.js"></script>
 <script src="./static/js/regionsData.js"></script>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="//d3js.org/topojson.v1.min.js"></script>
@@ -78,7 +79,7 @@
     var rect = infoBox
         .append("rect")
         .attr('width', 276)
-        .attr('height', 180)
+        .attr('height', 200)
         .attr('fill', 'none');
 
 
@@ -191,7 +192,17 @@
             document.getElementById("hospitalBeds").innerHTML += "<a class='text-danger'>"+getData().get(d.properties.SR_UIME).occupied+"</a>" +
                 "/<a class='font-weight-bold'>"+getData().get(d.properties.SR_UIME).max+"</a>";
 
-            });
+            infoBox.append("text")
+                .attr('id', 'unemployed')
+                .attr('fill', 'black')
+                .attr('class', 'h5')
+                .attr('x', 10)
+                .attr('y', 190)
+                .text("Brezposelni: ");
+            document.getElementById("unemployed").innerHTML += "<a class='font-weight-bold'>"+getBrezposelni().get("oktober").get(d.properties.SR_UIME)[2]+"</a>";
+
+
+        });
 
         map.selectAll("path").on('mouseout', function (d, i) {
             infoBox.select("rect").attr('fill', 'none');

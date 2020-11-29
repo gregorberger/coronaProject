@@ -1,0 +1,2392 @@
+<?xml version="1.0" encoding="utf-8"?><?mso-application progid="Excel.Sheet"?><Workbook xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:x2="urn:schemas-microsoft-com:office:excel2" xmlns:html="http://www.w3.org/TR/REC-html40" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+ <x:ExcelWorkbook>
+  <x:ActiveSheet>9</x:ActiveSheet>
+ </x:ExcelWorkbook>
+ <o:DocumentProperties>
+  <o:Title>Excel Template</o:Title>
+  <o:Author>Romana Mrzlikar</o:Author>
+  <o:Created>2000-08-31T14:29:15Z</o:Created>
+  <o:LastSaved>2020-11-03T10:04:23Z</o:LastSaved>
+  <o:Company>ProClarity Corporation</o:Company>
+ </o:DocumentProperties>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <ss:Alignment ss:Vertical="Bottom" />
+   <ss:Font ss:FontName="Arial" ss:Size="10" />
+  </Style>
+  <Style ss:ID="S42" ss:Name="Navadno_T01_SL01">
+   <ss:Alignment ss:Vertical="Bottom" />
+   <ss:Borders />
+   <ss:Font ss:FontName="Arial" ss:Size="10" />
+   <ss:Interior />
+   <ss:NumberFormat />
+   <ss:Protection ss:Protected="1" x:HideFormula="0" />
+  </Style>
+  <Style ss:ID="S65">
+   <ss:Alignment ss:Vertical="Center" />
+   <ss:Font ss:FontName="Arial" ss:Size="8" />
+  </Style>
+  <Style ss:ID="S66">
+   <ss:Alignment ss:Vertical="Center" />
+   <ss:Font ss:Bold="1" ss:FontName="Arial" ss:Size="8" />
+  </Style>
+  <Style ss:ID="S67">
+   <ss:Alignment ss:Horizontal="Right" ss:Vertical="Center" />
+   <ss:Font ss:FontName="Arial" ss:Size="8" />
+   <ss:NumberFormat ss:Format="#,##0" />
+  </Style>
+  <Style ss:ID="S68">
+   <ss:Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1" />
+   <ss:Borders>
+    <ss:Border ss:Position="Top" ss:Color="#339E35" ss:LineStyle="Continuous" ss:Weight="1" />
+    <ss:Border ss:Position="Bottom" ss:Color="#339E35" ss:LineStyle="Continuous" ss:Weight="1" />
+   </ss:Borders>
+   <ss:Font ss:FontName="Arial" ss:Size="8" />
+  </Style>
+  <Style ss:ID="S69" ss:Parent="S42">
+   <ss:Alignment ss:Horizontal="Left" ss:Vertical="Center" />
+   <ss:Borders />
+   <ss:Font ss:Bold="1" ss:Color="#000000" ss:FontName="Arial" ss:Size="8" />
+  </Style>
+  <Style ss:ID="S70" ss:Parent="S42">
+   <ss:Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1" ss:Indent="1" />
+   <ss:Borders />
+   <ss:Font ss:Color="#000000" ss:FontName="Arial" ss:Size="8" />
+   <ss:NumberFormat ss:Format="\ @" />
+  </Style>
+  <Style ss:ID="S71" ss:Parent="S42">
+   <ss:Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1" />
+   <ss:Borders>
+    <ss:Border ss:Position="Bottom" ss:Color="#339E35" ss:LineStyle="Continuous" ss:Weight="1" />
+   </ss:Borders>
+   <ss:Font ss:Color="#000000" ss:FontName="Arial" ss:Size="8" />
+   <ss:NumberFormat ss:Format="\ @" />
+  </Style>
+  <Style ss:ID="S72">
+   <ss:Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1" />
+   <ss:Borders>
+    <ss:Border ss:Position="Top" ss:Color="#339E35" ss:LineStyle="Continuous" ss:Weight="1" />
+    <ss:Border ss:Position="Bottom" ss:Color="#339E35" ss:LineStyle="Continuous" ss:Weight="1" />
+   </ss:Borders>
+   <ss:Font ss:FontName="Arial" ss:Size="8" />
+   <ss:NumberFormat ss:Format="#,##0" />
+   <ss:Protection ss:Protected="0" x:HideFormula="0" />
+  </Style>
+  <Style ss:ID="S73">
+   <ss:Alignment ss:Horizontal="Center" ss:Vertical="Center" />
+   <ss:Borders>
+    <ss:Border ss:Position="Top" ss:Color="#339E35" ss:LineStyle="Continuous" ss:Weight="1" />
+    <ss:Border ss:Position="Bottom" ss:Color="#339E35" ss:LineStyle="Continuous" ss:Weight="1" />
+   </ss:Borders>
+   <ss:Font ss:FontName="Arial" ss:Size="8" />
+   <ss:NumberFormat ss:Format="#,##0" />
+   <ss:Protection ss:Protected="0" x:HideFormula="0" />
+  </Style>
+  <Style ss:ID="S74">
+   <ss:Alignment ss:Vertical="Center" />
+   <ss:Font ss:Bold="1" ss:Color="#339E35" ss:FontName="Arial" ss:Size="8" />
+   <ss:NumberFormat ss:Format="#,##0" />
+  </Style>
+  <Style ss:ID="S75">
+   <ss:Alignment ss:Vertical="Bottom" />
+   <ss:Font ss:FontName="Arial" ss:Size="8" />
+   <ss:NumberFormat ss:Format="#,##0" />
+  </Style>
+  <Style ss:ID="S76">
+   <ss:Alignment ss:Vertical="Bottom" />
+   <ss:Borders>
+    <ss:Border ss:Position="Bottom" ss:Color="#339E35" ss:LineStyle="Continuous" ss:Weight="1" />
+   </ss:Borders>
+   <ss:Font ss:FontName="Arial" ss:Size="8" />
+   <ss:NumberFormat ss:Format="#,##0" />
+  </Style>
+  <Style ss:ID="S77">
+   <ss:Alignment ss:Horizontal="Right" ss:Vertical="Center" />
+   <ss:Font ss:Bold="1" ss:FontName="Arial" ss:Size="8" />
+   <ss:NumberFormat ss:Format="#,##0" />
+  </Style>
+  <Style ss:ID="S78" ss:Parent="S42">
+   <ss:Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1" />
+   <ss:Borders />
+   <ss:Font ss:Bold="1" ss:Color="#000000" ss:FontName="Arial" ss:Size="8" />
+   <ss:NumberFormat ss:Format="\ @" />
+  </Style>
+  <Style ss:ID="S79">
+   <ss:Alignment ss:Horizontal="Center" ss:Vertical="Center" />
+   <ss:Font ss:Bold="1" ss:FontName="Arial" ss:Size="8" />
+   <ss:NumberFormat ss:Format="#,##0" />
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="JAN">
+  <ss:Names />
+  <ss:Table ss:DefaultRowHeight="12.75" ss:DefaultColumnWidth="48" ss:ExpandedRowCount="22" ss:ExpandedColumnCount="4">
+   <Column ss:Index="1" ss:AutoFitWidth="0" ss:Width="105" />
+   <Column ss:Index="2" ss:Span="2" ss:AutoFitWidth="0" ss:Width="55.5" />
+   <Row ss:Index="1" ss:Height="16.5">
+    <Cell ss:StyleID="S74"><Data ss:Type="String">Število registrirano brezposelnih oseb po spolu in statističnih regijah, januar 2020</Data>
+    </Cell>
+    <Cell ss:StyleID="S65" />
+    <Cell ss:StyleID="S65" />
+    <Cell ss:StyleID="S65" />
+   </Row>
+   <Row ss:Index="2" ss:Height="14.25">
+    <Cell ss:StyleID="S66" />
+    <Cell ss:MergeAcross="2" ss:MergeDown="0" ss:StyleID="S79" />
+   </Row>
+   <Row ss:Index="3" ss:Height="31.5">
+    <Cell ss:StyleID="S68"><Data ss:Type="String">Kohezijska / statistična regija</Data>
+    </Cell>
+    <Cell ss:StyleID="S72"><Data ss:Type="String">Moški</Data>
+    </Cell>
+    <Cell ss:StyleID="S72"><Data ss:Type="String">Ženske</Data>
+    </Cell>
+    <Cell ss:StyleID="S73"><Data ss:Type="String">Skupaj</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="4" ss:Height="16.5">
+    <Cell ss:StyleID="S69"><Data ss:Type="String">Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">41196</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">38645</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">79841</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="5" ss:Height="16.5">
+    <Cell ss:StyleID="S69" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+   </Row>
+   <Row ss:Index="6" ss:Height="16.5">
+    <Cell ss:StyleID="S78"><Data ss:Type="String">Vzhodna Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">23819</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">23645</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">47464</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="7" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Jugovzhodna Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2750</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2643</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">5393</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="8" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Koroška</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1273</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1373</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2646</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="9" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Podravska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">6943</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">6917</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">13860</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="10" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Pomurska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3302</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3470</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">6772</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="11" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Posavska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1825</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1629</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3454</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="12" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Primorsko-notranjska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">798</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">844</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1642</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="13" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Savinjska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">5661</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">5626</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">11287</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="14" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Zasavska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1267</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1143</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2410</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="15" ss:Height="16.5">
+    <Cell ss:StyleID="S70" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+   </Row>
+   <Row ss:Index="16" ss:Height="16.5">
+    <Cell ss:StyleID="S78"><Data ss:Type="String">Zahodna Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">16706</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">14738</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">31444</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="17" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Gorenjska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2953</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2503</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">5456</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="18" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Goriška</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1485</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1530</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3015</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="19" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Obalno-kraška</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">2231</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">2100</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">4331</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="20" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Osrednjeslovenska</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">10037</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">8605</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">18642</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="21" ss:Height="15.75">
+    <Cell ss:StyleID="S70" />
+    <Cell ss:StyleID="S75" />
+    <Cell ss:StyleID="S75" />
+    <Cell ss:StyleID="S75" />
+   </Row>
+   <Row ss:Index="22" ss:Height="15.75">
+    <Cell ss:StyleID="S71"><Data ss:Type="String">Občina izven RS</Data>
+    </Cell>
+    <Cell ss:StyleID="S76"><Data ss:Type="Number">671</Data>
+    </Cell>
+    <Cell ss:StyleID="S76"><Data ss:Type="Number">262</Data>
+    </Cell>
+    <Cell ss:StyleID="S76"><Data ss:Type="Number">933</Data>
+    </Cell>
+   </Row>
+  </ss:Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3" />
+    <Footer x:Margin="0.3" />
+    <PageMargins x:Top="0.75" x:Bottom="0.75" x:Left="0.7" x:Right="0.7" />
+   </PageSetup>
+   <Print>
+    <ValidPrinterInfo />
+    <PaperSizeIndex>9</PaperSizeIndex>
+    <HorizontalResolution>600</HorizontalResolution>
+    <VerticalResolution>600</VerticalResolution>
+   </Print>
+   <DoNotDisplayGridlines />
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <RangeSelection>R1:R16384</RangeSelection>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="FEB">
+  <ss:Names />
+  <ss:Table ss:DefaultRowHeight="12.75" ss:DefaultColumnWidth="48" ss:ExpandedRowCount="22" ss:ExpandedColumnCount="4">
+   <Column ss:Index="1" ss:AutoFitWidth="0" ss:Width="105" />
+   <Column ss:Index="2" ss:Span="2" ss:AutoFitWidth="0" ss:Width="55.5" />
+   <Row ss:Index="1" ss:Height="16.5">
+    <Cell ss:StyleID="S74"><Data ss:Type="String">Število registrirano brezposelnih oseb po spolu in statističnih regijah, februar 2020</Data>
+    </Cell>
+    <Cell ss:StyleID="S65" />
+    <Cell ss:StyleID="S65" />
+    <Cell ss:StyleID="S65" />
+   </Row>
+   <Row ss:Index="2" ss:Height="14.25">
+    <Cell ss:StyleID="S66" />
+    <Cell ss:MergeAcross="2" ss:MergeDown="0" ss:StyleID="S79" />
+   </Row>
+   <Row ss:Index="3" ss:Height="31.5">
+    <Cell ss:StyleID="S68"><Data ss:Type="String">Kohezijska / statistična regija</Data>
+    </Cell>
+    <Cell ss:StyleID="S72"><Data ss:Type="String">Moški</Data>
+    </Cell>
+    <Cell ss:StyleID="S72"><Data ss:Type="String">Ženske</Data>
+    </Cell>
+    <Cell ss:StyleID="S73"><Data ss:Type="String">Skupaj</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="4" ss:Height="16.5">
+    <Cell ss:StyleID="S69"><Data ss:Type="String">Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">39732</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">37752</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">77484</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="5" ss:Height="16.5">
+    <Cell ss:StyleID="S69" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+   </Row>
+   <Row ss:Index="6" ss:Height="16.5">
+    <Cell ss:StyleID="S78"><Data ss:Type="String">Vzhodna Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">22889</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">23110</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">45999</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="7" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Jugovzhodna Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2690</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2575</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">5265</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="8" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Koroška</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1236</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1346</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2582</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="9" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Podravska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">6654</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">6758</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">13412</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="10" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Pomurska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3105</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3317</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">6422</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="11" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Posavska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1732</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1590</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3322</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="12" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Primorsko-notranjska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">792</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">817</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1609</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="13" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Savinjska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">5471</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">5595</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">11066</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="14" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Zasavska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1209</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1112</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2321</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="15" ss:Height="16.5">
+    <Cell ss:StyleID="S70" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+   </Row>
+   <Row ss:Index="16" ss:Height="16.5">
+    <Cell ss:StyleID="S78"><Data ss:Type="String">Zahodna Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">16228</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">14372</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">30600</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="17" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Gorenjska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2801</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2440</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">5241</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="18" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Goriška</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1410</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1486</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2896</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="19" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Obalno-kraška</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">2155</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">2047</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">4202</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="20" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Osrednjeslovenska</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">9862</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">8399</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">18261</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="21" ss:Height="15.75">
+    <Cell ss:StyleID="S70" />
+    <Cell ss:StyleID="S75" />
+    <Cell ss:StyleID="S75" />
+    <Cell ss:StyleID="S75" />
+   </Row>
+   <Row ss:Index="22" ss:Height="15.75">
+    <Cell ss:StyleID="S71"><Data ss:Type="String">Občina izven RS</Data>
+    </Cell>
+    <Cell ss:StyleID="S76"><Data ss:Type="Number">615</Data>
+    </Cell>
+    <Cell ss:StyleID="S76"><Data ss:Type="Number">270</Data>
+    </Cell>
+    <Cell ss:StyleID="S76"><Data ss:Type="Number">885</Data>
+    </Cell>
+   </Row>
+  </ss:Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3" />
+    <Footer x:Margin="0.3" />
+    <PageMargins x:Top="0.75" x:Bottom="0.75" x:Left="0.7" x:Right="0.7" />
+   </PageSetup>
+   <Print>
+    <PaperSizeIndex>9</PaperSizeIndex>
+    <HorizontalResolution>2</HorizontalResolution>
+    <VerticalResolution>2</VerticalResolution>
+   </Print>
+   <DoNotDisplayGridlines />
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <RangeSelection>R1:R16384</RangeSelection>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="MAR">
+  <ss:Names />
+  <ss:Table ss:DefaultRowHeight="12.75" ss:DefaultColumnWidth="48" ss:ExpandedRowCount="22" ss:ExpandedColumnCount="4">
+   <Column ss:Index="1" ss:AutoFitWidth="0" ss:Width="105" />
+   <Column ss:Index="2" ss:Span="2" ss:AutoFitWidth="0" ss:Width="55.5" />
+   <Row ss:Index="1" ss:Height="16.5">
+    <Cell ss:StyleID="S74"><Data ss:Type="String">Število registrirano brezposelnih oseb po spolu in statističnih regijah, marec 2020</Data>
+    </Cell>
+    <Cell ss:StyleID="S65" />
+    <Cell ss:StyleID="S65" />
+    <Cell ss:StyleID="S65" />
+   </Row>
+   <Row ss:Index="2" ss:Height="14.25">
+    <Cell ss:StyleID="S66" />
+    <Cell ss:MergeAcross="2" ss:MergeDown="0" ss:StyleID="S79" />
+   </Row>
+   <Row ss:Index="3" ss:Height="31.5">
+    <Cell ss:StyleID="S68"><Data ss:Type="String">Kohezijska / statistična regija</Data>
+    </Cell>
+    <Cell ss:StyleID="S72"><Data ss:Type="String">Moški</Data>
+    </Cell>
+    <Cell ss:StyleID="S72"><Data ss:Type="String">Ženske</Data>
+    </Cell>
+    <Cell ss:StyleID="S73"><Data ss:Type="String">Skupaj</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="4" ss:Height="16.5">
+    <Cell ss:StyleID="S69"><Data ss:Type="String">Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">39403</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">38452</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">77855</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="5" ss:Height="16.5">
+    <Cell ss:StyleID="S69" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+   </Row>
+   <Row ss:Index="6" ss:Height="16.5">
+    <Cell ss:StyleID="S78"><Data ss:Type="String">Vzhodna Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">22456</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">23378</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">45834</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="7" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Jugovzhodna Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2669</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2534</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">5203</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="8" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Koroška</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1259</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1440</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2699</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="9" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Podravska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">6564</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">7008</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">13572</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="10" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Pomurska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2938</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3203</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">6141</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="11" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Posavska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1698</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1617</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3315</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="12" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Primorsko-notranjska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">803</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">808</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1611</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="13" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Savinjska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">5328</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">5634</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">10962</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="14" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Zasavska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1197</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1134</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2331</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="15" ss:Height="16.5">
+    <Cell ss:StyleID="S70" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+   </Row>
+   <Row ss:Index="16" ss:Height="16.5">
+    <Cell ss:StyleID="S78"><Data ss:Type="String">Zahodna Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">16378</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">14787</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">31165</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="17" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Gorenjska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2787</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2615</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">5402</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="18" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Goriška</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1436</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1544</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2980</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="19" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Obalno-kraška</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">2194</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">2089</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">4283</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="20" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Osrednjeslovenska</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">9961</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">8539</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">18500</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="21" ss:Height="15.75">
+    <Cell ss:StyleID="S70" />
+    <Cell ss:StyleID="S75" />
+    <Cell ss:StyleID="S75" />
+    <Cell ss:StyleID="S75" />
+   </Row>
+   <Row ss:Index="22" ss:Height="15.75">
+    <Cell ss:StyleID="S71"><Data ss:Type="String">Občina izven RS</Data>
+    </Cell>
+    <Cell ss:StyleID="S76"><Data ss:Type="Number">569</Data>
+    </Cell>
+    <Cell ss:StyleID="S76"><Data ss:Type="Number">287</Data>
+    </Cell>
+    <Cell ss:StyleID="S76"><Data ss:Type="Number">856</Data>
+    </Cell>
+   </Row>
+  </ss:Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3" />
+    <Footer x:Margin="0.3" />
+    <PageMargins x:Top="0.75" x:Bottom="0.75" x:Left="0.7" x:Right="0.7" />
+   </PageSetup>
+   <Print>
+    <PaperSizeIndex>9</PaperSizeIndex>
+    <HorizontalResolution>2</HorizontalResolution>
+    <VerticalResolution>2</VerticalResolution>
+   </Print>
+   <DoNotDisplayGridlines />
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <RangeSelection>R1:R16384</RangeSelection>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="APR">
+  <ss:Names />
+  <ss:Table ss:DefaultRowHeight="12.75" ss:DefaultColumnWidth="48" ss:ExpandedRowCount="22" ss:ExpandedColumnCount="4">
+   <Column ss:Index="1" ss:AutoFitWidth="0" ss:Width="105" />
+   <Column ss:Index="2" ss:Span="2" ss:AutoFitWidth="0" ss:Width="55.5" />
+   <Row ss:Index="1" ss:Height="16.5">
+    <Cell ss:StyleID="S74"><Data ss:Type="String">Število registrirano brezposelnih oseb po spolu in statističnih regijah, april 2020</Data>
+    </Cell>
+    <Cell ss:StyleID="S65" />
+    <Cell ss:StyleID="S65" />
+    <Cell ss:StyleID="S65" />
+   </Row>
+   <Row ss:Index="2" ss:Height="14.25">
+    <Cell ss:StyleID="S66" />
+    <Cell ss:MergeAcross="2" ss:MergeDown="0" ss:StyleID="S79" />
+   </Row>
+   <Row ss:Index="3" ss:Height="31.5">
+    <Cell ss:StyleID="S68"><Data ss:Type="String">Kohezijska / statistična regija</Data>
+    </Cell>
+    <Cell ss:StyleID="S72"><Data ss:Type="String">Moški</Data>
+    </Cell>
+    <Cell ss:StyleID="S72"><Data ss:Type="String">Ženske</Data>
+    </Cell>
+    <Cell ss:StyleID="S73"><Data ss:Type="String">Skupaj</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="4" ss:Height="16.5">
+    <Cell ss:StyleID="S69"><Data ss:Type="String">Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">44271</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">44377</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">88648</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="5" ss:Height="16.5">
+    <Cell ss:StyleID="S69" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+   </Row>
+   <Row ss:Index="6" ss:Height="16.5">
+    <Cell ss:StyleID="S78"><Data ss:Type="String">Vzhodna Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">24820</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">26631</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">51451</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="7" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Jugovzhodna Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2917</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2789</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">5706</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="8" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Koroška</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1401</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1660</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3061</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="9" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Podravska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">7410</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">8307</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">15717</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="10" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Pomurska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3150</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3542</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">6692</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="11" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Posavska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1839</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1750</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3589</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="12" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Primorsko-notranjska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">894</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">927</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1821</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="13" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Savinjska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">5913</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">6412</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">12325</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="14" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Zasavska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1296</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1244</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2540</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="15" ss:Height="16.5">
+    <Cell ss:StyleID="S70" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+   </Row>
+   <Row ss:Index="16" ss:Height="16.5">
+    <Cell ss:StyleID="S78"><Data ss:Type="String">Zahodna Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">18692</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">17398</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">36090</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="17" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Gorenjska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3338</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3240</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">6578</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="18" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Goriška</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1653</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1797</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3450</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="19" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Obalno-kraška</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">2603</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">2580</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">5183</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="20" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Osrednjeslovenska</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">11098</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">9781</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">20879</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="21" ss:Height="15.75">
+    <Cell ss:StyleID="S70" />
+    <Cell ss:StyleID="S75" />
+    <Cell ss:StyleID="S75" />
+    <Cell ss:StyleID="S75" />
+   </Row>
+   <Row ss:Index="22" ss:Height="15.75">
+    <Cell ss:StyleID="S71"><Data ss:Type="String">Občina izven RS</Data>
+    </Cell>
+    <Cell ss:StyleID="S76"><Data ss:Type="Number">759</Data>
+    </Cell>
+    <Cell ss:StyleID="S76"><Data ss:Type="Number">348</Data>
+    </Cell>
+    <Cell ss:StyleID="S76"><Data ss:Type="Number">1107</Data>
+    </Cell>
+   </Row>
+  </ss:Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3" />
+    <Footer x:Margin="0.3" />
+    <PageMargins x:Top="0.75" x:Bottom="0.75" x:Left="0.7" x:Right="0.7" />
+   </PageSetup>
+   <Print>
+    <PaperSizeIndex>9</PaperSizeIndex>
+    <HorizontalResolution>2</HorizontalResolution>
+    <VerticalResolution>2</VerticalResolution>
+   </Print>
+   <DoNotDisplayGridlines />
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <RangeSelection>R1:R16384</RangeSelection>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="MAJ">
+  <ss:Names />
+  <ss:Table ss:DefaultRowHeight="12.75" ss:DefaultColumnWidth="48" ss:ExpandedRowCount="22" ss:ExpandedColumnCount="4">
+   <Column ss:Index="1" ss:AutoFitWidth="0" ss:Width="105" />
+   <Column ss:Index="2" ss:Span="2" ss:AutoFitWidth="0" ss:Width="55.5" />
+   <Row ss:Index="1" ss:Height="16.5">
+    <Cell ss:StyleID="S74"><Data ss:Type="String">Število registrirano brezposelnih oseb po spolu in statističnih regijah, maj 2020</Data>
+    </Cell>
+    <Cell ss:StyleID="S65" />
+    <Cell ss:StyleID="S65" />
+    <Cell ss:StyleID="S65" />
+   </Row>
+   <Row ss:Index="2" ss:Height="14.25">
+    <Cell ss:StyleID="S66" />
+    <Cell ss:MergeAcross="2" ss:MergeDown="0" ss:StyleID="S79" />
+   </Row>
+   <Row ss:Index="3" ss:Height="31.5">
+    <Cell ss:StyleID="S68"><Data ss:Type="String">Kohezijska / statistična regija</Data>
+    </Cell>
+    <Cell ss:StyleID="S72"><Data ss:Type="String">Moški</Data>
+    </Cell>
+    <Cell ss:StyleID="S72"><Data ss:Type="String">Ženske</Data>
+    </Cell>
+    <Cell ss:StyleID="S73"><Data ss:Type="String">Skupaj</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="4" ss:Height="16.5">
+    <Cell ss:StyleID="S69"><Data ss:Type="String">Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">44804</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">45611</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">90415</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="5" ss:Height="16.5">
+    <Cell ss:StyleID="S69" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+   </Row>
+   <Row ss:Index="6" ss:Height="16.5">
+    <Cell ss:StyleID="S78"><Data ss:Type="String">Vzhodna Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">24753</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">27174</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">51927</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="7" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Jugovzhodna Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2977</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2876</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">5853</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="8" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Koroška</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1402</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1639</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3041</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="9" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Podravska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">7382</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">8430</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">15812</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="10" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Pomurska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2999</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3533</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">6532</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="11" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Posavska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1844</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1803</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3647</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="12" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Primorsko-notranjska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">915</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">992</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1907</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="13" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Savinjska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">5913</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">6638</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">12551</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="14" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Zasavska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1321</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1263</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2584</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="15" ss:Height="16.5">
+    <Cell ss:StyleID="S70" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+   </Row>
+   <Row ss:Index="16" ss:Height="16.5">
+    <Cell ss:StyleID="S78"><Data ss:Type="String">Zahodna Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">19295</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">18062</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">37357</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="17" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Gorenjska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3496</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3431</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">6927</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="18" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Goriška</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1731</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1850</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3581</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="19" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Obalno-kraška</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">2702</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">2698</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">5400</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="20" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Osrednjeslovenska</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">11366</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">10083</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">21449</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="21" ss:Height="15.75">
+    <Cell ss:StyleID="S70" />
+    <Cell ss:StyleID="S75" />
+    <Cell ss:StyleID="S75" />
+    <Cell ss:StyleID="S75" />
+   </Row>
+   <Row ss:Index="22" ss:Height="15.75">
+    <Cell ss:StyleID="S71"><Data ss:Type="String">Občina izven RS</Data>
+    </Cell>
+    <Cell ss:StyleID="S76"><Data ss:Type="Number">756</Data>
+    </Cell>
+    <Cell ss:StyleID="S76"><Data ss:Type="Number">375</Data>
+    </Cell>
+    <Cell ss:StyleID="S76"><Data ss:Type="Number">1131</Data>
+    </Cell>
+   </Row>
+  </ss:Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3" />
+    <Footer x:Margin="0.3" />
+    <PageMargins x:Top="0.75" x:Bottom="0.75" x:Left="0.7" x:Right="0.7" />
+   </PageSetup>
+   <Print>
+    <PaperSizeIndex>9</PaperSizeIndex>
+    <HorizontalResolution>2</HorizontalResolution>
+    <VerticalResolution>2</VerticalResolution>
+   </Print>
+   <DoNotDisplayGridlines />
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <RangeSelection>R1:R16384</RangeSelection>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="JUN">
+  <ss:Names />
+  <ss:Table ss:DefaultRowHeight="12.75" ss:DefaultColumnWidth="48" ss:ExpandedRowCount="22" ss:ExpandedColumnCount="4">
+   <Column ss:Index="1" ss:AutoFitWidth="0" ss:Width="105" />
+   <Column ss:Index="2" ss:Span="2" ss:AutoFitWidth="0" ss:Width="55.5" />
+   <Row ss:Index="1" ss:Height="16.5">
+    <Cell ss:StyleID="S74"><Data ss:Type="String">Število registrirano brezposelnih oseb po spolu in statističnih regijah, junij 2020</Data>
+    </Cell>
+    <Cell ss:StyleID="S65" />
+    <Cell ss:StyleID="S65" />
+    <Cell ss:StyleID="S65" />
+   </Row>
+   <Row ss:Index="2" ss:Height="14.25">
+    <Cell ss:StyleID="S66" />
+    <Cell ss:MergeAcross="2" ss:MergeDown="0" ss:StyleID="S79" />
+   </Row>
+   <Row ss:Index="3" ss:Height="31.5">
+    <Cell ss:StyleID="S68"><Data ss:Type="String">Kohezijska / statistična regija</Data>
+    </Cell>
+    <Cell ss:StyleID="S72"><Data ss:Type="String">Moški</Data>
+    </Cell>
+    <Cell ss:StyleID="S72"><Data ss:Type="String">Ženske</Data>
+    </Cell>
+    <Cell ss:StyleID="S73"><Data ss:Type="String">Skupaj</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="4" ss:Height="16.5">
+    <Cell ss:StyleID="S69"><Data ss:Type="String">Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">44315</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">45062</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">89377</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="5" ss:Height="16.5">
+    <Cell ss:StyleID="S69" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+   </Row>
+   <Row ss:Index="6" ss:Height="16.5">
+    <Cell ss:StyleID="S78"><Data ss:Type="String">Vzhodna Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">24433</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">26809</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">51242</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="7" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Jugovzhodna Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3093</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2922</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">6015</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="8" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Koroška</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1390</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1628</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3018</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="9" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Podravska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">7113</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">8117</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">15230</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="10" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Pomurska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2848</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3363</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">6211</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="11" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Posavska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1868</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1856</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3724</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="12" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Primorsko-notranjska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">920</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">980</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1900</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="13" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Savinjska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">5833</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">6686</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">12519</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="14" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Zasavska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1368</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1257</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2625</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="15" ss:Height="16.5">
+    <Cell ss:StyleID="S70" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+   </Row>
+   <Row ss:Index="16" ss:Height="16.5">
+    <Cell ss:StyleID="S78"><Data ss:Type="String">Zahodna Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">19268</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">17876</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">37144</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="17" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Gorenjska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3423</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3418</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">6841</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="18" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Goriška</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1804</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1810</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3614</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="19" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Obalno-kraška</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">2640</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">2503</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">5143</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="20" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Osrednjeslovenska</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">11401</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">10145</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">21546</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="21" ss:Height="15.75">
+    <Cell ss:StyleID="S70" />
+    <Cell ss:StyleID="S75" />
+    <Cell ss:StyleID="S75" />
+    <Cell ss:StyleID="S75" />
+   </Row>
+   <Row ss:Index="22" ss:Height="15.75">
+    <Cell ss:StyleID="S71"><Data ss:Type="String">Občina izven RS</Data>
+    </Cell>
+    <Cell ss:StyleID="S76"><Data ss:Type="Number">614</Data>
+    </Cell>
+    <Cell ss:StyleID="S76"><Data ss:Type="Number">377</Data>
+    </Cell>
+    <Cell ss:StyleID="S76"><Data ss:Type="Number">991</Data>
+    </Cell>
+   </Row>
+  </ss:Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3" />
+    <Footer x:Margin="0.3" />
+    <PageMargins x:Top="0.75" x:Bottom="0.75" x:Left="0.7" x:Right="0.7" />
+   </PageSetup>
+   <Print>
+    <PaperSizeIndex>9</PaperSizeIndex>
+    <HorizontalResolution>2</HorizontalResolution>
+    <VerticalResolution>2</VerticalResolution>
+   </Print>
+   <DoNotDisplayGridlines />
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <RangeSelection>R1:R16384</RangeSelection>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="JUL">
+  <ss:Names />
+  <ss:Table ss:DefaultRowHeight="12.75" ss:DefaultColumnWidth="48" ss:ExpandedRowCount="22" ss:ExpandedColumnCount="4">
+   <Column ss:Index="1" ss:AutoFitWidth="0" ss:Width="105" />
+   <Column ss:Index="2" ss:Span="2" ss:AutoFitWidth="0" ss:Width="55.5" />
+   <Row ss:Index="1" ss:Height="16.5">
+    <Cell ss:StyleID="S74"><Data ss:Type="String">Število registrirano brezposelnih oseb po spolu in statističnih regijah, julij 2020</Data>
+    </Cell>
+    <Cell ss:StyleID="S65" />
+    <Cell ss:StyleID="S65" />
+    <Cell ss:StyleID="S65" />
+   </Row>
+   <Row ss:Index="2" ss:Height="14.25">
+    <Cell ss:StyleID="S66" />
+    <Cell ss:MergeAcross="2" ss:MergeDown="0" ss:StyleID="S79" />
+   </Row>
+   <Row ss:Index="3" ss:Height="31.5">
+    <Cell ss:StyleID="S68"><Data ss:Type="String">Kohezijska / statistična regija</Data>
+    </Cell>
+    <Cell ss:StyleID="S72"><Data ss:Type="String">Moški</Data>
+    </Cell>
+    <Cell ss:StyleID="S72"><Data ss:Type="String">Ženske</Data>
+    </Cell>
+    <Cell ss:StyleID="S73"><Data ss:Type="String">Skupaj</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="4" ss:Height="16.5">
+    <Cell ss:StyleID="S69"><Data ss:Type="String">Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">44082</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">45315</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">89397</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="5" ss:Height="16.5">
+    <Cell ss:StyleID="S69" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+   </Row>
+   <Row ss:Index="6" ss:Height="16.5">
+    <Cell ss:StyleID="S78"><Data ss:Type="String">Vzhodna Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">24280</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">26959</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">51239</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="7" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Jugovzhodna Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3189</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3025</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">6214</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="8" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Koroška</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1373</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1597</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2970</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="9" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Podravska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">6983</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">8056</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">15039</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="10" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Pomurska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2786</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3374</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">6160</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="11" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Posavska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1867</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1868</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3735</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="12" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Primorsko-notranjska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">920</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1008</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1928</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="13" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Savinjska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">5778</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">6719</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">12497</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="14" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Zasavska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1384</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1312</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2696</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="15" ss:Height="16.5">
+    <Cell ss:StyleID="S70" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+   </Row>
+   <Row ss:Index="16" ss:Height="16.5">
+    <Cell ss:StyleID="S78"><Data ss:Type="String">Zahodna Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">19252</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">17998</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">37250</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="17" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Gorenjska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3397</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3395</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">6792</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="18" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Goriška</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1818</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1825</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3643</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="19" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Obalno-kraška</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">2570</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">2411</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">4981</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="20" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Osrednjeslovenska</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">11467</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">10367</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">21834</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="21" ss:Height="15.75">
+    <Cell ss:StyleID="S70" />
+    <Cell ss:StyleID="S75" />
+    <Cell ss:StyleID="S75" />
+    <Cell ss:StyleID="S75" />
+   </Row>
+   <Row ss:Index="22" ss:Height="15.75">
+    <Cell ss:StyleID="S71"><Data ss:Type="String">Občina izven RS</Data>
+    </Cell>
+    <Cell ss:StyleID="S76"><Data ss:Type="Number">550</Data>
+    </Cell>
+    <Cell ss:StyleID="S76"><Data ss:Type="Number">358</Data>
+    </Cell>
+    <Cell ss:StyleID="S76"><Data ss:Type="Number">908</Data>
+    </Cell>
+   </Row>
+  </ss:Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3" />
+    <Footer x:Margin="0.3" />
+    <PageMargins x:Top="0.75" x:Bottom="0.75" x:Left="0.7" x:Right="0.7" />
+   </PageSetup>
+   <Print>
+    <PaperSizeIndex>9</PaperSizeIndex>
+    <HorizontalResolution>2</HorizontalResolution>
+    <VerticalResolution>2</VerticalResolution>
+   </Print>
+   <DoNotDisplayGridlines />
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <RangeSelection>R1:R16384</RangeSelection>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="AVG">
+  <ss:Names />
+  <ss:Table ss:DefaultRowHeight="12.75" ss:DefaultColumnWidth="48" ss:ExpandedRowCount="22" ss:ExpandedColumnCount="4">
+   <Column ss:Index="1" ss:AutoFitWidth="0" ss:Width="105" />
+   <Column ss:Index="2" ss:Span="2" ss:AutoFitWidth="0" ss:Width="55.5" />
+   <Row ss:Index="1" ss:Height="16.5">
+    <Cell ss:StyleID="S74"><Data ss:Type="String">Število registrirano brezposelnih oseb po spolu in statističnih regijah, avgust 2020</Data>
+    </Cell>
+    <Cell ss:StyleID="S65" />
+    <Cell ss:StyleID="S65" />
+    <Cell ss:StyleID="S65" />
+   </Row>
+   <Row ss:Index="2" ss:Height="14.25">
+    <Cell ss:StyleID="S66" />
+    <Cell ss:MergeAcross="2" ss:MergeDown="0" ss:StyleID="S79" />
+   </Row>
+   <Row ss:Index="3" ss:Height="31.5">
+    <Cell ss:StyleID="S68"><Data ss:Type="String">Kohezijska / statistična regija</Data>
+    </Cell>
+    <Cell ss:StyleID="S72"><Data ss:Type="String">Moški</Data>
+    </Cell>
+    <Cell ss:StyleID="S72"><Data ss:Type="String">Ženske</Data>
+    </Cell>
+    <Cell ss:StyleID="S73"><Data ss:Type="String">Skupaj</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="4" ss:Height="16.5">
+    <Cell ss:StyleID="S69"><Data ss:Type="String">Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">43454</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">44718</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">88172</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="5" ss:Height="16.5">
+    <Cell ss:StyleID="S69" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+   </Row>
+   <Row ss:Index="6" ss:Height="16.5">
+    <Cell ss:StyleID="S78"><Data ss:Type="String">Vzhodna Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">23906</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">26475</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">50381</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="7" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Jugovzhodna Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3163</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3032</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">6195</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="8" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Koroška</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1342</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1528</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2870</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="9" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Podravska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">6864</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">7961</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">14825</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="10" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Pomurska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2727</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3257</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">5984</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="11" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Posavska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1836</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1868</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3704</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="12" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Primorsko-notranjska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">934</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1008</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1942</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="13" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Savinjska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">5663</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">6472</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">12135</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="14" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Zasavska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1377</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1349</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2726</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="15" ss:Height="16.5">
+    <Cell ss:StyleID="S70" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+   </Row>
+   <Row ss:Index="16" ss:Height="16.5">
+    <Cell ss:StyleID="S78"><Data ss:Type="String">Zahodna Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">19053</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">17881</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">36934</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="17" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Gorenjska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3329</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3325</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">6654</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="18" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Goriška</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1782</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1804</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3586</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="19" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Obalno-kraška</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">2527</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">2348</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">4875</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="20" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Osrednjeslovenska</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">11415</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">10404</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">21819</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="21" ss:Height="15.75">
+    <Cell ss:StyleID="S70" />
+    <Cell ss:StyleID="S75" />
+    <Cell ss:StyleID="S75" />
+    <Cell ss:StyleID="S75" />
+   </Row>
+   <Row ss:Index="22" ss:Height="15.75">
+    <Cell ss:StyleID="S71"><Data ss:Type="String">Občina izven RS</Data>
+    </Cell>
+    <Cell ss:StyleID="S76"><Data ss:Type="Number">495</Data>
+    </Cell>
+    <Cell ss:StyleID="S76"><Data ss:Type="Number">362</Data>
+    </Cell>
+    <Cell ss:StyleID="S76"><Data ss:Type="Number">857</Data>
+    </Cell>
+   </Row>
+  </ss:Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3" />
+    <Footer x:Margin="0.3" />
+    <PageMargins x:Top="0.75" x:Bottom="0.75" x:Left="0.7" x:Right="0.7" />
+   </PageSetup>
+   <Print>
+    <PaperSizeIndex>9</PaperSizeIndex>
+    <HorizontalResolution>2</HorizontalResolution>
+    <VerticalResolution>2</VerticalResolution>
+   </Print>
+   <DoNotDisplayGridlines />
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <RangeSelection>R1:R16384</RangeSelection>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="SEP">
+  <ss:Names />
+  <ss:Table ss:DefaultRowHeight="12.75" ss:DefaultColumnWidth="48" ss:ExpandedRowCount="22" ss:ExpandedColumnCount="4">
+   <Column ss:Index="1" ss:AutoFitWidth="0" ss:Width="105" />
+   <Column ss:Index="2" ss:Span="2" ss:AutoFitWidth="0" ss:Width="55.5" />
+   <Row ss:Index="1" ss:Height="16.5">
+    <Cell ss:StyleID="S74"><Data ss:Type="String">Število registrirano brezposelnih oseb po spolu in statističnih regijah, september 2020</Data>
+    </Cell>
+    <Cell ss:StyleID="S65" />
+    <Cell ss:StyleID="S65" />
+    <Cell ss:StyleID="S65" />
+   </Row>
+   <Row ss:Index="2" ss:Height="14.25">
+    <Cell ss:StyleID="S66" />
+    <Cell ss:MergeAcross="2" ss:MergeDown="0" ss:StyleID="S79" />
+   </Row>
+   <Row ss:Index="3" ss:Height="31.5">
+    <Cell ss:StyleID="S68"><Data ss:Type="String">Kohezijska / statistična regija</Data>
+    </Cell>
+    <Cell ss:StyleID="S72"><Data ss:Type="String">Moški</Data>
+    </Cell>
+    <Cell ss:StyleID="S72"><Data ss:Type="String">Ženske</Data>
+    </Cell>
+    <Cell ss:StyleID="S73"><Data ss:Type="String">Skupaj</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="4" ss:Height="16.5">
+    <Cell ss:StyleID="S69"><Data ss:Type="String">Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">41520</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">42246</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">83766</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="5" ss:Height="16.5">
+    <Cell ss:StyleID="S69" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+   </Row>
+   <Row ss:Index="6" ss:Height="16.5">
+    <Cell ss:StyleID="S78"><Data ss:Type="String">Vzhodna Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">22656</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">24771</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">47427</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="7" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Jugovzhodna Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3036</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2854</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">5890</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="8" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Koroška</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1232</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1321</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2553</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="9" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Podravska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">6556</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">7645</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">14201</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="10" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Pomurska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2565</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3041</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">5606</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="11" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Posavska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1769</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1773</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3542</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="12" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Primorsko-notranjska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">893</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">941</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1834</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="13" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Savinjska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">5302</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">5949</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">11251</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="14" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Zasavska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1303</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1247</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2550</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="15" ss:Height="16.5">
+    <Cell ss:StyleID="S70" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+   </Row>
+   <Row ss:Index="16" ss:Height="16.5">
+    <Cell ss:StyleID="S78"><Data ss:Type="String">Zahodna Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">18442</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">17120</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">35562</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="17" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Gorenjska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3161</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3053</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">6214</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="18" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Goriška</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1722</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1709</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3431</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="19" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Obalno-kraška</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">2449</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">2238</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">4687</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="20" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Osrednjeslovenska</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">11110</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">10120</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">21230</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="21" ss:Height="15.75">
+    <Cell ss:StyleID="S70" />
+    <Cell ss:StyleID="S75" />
+    <Cell ss:StyleID="S75" />
+    <Cell ss:StyleID="S75" />
+   </Row>
+   <Row ss:Index="22" ss:Height="15.75">
+    <Cell ss:StyleID="S71"><Data ss:Type="String">Občina izven RS</Data>
+    </Cell>
+    <Cell ss:StyleID="S76"><Data ss:Type="Number">422</Data>
+    </Cell>
+    <Cell ss:StyleID="S76"><Data ss:Type="Number">355</Data>
+    </Cell>
+    <Cell ss:StyleID="S76"><Data ss:Type="Number">777</Data>
+    </Cell>
+   </Row>
+  </ss:Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3" />
+    <Footer x:Margin="0.3" />
+    <PageMargins x:Top="0.75" x:Bottom="0.75" x:Left="0.7" x:Right="0.7" />
+   </PageSetup>
+   <Print>
+    <ValidPrinterInfo />
+    <PaperSizeIndex>9</PaperSizeIndex>
+    <HorizontalResolution>600</HorizontalResolution>
+    <VerticalResolution>600</VerticalResolution>
+   </Print>
+   <DoNotDisplayGridlines />
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <RangeSelection>R1:R16384</RangeSelection>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="OKT">
+  <ss:Names />
+  <ss:Table ss:DefaultRowHeight="12.75" ss:DefaultColumnWidth="48" ss:ExpandedRowCount="22" ss:ExpandedColumnCount="4">
+   <Column ss:Index="1" ss:AutoFitWidth="0" ss:Width="105" />
+   <Column ss:Index="2" ss:Span="2" ss:AutoFitWidth="0" ss:Width="55.5" />
+   <Row ss:Index="1" ss:Height="16.5">
+    <Cell ss:StyleID="S74"><Data ss:Type="String">Število registrirano brezposelnih oseb po spolu in statističnih regijah, oktober 2020</Data>
+    </Cell>
+    <Cell ss:StyleID="S65" />
+    <Cell ss:StyleID="S65" />
+    <Cell ss:StyleID="S65" />
+   </Row>
+   <Row ss:Index="2" ss:Height="14.25">
+    <Cell ss:StyleID="S66" />
+    <Cell ss:MergeAcross="2" ss:MergeDown="0" ss:StyleID="S79" />
+   </Row>
+   <Row ss:Index="3" ss:Height="31.5">
+    <Cell ss:StyleID="S68"><Data ss:Type="String">Kohezijska / statistična regija</Data>
+    </Cell>
+    <Cell ss:StyleID="S72"><Data ss:Type="String">Moški</Data>
+    </Cell>
+    <Cell ss:StyleID="S72"><Data ss:Type="String">Ženske</Data>
+    </Cell>
+    <Cell ss:StyleID="S73"><Data ss:Type="String">Skupaj</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="4" ss:Height="16.5">
+    <Cell ss:StyleID="S69"><Data ss:Type="String">Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">41387</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">42267</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">83654</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="5" ss:Height="16.5">
+    <Cell ss:StyleID="S69" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+   </Row>
+   <Row ss:Index="6" ss:Height="16.5">
+    <Cell ss:StyleID="S78"><Data ss:Type="String">Vzhodna Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">22571</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">24930</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">47501</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="7" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Jugovzhodna Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2898</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2808</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">5706</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="8" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Koroška</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1217</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1334</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2551</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="9" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Podravska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">6658</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">7802</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">14460</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="10" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Pomurska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2545</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3066</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">5611</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="11" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Posavska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1755</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1796</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3551</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="12" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Primorsko-notranjska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">868</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">922</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1790</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="13" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Savinjska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">5328</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">5927</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">11255</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="14" ss:Height="16.5">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Zasavska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1302</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1275</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">2577</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="15" ss:Height="16.5">
+    <Cell ss:StyleID="S70" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+    <Cell ss:StyleID="S67" />
+   </Row>
+   <Row ss:Index="16" ss:Height="16.5">
+    <Cell ss:StyleID="S78"><Data ss:Type="String">Zahodna Slovenija</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">18433</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">17000</Data>
+    </Cell>
+    <Cell ss:StyleID="S77"><Data ss:Type="Number">35433</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="17" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Gorenjska</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3182</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3046</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">6228</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="18" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Goriška</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1722</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">1714</Data>
+    </Cell>
+    <Cell ss:StyleID="S67"><Data ss:Type="Number">3436</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="19" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Obalno-kraška</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">2405</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">2247</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">4652</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="20" ss:Height="15.75">
+    <Cell ss:StyleID="S70"><Data ss:Type="String">Osrednjeslovenska</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">11124</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">9993</Data>
+    </Cell>
+    <Cell ss:StyleID="S75"><Data ss:Type="Number">21117</Data>
+    </Cell>
+   </Row>
+   <Row ss:Index="21" ss:Height="15.75">
+    <Cell ss:StyleID="S70" />
+    <Cell ss:StyleID="S75" />
+    <Cell ss:StyleID="S75" />
+    <Cell ss:StyleID="S75" />
+   </Row>
+   <Row ss:Index="22" ss:Height="15.75">
+    <Cell ss:StyleID="S71"><Data ss:Type="String">Občina izven RS</Data>
+    </Cell>
+    <Cell ss:StyleID="S76"><Data ss:Type="Number">383</Data>
+    </Cell>
+    <Cell ss:StyleID="S76"><Data ss:Type="Number">337</Data>
+    </Cell>
+    <Cell ss:StyleID="S76"><Data ss:Type="Number">720</Data>
+    </Cell>
+   </Row>
+  </ss:Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3" />
+    <Footer x:Margin="0.3" />
+    <PageMargins x:Top="0.75" x:Bottom="0.75" x:Left="0.7" x:Right="0.7" />
+   </PageSetup>
+   <Print>
+    <PaperSizeIndex>9</PaperSizeIndex>
+    <HorizontalResolution>2</HorizontalResolution>
+    <VerticalResolution>2</VerticalResolution>
+   </Print>
+   <DoNotDisplayGridlines />
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <RangeSelection>R1C1</RangeSelection>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>
