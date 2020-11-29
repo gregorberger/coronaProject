@@ -48,7 +48,12 @@
 <div id="main" class="container-fluid text-center pt-5 bg-dark h-100">
     <div class="row">
         <div id="infoBox" class="col-2">
-            <div id="titleInfoBox" class="h4 text-white collapse">
+            <div id="titleInfoBox" class="h4 text-white collapse"></div>
+            <div class="row">
+                <div id="mapData"></div>
+            </div>
+            <div class="row">
+                <div id="mapLegend"></div>
             </div>
         </div>
         <div id="mapDiv" class="col-10"></div>
@@ -66,9 +71,9 @@
         .attr("width",width)
         .attr("height",height);
 
-    var infoBox = d3.select("#infoBox").append("svg")
+    var mapData = d3.select("#mapData").append("svg")
         .attr("width",300)
-        .attr("height",500);
+        .attr("height",300);
 
     var projection = d3.geoIdentity().reflectY(true);
     var path = d3.geoPath(projection);
@@ -76,7 +81,7 @@
     var region;
     var regionsMapData;
 
-    var rect = infoBox
+    var rect = mapData
         .append("rect")
         .attr('width', 276)
         .attr('height', 200)
@@ -104,13 +109,13 @@
 
             document.getElementById("titleInfoBox").classList.remove("collapse");
 
-            infoBox.select("rect")
+            mapData.select("rect")
                 .attr('fill', '#ffa458')
                 .attr('stroke', 'black')
                 .attr('stroke-width', '3')
                 .attr('opacity', 1);
 
-            infoBox.append("text")
+            mapData.append("text")
                 .attr('fill', 'black')
                 .attr('class', 'font-weight-bold h4')
                 .attr('x', 10)
@@ -155,7 +160,7 @@
                     region = 'kr';
                     break;
             }
-            infoBox.append("text")
+            mapData.append("text")
                 .attr('id', 'activeCases')
                 .attr('fill', 'black')
                 .attr('class', 'h5')
@@ -164,7 +169,7 @@
                 .text("Aktivni primeri: ");
             document.getElementById("activeCases").innerHTML += "<a class='font-weight-bold'>"+regionsMapData[region].activeCases+"</a>";
 
-            infoBox.append("text")
+            mapData.append("text")
                 .attr('id', 'confirmedToDate')
                 .attr('fill', 'black')
                 .attr('class', 'h5')
@@ -173,7 +178,7 @@
                 .text("Potrjeni do danes: ");
             document.getElementById("confirmedToDate").innerHTML += "<a class='font-weight-bold'>"+regionsMapData[region].confirmedToDate+"</a>";
 
-            infoBox.append("text")
+            mapData.append("text")
                 .attr('id', 'deceasedToDate')
                 .attr('fill', 'black')
                 .attr('class', 'h5')
@@ -182,7 +187,7 @@
                 .text("Smrti do danes: ");
             document.getElementById("deceasedToDate").innerHTML += "<a class='font-weight-bold'>"+regionsMapData[region].deceasedToDate+"</a>";
 
-            infoBox.append("text")
+            mapData.append("text")
                 .attr('id', 'hospitalBeds')
                 .attr('fill', 'black')
                 .attr('class', 'h5')
@@ -192,7 +197,7 @@
             document.getElementById("hospitalBeds").innerHTML += "<a class='text-danger'>"+getData().get(d.properties.SR_UIME).occupied+"</a>" +
                 "/<a class='font-weight-bold'>"+getData().get(d.properties.SR_UIME).max+"</a>";
 
-            infoBox.append("text")
+            mapData.append("text")
                 .attr('id', 'unemployed')
                 .attr('fill', 'black')
                 .attr('class', 'h5')
@@ -205,12 +210,15 @@
         });
 
         map.selectAll("path").on('mouseout', function (d, i) {
-            infoBox.select("rect").attr('fill', 'none');
-            infoBox.select("rect").attr('stroke', 'none');
-            infoBox.selectAll("text").remove();
-            infoBox.selectAll("br").remove();
+            mapData.select("rect").attr('fill', 'none');
+            mapData.select("rect").attr('stroke', 'none');
+            mapData.selectAll("text").remove();
+            mapData.selectAll("br").remove();
             document.getElementById("titleInfoBox").classList.add("collapse");
         })
     });
+
+    mapLegend();
+
 </script>
 <script src="https://d3js.org/d3.v5.js"></script>
