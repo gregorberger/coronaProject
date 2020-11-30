@@ -2,6 +2,7 @@ let regionsMap;
 d3.json('https://api.sledilnik.org/api/municipalities')
     .then(function(data) {
         let todayData = data[data.length - 1];
+        regionsMap = new Map();
         regionsMap = parseRegionsData(todayData);
 
     });
@@ -12,10 +13,49 @@ function getRegionsData(){
 
 function parseRegionsData(todayData) {
     let regionsData = todayData.regions;
-    regionsMap = new Map();
     const regionsDataMap = new Map(Object.entries(regionsData));
     for (var mapElement of regionsDataMap) {
         var regionName = mapElement[0];
+
+        switch (regionName) {
+            case "ms":
+                regionName = 'Pomurska';
+                break;
+            case "mb":
+                regionName = 'Podravska';
+                break;
+            case "ce":
+                regionName = 'Savinjska';
+                break;
+            case "kk":
+                regionName = 'Posavska';
+                break;
+            case "za":
+                regionName = 'Zasavska';
+                break;
+            case "sg":
+                regionName = 'Koroška';
+                break;
+            case "nm":
+                regionName = 'Jugovzhodna Slovenija';
+                break;
+            case "lj":
+                regionName = 'Osrednjeslovenska';
+                break;
+            case "po":
+                regionName = 'Primorsko-notranjska';
+                break;
+            case "kp":
+                regionName = 'Obalno-kraška';
+                break;
+            case "ng":
+                regionName = 'Goriška';
+                break;
+            case "kr":
+                regionName = 'Gorenjska';
+                break;
+        }
+
         var obcineInRegion = mapElement[1];
         var activeCases = 0;
         var confirmedToDate = 0;

@@ -46,6 +46,10 @@
 </nav>
 
 <div id="main" class="container-fluid text-center pt-5 bg-dark h-100">
+    <div class="d-inline-flex align-items-center">
+        <h1 class="text-white border-bottom">Zemljevid po regijah</h1>
+
+    </div>
     <div class="row">
         <div id="infoBox" class="col-2">
             <div id="titleInfoBox" class="h4 text-white collapse"></div>
@@ -77,9 +81,7 @@
 
     var projection = d3.geoIdentity().reflectY(true);
     var path = d3.geoPath(projection);
-    var todaysData;
     var region;
-    var regionsMapData;
 
     var rect = mapData
         .append("rect")
@@ -89,10 +91,7 @@
 
 
     d3.json("./static/SR.geojson", function(err, geojson) {
-        // Data from today
-        regionsMapData = getRegionsData();
         projection.fitSize([width,height],geojson);
-
 
         map.append("g")
             .selectAll("path")
@@ -100,8 +99,9 @@
             .enter()
             .append("path")
             .attr("id", function(d) { return d.properties.SR_UIME; })
-            .attr("class", function(d) { return pathColor(regionsMapData, d.properties.SR_UIME); })
+            .attr("class", function(d) { return pathColor(d.properties.SR_UIME); })
             .attr("d", path);
+
 
         map.selectAll("path").on('mouseover', function (d, i) {
             var x = d3.mouse(this)[0];
@@ -122,44 +122,6 @@
                 .attr('y', 30)
                 .text(d.properties.SR_UIME);
 
-            switch (d.properties.SR_UIME) {
-                case "Pomurska":
-                    region = 'ms';
-                    break;
-                case "Podravska":
-                    region = 'mb';
-                    break;
-                case "Savinjska":
-                    region = 'ce';
-                    break;
-                case "Posavska":
-                    region = 'kk';
-                    break;
-                case "Zasavska":
-                    region = 'za';
-                    break;
-                case "Koroška":
-                    region = 'sg';
-                    break;
-                case "Jugovzhodna Slovenija":
-                    region = 'nm';
-                    break;
-                case "Osrednjeslovenska":
-                    region = 'lj';
-                    break;
-                case "Primorsko-notranjska":
-                    region = 'po';
-                    break;
-                case "Obalno-kraška":
-                    region = 'kp';
-                    break;
-                case "Goriška":
-                    region = 'ng';
-                    break;
-                case "Gorenjska":
-                    region = 'kr';
-                    break;
-            }
             mapData.append("text")
                 .attr('id', 'activeCases')
                 .attr('fill', 'black')
@@ -167,7 +129,7 @@
                 .attr('x', 10)
                 .attr('y', 70)
                 .text("Aktivni primeri: ");
-            document.getElementById("activeCases").innerHTML += "<a class='font-weight-bold'>"+regionsMapData[region].activeCases+"</a>";
+            document.getElementById("activeCases").innerHTML += "<a class='font-weight-bold'>"+regionsMap[d.properties.SR_UIME].activeCases+"</a>";
 
             mapData.append("text")
                 .attr('id', 'confirmedToDate')
@@ -176,7 +138,7 @@
                 .attr('x', 10)
                 .attr('y', 100)
                 .text("Potrjeni do danes: ");
-            document.getElementById("confirmedToDate").innerHTML += "<a class='font-weight-bold'>"+regionsMapData[region].confirmedToDate+"</a>";
+            document.getElementById("confirmedToDate").innerHTML += "<a class='font-weight-bold'>"+regionsMap[d.properties.SR_UIME].confirmedToDate+"</a>";
 
             mapData.append("text")
                 .attr('id', 'deceasedToDate')
@@ -185,7 +147,7 @@
                 .attr('x', 10)
                 .attr('y', 130)
                 .text("Smrti do danes: ");
-            document.getElementById("deceasedToDate").innerHTML += "<a class='font-weight-bold'>"+regionsMapData[region].deceasedToDate+"</a>";
+            document.getElementById("deceasedToDate").innerHTML += "<a class='font-weight-bold'>"+regionsMap[d.properties.SR_UIME].deceasedToDate+"</a>";
 
             mapData.append("text")
                 .attr('id', 'hospitalBeds')
