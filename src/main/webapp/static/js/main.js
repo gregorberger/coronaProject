@@ -1,9 +1,9 @@
-function insertBoxInfoTitle() {
+function getDate() {
     n =  new Date();
     y = n.getFullYear();
     m = n.getMonth() + 1;
     d = n.getDate();
-    document.getElementById("titleInfoBox").innerHTML = "Podatki za <br><b>" + d + "." + m + "." + y+"</b>";
+    return  d + "." + m + "." + y;
 }
 
 
@@ -33,15 +33,15 @@ function mapLegend() {
     var size = 20;
 
     var mapLegend = d3.select("#mapLegend").append("svg")
-        .attr("width",220)
+        .attr("width",320)
         .attr("height",250);
 
     mapLegend.selectAll("mapLegend")
         .data(keys)
         .enter()
         .append("rect")
-        .attr("x", 100)
-        .attr("y", function(d,i){ return 100 + i*(size+5)}) // 100 is where the first dot appears. 25 is the distance between dots
+        .attr("x", 200)
+        .attr("y", function(d,i){ return 10 + i*(size+5)}) // 100 is where the first dot appears. 25 is the distance between dots
         .attr("width", size)
         .attr("height", size)
         .style("fill", function(d,i){ return color[i]})
@@ -50,8 +50,8 @@ function mapLegend() {
         .data(keys)
         .enter()
         .append("text")
-        .attr("x", 100 + size*1.2)
-        .attr("y", function(d,i){ return 105 + i*(size+5) + (size/2)}) // 100 is where the first dot appears. 25 is the distance between dots
+        .attr("x", 200 + size*1.2)
+        .attr("y", function(d,i){ return 12 + i*(size+5) + (size/2)}) // 100 is where the first dot appears. 25 is the distance between dots
         .style("fill", function(d,i){ return color[i]})
         .text(function(d){ return d})
         .attr("text-anchor", "left")

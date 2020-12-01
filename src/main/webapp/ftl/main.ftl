@@ -60,16 +60,15 @@
                 <div id="mapLegend"></div>
             </div>
         </div>
-        <div id="mapDiv" class="col-10"></div>
+        <div id="mapDiv" class="col-7"></div>
+        <div id="graphs" class="col-3">neki grafi</div>
     </div>
 </div>
 
 
 <script>
-    insertBoxInfoTitle();
-
-    var width = 1350;
-    var height = 700;
+    var width = 1150;
+    var height = 600;
     var map = d3.select("#mapDiv")
         .append("svg")
         .attr("width",width)
@@ -77,7 +76,7 @@
 
     var mapData = d3.select("#mapData").append("svg")
         .attr("width",300)
-        .attr("height",300);
+        .attr("height",400);
 
     var projection = d3.geoIdentity().reflectY(true);
     var path = d3.geoPath(projection);
@@ -89,6 +88,21 @@
         .attr('height', 200)
         .attr('fill', 'none');
 
+
+    function bottomRightMapInfo() {
+        map.append("text")
+            .attr('x', 980)
+            .attr('y', 575)
+            .attr('class', "text-muted")
+            .attr('fill', "white")
+            .text("Podatki za :" + getDate());
+        map.append("text")
+            .attr('x', 915)
+            .attr('y', 590)
+            .attr('class', "text-muted")
+            .attr('fill', "white")
+            .text("vir: NIJZ, Ministrstvo za zdravje");
+    }
 
     d3.json("./static/SR.geojson", function(err, geojson) {
         projection.fitSize([width,height],geojson);
@@ -102,6 +116,7 @@
             .attr("class", function(d) { return pathColor(d.properties.SR_UIME); })
             .attr("d", path);
 
+        bottomRightMapInfo();
 
         map.selectAll("path").on('mouseover', function (d, i) {
             var x = d3.mouse(this)[0];
@@ -110,6 +125,8 @@
             document.getElementById("titleInfoBox").classList.remove("collapse");
 
             mapData.select("rect")
+                //.attr('x', 150)
+                //.attr('y', 30)
                 .attr('fill', '#ffa458')
                 .attr('stroke', 'black')
                 .attr('stroke-width', '3')
