@@ -25,3 +25,13 @@
 .cases1400 {
     fill: #E62129;
 }
+
+#labTestsGraph {
+    height: 320px;
+    margin-left: 20px;
+}
+#drugiGraf {
+    height: 320px;
+    margin-left: 20px;
+}
+

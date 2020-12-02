@@ -23,7 +23,14 @@
     }
 </style>
 <body>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
 <script src="https://d3js.org/d3.v5.js"></script>
+<script src="./static/js/labTests.js"></script>
 <script src="./static/js/bolnisnice.js"></script>
 <script src="./static/js/brezposelni.js"></script>
 <script src="./static/js/regionsData.js"></script>
@@ -61,7 +68,10 @@
             </div>
         </div>
         <div id="mapDiv" class="col-7"></div>
-        <div id="graphs" class="col-3">neki grafi</div>
+        <div id="graphs" class="col-3">
+            <div id="labTestsGraph" class="row"></div>
+            <div id="drugiGraf" class="row"></div>
+        </div>
     </div>
 </div>
 
