@@ -73,6 +73,36 @@
             <div id="drugiGraf" class="row"></div>
         </div>
     </div>
+
+
+    <div class="row bg-dark mt-5">
+        <div class="col-sm-4">
+            <div class="card ml-5">
+                <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card mr-5">
+                <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
 </div>
 
 
@@ -104,13 +134,13 @@
             .attr('x', 980)
             .attr('y', 575)
             .attr('class', "text-muted")
-            .attr('fill', "white")
+            .attr('fill', "grey")
             .text("Podatki za :" + getDate());
         map.append("text")
             .attr('x', 915)
             .attr('y', 590)
             .attr('class', "text-muted")
-            .attr('fill', "white")
+            .attr('fill', "grey")
             .text("vir: NIJZ, Ministrstvo za zdravje");
     }
 
@@ -131,8 +161,6 @@
         map.selectAll("path").on('mouseover', function (d, i) {
             var x = d3.mouse(this)[0];
             var y = d3.mouse(this)[1];
-
-            document.getElementById("titleInfoBox").classList.remove("collapse");
 
             mapData.select("rect")
                 //.attr('x', 150)
