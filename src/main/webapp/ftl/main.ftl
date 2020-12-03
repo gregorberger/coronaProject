@@ -77,7 +77,7 @@
 
 
     <div class="row bg-dark mt-5">
-        <div class="col-sm-4">
+        <div class="col-sm-3">
             <div class="card ml-5">
                 <div class="card-body">
                     <h5 class="card-title">Aktivni primeri:</h5>
@@ -85,7 +85,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-3">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Hospitalizirani bolniki:</h5>
@@ -93,11 +93,19 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-4">
-            <div class="card mr-5">
+        <div class="col-sm-3">
+            <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Število smrti:</h5>
                     <p class="card-text" id="smrti"></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card mr-5">
+                <div class="card-body">
+                    <h5 class="card-title">Brezposelni:</h5>
+                    <p class="card-text" id="brezposelni"></p>
                 </div>
             </div>
         </div>
@@ -187,7 +195,7 @@
         .datum([{"people": 79841, "month":"jan"}, {"people": 77484, "month":"feb"}, {"people": 77855, "month":"mar"},
             {"people": 88648, "month":"apr"}, {"people": 90415, "month":"maj"}, {"people": 89377, "month":"jun"},
             {"people": 89397, "month":"jul"}, {"people": 88172, "month":"avg"}, {"people": 83766, "month":"sep"},
-            {"people": 83654, "month":"nov"}])
+            {"people": 83654, "month":"okt"}, {"people": 83654, "month":"nov"}])
 
         .style("opacity", ".8")
         //.style("stroke", "black")
@@ -215,10 +223,11 @@
 
     d3.json("https://api.sledilnik.org/api/stats", function(err, splosno) {
         let splosnoDanes = splosno[splosno.length - 2];
-        console.log(splosnoDanes);
-        d3.select("#aktivni").text(splosnoDanes.cases.active);
-        d3.select("#smrti").text(splosnoDanes.statePerTreatment.deceasedToDate);
-        d3.select("#hospitalizirani").text(splosnoDanes.statePerTreatment.inHospital);
+        console.log(getBrezposelni().get("oktober"));
+        d3.select("#aktivni").text(splosnoDanes.cases.active).style("font-weight", "bold");
+        d3.select("#smrti").text(splosnoDanes.statePerTreatment.deceasedToDate).style("font-weight", "bold");
+        d3.select("#hospitalizirani").text(splosnoDanes.statePerTreatment.inHospital).style("font-weight", "bold");
+        d3.select("#brezposelni").text(getBrezposelni().get("oktober").get("Slovenija")[2]).style("font-weight", "bold");
     });
 
     d3.json("./static/SR.geojson", function(err, geojson) {
