@@ -70,7 +70,8 @@
         <div id="mapDiv" class="col-7"></div>
         <div id="graphs" class="col-3">
             <div id="labTestsGraph" class="row"></div>
-            <div id="drugiGraf" class="row"></div>
+            <!div id="drugiGraf" class="row">
+            <div id="graph01" class="row"></div>
         </div>
     </div>
 
@@ -143,6 +144,73 @@
             .attr('fill', "grey")
             .text("vir: NIJZ, Ministrstvo za zdravje");
     }
+
+    //test risanje grafa D3
+
+    var margin = {top: 20, right: 30, bottom: 50, left: 100},
+        width1 = 390 - margin.left - margin.right,
+        height1 = 250 - margin.top - margin.bottom;
+
+    var graf = d3.select("#graph01")
+        .append("svg")
+        .attr("width", width1 + margin.left + margin.right)
+        .attr("height", height1 + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform",
+            "translate(" + margin.left + "," + margin.top + ")");
+
+    var x = d3.scalePoint()
+        .domain(["jan", "feb", "mar", "apr", "maj", "jun", "jul", "avg", "sep", "okt", "nov"])
+        .range([0, width1]);
+    graf.append("g")
+        .attr("transform", "translate(0," + height1 + ")")
+        .attr("color", "red")
+        .call(d3.axisBottom(x))
+        .selectAll("text")
+            .style("font-size", "10px")
+            .attr("transform", "translate(-10,10)rotate(-45)")
+            .style("fill", "#FFFFFF");
+
+    var y = d3.scaleLinear()
+        .domain([76000, 92000])
+        .range([height1, 0]);
+
+    graf.append("g")
+        .call(d3.axisLeft(y))
+        .selectAll("text")
+            .style("font-size", "10px")
+            .style("fill", "#FFFFFF");
+
+
+
+    graf.append("path")
+        .datum([{"people": 79841, "month":"jan"}, {"people": 77484, "month":"feb"}, {"people": 77855, "month":"mar"},
+            {"people": 88648, "month":"apr"}, {"people": 90415, "month":"maj"}, {"people": 89377, "month":"jun"},
+            {"people": 89397, "month":"jul"}, {"people": 88172, "month":"avg"}, {"people": 83766, "month":"sep"},
+            {"people": 83654, "month":"nov"}])
+
+        .style("opacity", ".8")
+        //.style("stroke", "black")
+        .style("stroke-width", 1)
+        .style("stroke-linejoin", "round")
+        .style("fill", "#DFDFDF")
+        .attr("d",  d3.area().curve(d3.curveBasis)
+            .x(function(d) { return this.x(d.month); })
+            .y0(height1)
+            .y1(function(d) { return this.y(d.people); })
+        );
+
+    d3.selectAll('.axis path')
+        .style("fill", "black")
+
+    graf.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("x", -85)
+        .attr("y", -50)
+        .attr("fill", "white")
+        .style("font-size", "15px")
+        .text("brezposelni");
+
 
     d3.json("./static/SR.geojson", function(err, geojson) {
         projection.fitSize([width,height],geojson);

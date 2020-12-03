@@ -56,4 +56,6 @@ function mapLegend() {
         .text(function(d){ return d})
         .attr("text-anchor", "left")
         .style("alignment-baseline", "middle")
+
+    mapLegend.selectAll("mapLegend").style("top", 250);
 }
