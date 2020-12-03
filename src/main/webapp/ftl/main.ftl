@@ -80,24 +80,24 @@
         <div class="col-sm-4">
             <div class="card ml-5">
                 <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <h5 class="card-title">Aktivni primeri:</h5>
+                    <p class="card-text" id="aktivni"></p>
                 </div>
             </div>
         </div>
         <div class="col-sm-4">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <h5 class="card-title">Hospitalizirani bolniki:</h5>
+                    <p class="card-text" id="hospitalizirani"></p>
                 </div>
             </div>
         </div>
         <div class="col-sm-4">
             <div class="card mr-5">
                 <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <h5 class="card-title">Število smrti:</h5>
+                    <p class="card-text" id="smrti"></p>
                 </div>
             </div>
         </div>
@@ -201,7 +201,7 @@
         );
 
     d3.selectAll('.axis path')
-        .style("fill", "black")
+        .style("fill", "black");
 
     graf.append("text")
         .attr("transform", "rotate(-90)")
@@ -211,9 +211,31 @@
         .style("font-size", "15px")
         .text("brezposelni");
 
+    //skupni podatki
+
+    d3.json("https://api.sledilnik.org/api/stats", function(err, splosno) {
+        let splosnoDanes = splosno[splosno.length - 2];
+        console.log(splosnoDanes);
+        d3.select("#aktivni").text(splosnoDanes.cases.active);
+        d3.select("#smrti").text(splosnoDanes.statePerTreatment.deceasedToDate);
+        d3.select("#hospitalizirani").text(splosnoDanes.statePerTreatment.inHospital);
+    });
 
     d3.json("./static/SR.geojson", function(err, geojson) {
         projection.fitSize([width,height],geojson);
+
+        /*console.log(regionsMap.Gorenjska.activeCases);
+
+        const reg = ["Pomurska", "Podravska", "Savinjska", "Posavska", "Zasavska", "Koroška", "Jugovzhodna Slovenija",
+            "Osrednjeslovenska", "Primorsko-notranjska", "Obalno-kraška", "Goriška", "Gorenjska"];
+        let aktivniSkupni = 0;
+        for (let el of reg.values()){
+            console.log(el)
+            console.log(getRegionsData().el.activeCases);
+            //aktivniSkupni += getRegionsData().get(reg[el]).activeCases;
+        }
+        d3.select("#aktivni").text(aktivniSkupni);
+        */
 
         map.append("g")
             .selectAll("path")
