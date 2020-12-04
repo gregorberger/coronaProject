@@ -156,7 +156,7 @@
     //test risanje grafa D3
 
     var margin = {top: 20, right: 30, bottom: 50, left: 100},
-        width1 = 390 - margin.left - margin.right,
+        width1 = 485 - margin.left - margin.right,
         height1 = 250 - margin.top - margin.bottom;
 
     var graf = d3.select("#graph01")

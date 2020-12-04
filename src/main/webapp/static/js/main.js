@@ -36,12 +36,24 @@ function mapLegend() {
         .attr("width",320)
         .attr("height",250);
 
+
+    mapLegend.selectAll("mapLegend")
+        .data(keys)
+        .enter()
+        .append("text")
+        .attr("x", 200)
+        .attr("y", 10) // 100 is where the first dot appears. 25 is the distance between dots
+        .style("fill", "white")
+        .text("Aktivni primeri:")
+        .attr("text-anchor", "left")
+        .style("alignment-baseline", "middle")
+
     mapLegend.selectAll("mapLegend")
         .data(keys)
         .enter()
         .append("rect")
         .attr("x", 200)
-        .attr("y", function(d,i){ return 10 + i*(size+5)}) // 100 is where the first dot appears. 25 is the distance between dots
+        .attr("y", function(d,i){ return 20 + i*(size+5)}) // 100 is where the first dot appears. 25 is the distance between dots
         .attr("width", size)
         .attr("height", size)
         .style("fill", function(d,i){ return color[i]})
@@ -51,7 +63,7 @@ function mapLegend() {
         .enter()
         .append("text")
         .attr("x", 200 + size*1.2)
-        .attr("y", function(d,i){ return 12 + i*(size+5) + (size/2)}) // 100 is where the first dot appears. 25 is the distance between dots
+        .attr("y", function(d,i){ return 22 + i*(size+5) + (size/2)}) // 100 is where the first dot appears. 25 is the distance between dots
         .style("fill", function(d,i){ return color[i]})
         .text(function(d){ return d})
         .attr("text-anchor", "left")
