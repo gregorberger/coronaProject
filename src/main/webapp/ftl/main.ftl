@@ -21,6 +21,7 @@
     path:hover {
         fill: pink;
     }
+
 </style>
 <body>
 <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -71,7 +72,9 @@
         <div id="graphs" class="col-3">
             <div id="labTestsGraph" class="row"></div>
             <!div id="drugiGraf" class="row">
-            <div id="graph01" class="row"></div>
+            <div id="graph01" class="row">
+                <button class="reset" type="button" onclick="resetSlovenija()">Reset</button>
+            </div>
         </div>
     </div>
 
@@ -155,6 +158,7 @@
 
     //test risanje grafa D3
 
+
     var margin = {top: 20, right: 30, bottom: 50, left: 100},
         width1 = 485 - margin.left - margin.right,
         height1 = 250 - margin.top - margin.bottom;
@@ -177,6 +181,7 @@
             .style("font-size", "10px")
             .attr("transform", "translate(-10,10)rotate(-45)")
             .style("fill", "#FFFFFF");
+
 
     var y = d3.scaleLinear()
         .domain([76000, 92000])
@@ -220,6 +225,35 @@
         .style("font-size", "15px")
         .text("brezposelni");
 
+    //reset button
+    let resetSlovenija = function() {
+        y = d3.scaleLinear()
+            .domain([76000, 92000])
+            .range([height1, 0]);
+
+        graf.select('.yaxis')
+            .call(d3.axisLeft(y))
+            .selectAll("text")
+            .style("font-size", "10px")
+            .style("fill", "#FFFFFF");
+
+        graf.select(".prikaz")
+            .datum([{"people": 79841, "month":"jan"}, {"people": 77484, "month":"feb"}, {"people": 77855, "month":"mar"},
+                {"people": 88648, "month":"apr"}, {"people": 90415, "month":"maj"}, {"people": 89377, "month":"jun"},
+                {"people": 89397, "month":"jul"}, {"people": 88172, "month":"avg"}, {"people": 83766, "month":"sep"},
+                {"people": 83654, "month":"okt"}, {"people": 83654, "month":"nov"}])
+            .style("opacity", ".8")
+            .style("stroke-width", 1)
+            .style("stroke-linejoin", "round")
+            .style("fill", "#DFDFDF")
+            .attr("d",  d3.area().curve(d3.curveBasis)
+                .x(function(d) { return this.x(d.month); })
+                .y0(height1)
+                .y1(function(d) { return this.y(d.people); })
+            );
+    }
+
+
     //skupni podatki
 
     d3.json("https://api.sledilnik.org/api/stats", function(err, splosno) {
@@ -232,19 +266,6 @@
 
     d3.json("./static/SR.geojson", function(err, geojson) {
         projection.fitSize([width,height],geojson);
-
-        /*console.log(regionsMap.Gorenjska.activeCases);
-
-        const reg = ["Pomurska", "Podravska", "Savinjska", "Posavska", "Zasavska", "Koroška", "Jugovzhodna Slovenija",
-            "Osrednjeslovenska", "Primorsko-notranjska", "Obalno-kraška", "Goriška", "Gorenjska"];
-        let aktivniSkupni = 0;
-        for (let el of reg.values()){
-            console.log(el)
-            console.log(getRegionsData().el.activeCases);
-            //aktivniSkupni += getRegionsData().get(reg[el]).activeCases;
-        }
-        d3.select("#aktivni").text(aktivniSkupni);
-        */
 
         map.append("g")
             .selectAll("path")
