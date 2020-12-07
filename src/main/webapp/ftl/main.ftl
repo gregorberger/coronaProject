@@ -53,7 +53,7 @@
 
 </nav>
 
-<div id="main" class="container-fluid text-center pt-5 bg-dark h-100">
+<div id="main" class="container-fluid text-center pt-5 backgroundColor h-100">
     <div class="d-inline-flex align-items-center">
         <h1 class="text-white border-bottom">Zemljevid po regijah</h1>
 
@@ -73,13 +73,13 @@
             <div id="labTestsGraph" class="row"></div>
             <!div id="drugiGraf" class="row">
             <div id="graph01" class="row">
-                <button class="reset" type="button" onclick="resetSlovenija()">Reset</button>
+                <button class="reset" type="button" onclick="resetSlovenija()">Ponastavi grafa</button>
             </div>
         </div>
     </div>
 
 
-    <div class="row bg-dark mt-5">
+    <div class="row backgroundColor mt-5">
         <div class="col-sm-3">
             <div class="card ml-5">
                 <div class="card-body">
@@ -251,6 +251,9 @@
                 .y0(height1)
                 .y1(function(d) { return this.y(d.people); })
             );
+
+        labTestsGraph();
+
     }
 
 
@@ -355,7 +358,50 @@
         })
 
         map.selectAll("path").on('click', function (d, i) {
+            // testiranje on click graf spremembe
+            var pozitivni = chart.series[0];
+            var negativni = chart.series[1];
 
+            switch (d.properties.SR_UIME) {
+                case "Pomurska":
+                    msLabTests(pozitivni, negativni);
+                    break;
+                case "Podravska":
+                    mbLabTests(pozitivni, negativni);
+                    break;
+                case "Savinjska":
+                    ceLabTests(pozitivni, negativni);
+                    break;
+                case "Posavska":
+                    ukgLabTests(pozitivni, negativni);
+                    break;
+                case "Zasavska":
+                    ukgLabTests(pozitivni, negativni);
+                    break;
+                case "Koroška":
+                    sgLabTests(pozitivni, negativni);
+                    break;
+                case "Jugovzhodna Slovenija":
+                    nmLabTests(pozitivni, negativni);
+                    break;
+                case "Osrednjeslovenska":
+                    ljLabTests(pozitivni, negativni);
+                    break;
+                case "Primorsko-notranjska":
+                    kpLabTests(pozitivni, negativni);
+                    break;
+                case "Obalno-kraška":
+                    kpLabTests(pozitivni, negativni);
+                    break;
+                case "Goriška":
+                    krLabTests(pozitivni, negativni);
+                    break;
+                case "Gorenjska":
+                    krLabTests(pozitivni, negativni);
+                    break;
+            }
+
+        // brezposelni on click graf spremembe
             let dataU = [{"people": getBrezposelni().get("januar").get(d.properties.SR_UIME)[2], "month":"jan"},
                 {"people": getBrezposelni().get("februar").get(d.properties.SR_UIME)[2], "month":"feb"},
                 {"people": getBrezposelni().get("marec").get(d.properties.SR_UIME)[2], "month":"mar"},
