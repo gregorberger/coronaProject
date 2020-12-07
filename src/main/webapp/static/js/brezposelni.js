@@ -21,6 +21,7 @@ d3.xml('./static/brezposelni_pospolu1.xml')
                 mesec = s[s.length - 2];
                 //podatki za naslednji mesec se zacnejo na 5 vrstici
                 trenutni += 5;
+                podatkiMesec = new Map();
             }
             //ne zanimajo nas podatki za celo V/Z Slovenijo
             else if (podatki[trenutni].textContent === "Vzhodna Slovenija" ||
@@ -33,7 +34,6 @@ d3.xml('./static/brezposelni_pospolu1.xml')
                 trenutni += 4;
             }
         }
-
     });
 function getBrezposelni() {
     return brezposelni;

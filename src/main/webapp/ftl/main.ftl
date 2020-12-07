@@ -172,7 +172,6 @@
         .range([0, width1]);
     graf.append("g")
         .attr("transform", "translate(0," + height1 + ")")
-        .attr("color", "red")
         .call(d3.axisBottom(x))
         .selectAll("text")
             .style("font-size", "10px")
@@ -184,6 +183,7 @@
         .range([height1, 0]);
 
     graf.append("g")
+        .attr("class", "yaxis")
         .call(d3.axisLeft(y))
         .selectAll("text")
             .style("font-size", "10px")
@@ -192,6 +192,7 @@
 
 
     graf.append("path")
+        .attr("class", "prikaz")
         .datum([{"people": 79841, "month":"jan"}, {"people": 77484, "month":"feb"}, {"people": 77855, "month":"mar"},
             {"people": 88648, "month":"apr"}, {"people": 90415, "month":"maj"}, {"people": 89377, "month":"jun"},
             {"people": 89397, "month":"jul"}, {"people": 88172, "month":"avg"}, {"people": 83766, "month":"sep"},
@@ -223,7 +224,6 @@
 
     d3.json("https://api.sledilnik.org/api/stats", function(err, splosno) {
         let splosnoDanes = splosno[splosno.length - 2];
-        console.log(getBrezposelni().get("oktober"));
         d3.select("#aktivni").text(splosnoDanes.cases.active).style("font-weight", "bold");
         d3.select("#smrti").text(splosnoDanes.statePerTreatment.deceasedToDate).style("font-weight", "bold");
         d3.select("#hospitalizirani").text(splosnoDanes.statePerTreatment.inHospital).style("font-weight", "bold");
@@ -331,6 +331,59 @@
             mapData.selectAll("text").remove();
             mapData.selectAll("br").remove();
             document.getElementById("titleInfoBox").classList.add("collapse");
+        })
+
+        map.selectAll("path").on('click', function (d, i) {
+
+            let dataU = [{"people": getBrezposelni().get("januar").get(d.properties.SR_UIME)[2], "month":"jan"},
+                {"people": getBrezposelni().get("februar").get(d.properties.SR_UIME)[2], "month":"feb"},
+                {"people": getBrezposelni().get("marec").get(d.properties.SR_UIME)[2], "month":"mar"},
+                {"people": getBrezposelni().get("april").get(d.properties.SR_UIME)[2], "month":"apr"},
+                {"people": getBrezposelni().get("maj").get(d.properties.SR_UIME)[2], "month":"maj"},
+                {"people": getBrezposelni().get("junij").get(d.properties.SR_UIME)[2], "month":"jun"},
+                {"people": getBrezposelni().get("julij").get(d.properties.SR_UIME)[2], "month":"jul"},
+                {"people": getBrezposelni().get("avgust").get(d.properties.SR_UIME)[2], "month":"avg"},
+                {"people": getBrezposelni().get("september").get(d.properties.SR_UIME)[2], "month":"sep"},
+                {"people": getBrezposelni().get("oktober").get(d.properties.SR_UIME)[2], "month":"okt"},
+                {"people": getBrezposelni().get("oktober").get(d.properties.SR_UIME)[2], "month":"nov"}]
+
+            let meja = function () {
+                let spodaj = parseInt(getBrezposelni().get("januar").get(d.properties.SR_UIME)[2]);
+                let zgoraj = parseInt(getBrezposelni().get("januar").get(d.properties.SR_UIME)[2]);
+                for (el in dataU){
+                    if (parseInt(dataU[el].people) < spodaj) {
+                        spodaj = parseInt(dataU[el].people);
+                    }
+                    if (parseInt(dataU[el].people) > zgoraj) {
+                        zgoraj = parseInt(dataU[el].people);
+                    }
+                }
+                spodaj -= 200;
+                zgoraj += 200;
+                return [spodaj, zgoraj];
+            }
+
+            y = d3.scaleLinear()
+                .domain([meja()[0] , meja()[1]])
+                .range([height1, 0]);
+            graf.select('.yaxis')
+                .call(d3.axisLeft(y))
+                .selectAll("text")
+                    .style("font-size", "10px")
+                    .style("fill", "#FFFFFF");
+
+            graf.select(".prikaz")
+                .datum(dataU)
+                .style("opacity", ".8")
+                .style("stroke-width", 1)
+                .style("stroke-linejoin", "round")
+                .style("fill", "#DFDFDF")
+                .attr("d",  d3.area().curve(d3.curveBasis)
+                    .x(function(d) { return this.x(d.month); })
+                    .y0(height1)
+                    .y1(function(d) { return this.y(d.people); })
+                );
+
         })
     });
 
