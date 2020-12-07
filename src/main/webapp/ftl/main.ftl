@@ -71,7 +71,6 @@
         <div id="mapDiv" class="col-7"></div>
         <div id="graphs" class="col-3">
             <div id="labTestsGraph" class="row"></div>
-            <!div id="drugiGraf" class="row">
             <div id="graph01" class="row">
                 <button class="reset" type="button" onclick="resetSlovenija()">Ponastavi grafa</button>
             </div>
@@ -81,33 +80,33 @@
 
     <div class="row backgroundColor mt-5">
         <div class="col-sm-3">
-            <div class="card ml-5">
+            <div class="card ml-5 navbar-bg border-dark">
                 <div class="card-body">
-                    <h5 class="card-title">Aktivni primeri:</h5>
+                    <h5 class="card-title text-white">Aktivni primeri:</h5>
                     <p class="card-text" id="aktivni"></p>
                 </div>
             </div>
         </div>
         <div class="col-sm-3">
-            <div class="card">
+            <div class="card navbar-bg border-dark">
                 <div class="card-body">
-                    <h5 class="card-title">Hospitalizirani bolniki:</h5>
+                    <h5 class="card-title text-white">Hospitalizirani bolniki:</h5>
                     <p class="card-text" id="hospitalizirani"></p>
                 </div>
             </div>
         </div>
         <div class="col-sm-3">
-            <div class="card">
+            <div class="card navbar-bg border-dark">
                 <div class="card-body">
-                    <h5 class="card-title">Število smrti:</h5>
+                    <h5 class="card-title text-white">Število smrti:</h5>
                     <p class="card-text" id="smrti"></p>
                 </div>
             </div>
         </div>
         <div class="col-sm-3">
-            <div class="card mr-5">
+            <div class="card mr-5 navbar-bg border-dark">
                 <div class="card-body">
-                    <h5 class="card-title">Brezposelni:</h5>
+                    <h5 class="card-title text-white">Brezposelni:</h5>
                     <p class="card-text" id="brezposelni"></p>
                 </div>
             </div>
@@ -288,7 +287,7 @@
             mapData.select("rect")
                 //.attr('x', 150)
                 //.attr('y', 30)
-                .attr('fill', '#ffa458')
+                .attr('fill', '#e69c24')
                 .attr('stroke', 'black')
                 .attr('stroke-width', '3')
                 .attr('opacity', 1);

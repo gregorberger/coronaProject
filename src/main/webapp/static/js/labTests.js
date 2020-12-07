@@ -28,8 +28,8 @@ function labTestsGraph() {
             text: 'vir: NIJZ, Ministrstvo za zdravje'
         },
         legend: {
-            backgroundColor: '#3a434a',
-            layout: 'vertical',
+            // backgroundColor: '#3a434a',
+            // layout: 'vertical',
             title: {
                 itemStyle: {
                     color: '#ffffff',
