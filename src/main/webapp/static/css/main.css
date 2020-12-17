@@ -1,5 +1,5 @@
 .navbar-bg {
-    background-color: #e69c24 !important;
+    background-color: #3f4756 !important;
 }
 
 .cases400 {
@@ -32,17 +32,21 @@
 }
 
 .backgroundColor {
-    background-color: #1b1501 !important;
+    background-color:#4282c7;
     /*#1b1501 !important*/
 }
 
 .reset {
     position: absolute;
-    top: 300px;
+    top: 335px;
     right: 350px;
     background-color: dimgray;
     color:white;
     border: none;
+    border-radius: 12px;
+}
+
+.border-radius {
     border-radius: 12px;
 }
 

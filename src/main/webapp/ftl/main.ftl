@@ -53,12 +53,12 @@
 
 </nav>
 
-<div id="main" class="container-fluid text-center pt-5 backgroundColor h-100">
+<div id="main" class="container-fluid text-center pt-4 backgroundColor h-100">
     <div class="d-inline-flex align-items-center">
         <h1 class="text-white border-bottom">Zemljevid po regijah</h1>
 
     </div>
-    <div class="row">
+    <div class="row pt-2">
         <div id="infoBox" class="col-2">
             <div id="titleInfoBox" class="h4 text-white collapse"></div>
             <div class="row">
@@ -68,8 +68,8 @@
                 <div id="mapLegend"></div>
             </div>
         </div>
-        <div id="mapDiv" class="col-7"></div>
-        <div id="graphs" class="col-3">
+        <div id="mapDiv" class="col-7 bg-light border-radius"></div>
+        <div id="graphs" class="col-3 navbar-bg border-radius pt-5">
             <div id="labTestsGraph" class="row"></div>
             <div id="graph01" class="row">
                 <button class="reset" type="button" onclick="resetSlovenija()">Ponastavi grafa</button>
@@ -80,7 +80,7 @@
 
     <div class="row backgroundColor mt-5">
         <div class="col-sm-3">
-            <div class="card ml-5 navbar-bg border-dark">
+            <div class="card ml-5 navbar-bg border-dark border-radius">
                 <div class="card-body">
                     <h5 class="card-title text-white">Aktivni primeri:</h5>
                     <p class="card-text" id="aktivni"></p>
@@ -88,7 +88,7 @@
             </div>
         </div>
         <div class="col-sm-3">
-            <div class="card navbar-bg border-dark">
+            <div class="card navbar-bg border-dark border-radius">
                 <div class="card-body">
                     <h5 class="card-title text-white">Hospitalizirani bolniki:</h5>
                     <p class="card-text" id="hospitalizirani"></p>
@@ -96,7 +96,7 @@
             </div>
         </div>
         <div class="col-sm-3">
-            <div class="card navbar-bg border-dark">
+            <div class="card navbar-bg border-dark border-radius">
                 <div class="card-body">
                     <h5 class="card-title text-white">Število smrti:</h5>
                     <p class="card-text" id="smrti"></p>
@@ -104,7 +104,7 @@
             </div>
         </div>
         <div class="col-sm-3">
-            <div class="card mr-5 navbar-bg border-dark">
+            <div class="card mr-5 navbar-bg border-dark border-radius">
                 <div class="card-body">
                     <h5 class="card-title text-white">Brezposelni:</h5>
                     <p class="card-text" id="brezposelni"></p>
@@ -118,7 +118,7 @@
 
 
 <script>
-    var width = 1150;
+    var width = 1070;
     var height = 600;
     var map = d3.select("#mapDiv")
         .append("svg")
@@ -142,13 +142,13 @@
 
     function bottomRightMapInfo() {
         map.append("text")
-            .attr('x', 980)
+            .attr('x', 900)
             .attr('y', 575)
             .attr('class', "text-muted")
             .attr('fill', "grey")
             .text("Podatki za :" + getDate());
         map.append("text")
-            .attr('x', 915)
+            .attr('x', 845)
             .attr('y', 590)
             .attr('class', "text-muted")
             .attr('fill', "grey")
@@ -285,52 +285,52 @@
             var y = d3.mouse(this)[1];
 
             mapData.select("rect")
-                //.attr('x', 150)
-                //.attr('y', 30)
-                .attr('fill', '#e69c24')
+                .attr('x', 15)
+                .attr('y', 0)
+                .attr('fill', '#3f4756')
                 .attr('stroke', 'black')
-                .attr('stroke-width', '3')
+                .attr('stroke-width', '1')
                 .attr('opacity', 1);
 
             mapData.append("text")
                 .attr('fill', 'black')
                 .attr('class', 'font-weight-bold h4')
-                .attr('x', 10)
+                .attr('x', 30)
                 .attr('y', 30)
                 .text(d.properties.SR_UIME);
 
             mapData.append("text")
                 .attr('id', 'activeCases')
-                .attr('fill', 'black')
+                .attr('fill', 'white')
                 .attr('class', 'h5')
-                .attr('x', 10)
+                .attr('x', 30)
                 .attr('y', 70)
                 .text("Aktivni primeri: ");
             document.getElementById("activeCases").innerHTML += "<a class='font-weight-bold'>"+regionsMap[d.properties.SR_UIME].activeCases+"</a>";
 
             mapData.append("text")
                 .attr('id', 'confirmedToDate')
-                .attr('fill', 'black')
+                .attr('fill', 'white')
                 .attr('class', 'h5')
-                .attr('x', 10)
+                .attr('x', 30)
                 .attr('y', 100)
                 .text("Potrjeni do danes: ");
             document.getElementById("confirmedToDate").innerHTML += "<a class='font-weight-bold'>"+regionsMap[d.properties.SR_UIME].confirmedToDate+"</a>";
 
             mapData.append("text")
                 .attr('id', 'deceasedToDate')
-                .attr('fill', 'black')
+                .attr('fill', 'white')
                 .attr('class', 'h5')
-                .attr('x', 10)
+                .attr('x', 30)
                 .attr('y', 130)
                 .text("Smrti do danes: ");
             document.getElementById("deceasedToDate").innerHTML += "<a class='font-weight-bold'>"+regionsMap[d.properties.SR_UIME].deceasedToDate+"</a>";
 
             mapData.append("text")
                 .attr('id', 'hospitalBeds')
-                .attr('fill', 'black')
+                .attr('fill', 'white')
                 .attr('class', 'h5')
-                .attr('x', 10)
+                .attr('x', 30)
                 .attr('y', 160)
                 .text("Postelje (Z/P): ");
             document.getElementById("hospitalBeds").innerHTML += "<a class='text-danger'>"+getData().get(d.properties.SR_UIME).occupied+"</a>" +
@@ -338,9 +338,9 @@
 
             mapData.append("text")
                 .attr('id', 'unemployed')
-                .attr('fill', 'black')
+                .attr('fill', 'white')
                 .attr('class', 'h5')
-                .attr('x', 10)
+                .attr('x', 30)
                 .attr('y', 190)
                 .text("Brezposelni: ");
             document.getElementById("unemployed").innerHTML += "<a class='font-weight-bold'>"+getBrezposelni().get("oktober").get(d.properties.SR_UIME)[2]+"</a>";
