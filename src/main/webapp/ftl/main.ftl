@@ -291,7 +291,7 @@
             mapData.select("rect")
                 .attr('x', 15)
                 .attr('y', 0)
-                .attr('fill', '#3f4756')
+                .attr('fill', '#4f5d75')
                 .attr('stroke', 'black')
                 .attr('stroke-width', '1')
                 .attr('opacity', 1);
