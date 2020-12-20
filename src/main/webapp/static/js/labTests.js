@@ -25,7 +25,11 @@ function labTestsGraph() {
             enabled: false
         },
         subtitle: {
-            text: 'vir: NIJZ, Ministrstvo za zdravje'
+            text: 'vir: NIJZ, Ministrstvo za zdravje',
+            style: {
+                color: '#343434',
+                fontWeight: 'bold'
+            }
         },
         legend: {
             // backgroundColor: '#3a434a',

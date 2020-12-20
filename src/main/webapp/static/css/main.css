@@ -1,29 +1,29 @@
 .navbar-bg {
-    background-color: #3f4756 !important;
+    background-color: #4f5d75 !important;
 }
 
 .cases400 {
-    fill: #E6A480;
+    fill: #fce8e4;
 }
 
 .cases600 {
-    fill: #E6904C;
+    fill: #fbd2d2;
 }
 
 .cases800 {
-    fill: #E6805B;
-}
-
-.cases1000 {
-    fill: #E6604B;
+    fill: #f6a5a5;
 }
 
 .cases1200 {
-    fill: #E6494C;
+    fill: #f27777;
 }
 
-.cases1400 {
-    fill: #E62129;
+.cases1600 {
+    fill: #ed4a4a;
+}
+
+.cases2000 {
+    fill: #E91D1D;
 }
 
 #labTestsGraph {
@@ -32,7 +32,7 @@
 }
 
 .backgroundColor {
-    background-color:#4282c7;
+    background-color:#2d3142;
     /*#1b1501 !important*/
 }
 

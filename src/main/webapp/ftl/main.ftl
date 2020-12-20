@@ -80,32 +80,36 @@
 
     <div class="row backgroundColor mt-5">
         <div class="col-sm-3">
-            <div class="card ml-5 navbar-bg border-dark border-radius">
+            <div class="card ml-5 navbar-bg border-radius">
                 <div class="card-body">
+                    <img src="/static/images/virus.png" width="30" height="30" alt="">
                     <h5 class="card-title text-white">Aktivni primeri:</h5>
                     <p class="card-text" id="aktivni"></p>
                 </div>
             </div>
         </div>
         <div class="col-sm-3">
-            <div class="card navbar-bg border-dark border-radius">
+            <div class="card navbar-bg border-radius">
                 <div class="card-body">
+                    <img src="/static/images/hospital.png" width="30" height="30" alt="">
                     <h5 class="card-title text-white">Hospitalizirani bolniki:</h5>
                     <p class="card-text" id="hospitalizirani"></p>
                 </div>
             </div>
         </div>
         <div class="col-sm-3">
-            <div class="card navbar-bg border-dark border-radius">
+            <div class="card navbar-bg border-radius">
                 <div class="card-body">
+                    <img src="/static/images/cross.png" width="25" height="30" alt="">
                     <h5 class="card-title text-white">Število smrti:</h5>
                     <p class="card-text" id="smrti"></p>
                 </div>
             </div>
         </div>
         <div class="col-sm-3">
-            <div class="card mr-5 navbar-bg border-dark border-radius">
+            <div class="card mr-5 navbar-bg border-radius">
                 <div class="card-body">
+                    <img src="/static/images/nojob.png" width="30" height="30" alt="">
                     <h5 class="card-title text-white">Brezposelni:</h5>
                     <p class="card-text" id="brezposelni"></p>
                 </div>

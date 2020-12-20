@@ -10,25 +10,25 @@ function getDate() {
 function pathColor(mapRegion) {
     if(regionsMap[mapRegion].activeCases <= 400) {
         return "cases400";
-    } else if (regionsMap[mapRegion].activeCases > 401 && regionsMap[mapRegion].activeCases <= 600) {
+    } else if (regionsMap[mapRegion].activeCases > 401 && regionsMap[mapRegion].activeCases <= 800) {
         return "cases600";
-    } else if (regionsMap[mapRegion].activeCases > 601 && regionsMap[mapRegion].activeCases <= 800) {
+    } else if (regionsMap[mapRegion].activeCases > 801 && regionsMap[mapRegion].activeCases <= 1200) {
         return "cases800";
-    } else if (regionsMap[mapRegion].activeCases > 801 && regionsMap[mapRegion].activeCases <= 1000) {
-        return "cases1000";
-    } else if (regionsMap[mapRegion].activeCases > 1001 && regionsMap[mapRegion].activeCases <= 1200) {
+    } else if (regionsMap[mapRegion].activeCases > 1201 && regionsMap[mapRegion].activeCases <= 1600) {
         return "cases1200";
-    } else if (regionsMap[mapRegion].activeCases > 1201) {
-        return "cases1400";
+    } else if (regionsMap[mapRegion].activeCases > 1601 && regionsMap[mapRegion].activeCases <= 2000) {
+        return "cases1600";
+    } else if (regionsMap[mapRegion].activeCases > 2001) {
+        return "cases2000";
     }
 }
 
 function mapLegend() {
     // create a list of keys
-    var keys = ["<401", "402-600", "601-800", "801-1000", "1001-1200", ">1201"]
+    var keys = ["<401", "402-800", "801-1200", "1201-1600", "1601-2000", ">2001"]
 
     // Usually you have a color scale in your chart already
-    var color = ["#E6A480","#E6904C","#E6805B","#E6604B","#E6494C","#E62129"];
+    var color = ["#fce8e4","#fbd2d2","#f6a5a5","#f27777","#ed4a4a","#E91D1D"];
 
     var size = 20;
 
@@ -45,7 +45,7 @@ function mapLegend() {
         .append("text")
         .attr("x", 20)
         .attr("y", 20) // 100 is where the first dot appears. 25 is the distance between dots
-        .style("fill", "black")
+        .style("fill", "white")
         .text("Aktivni primeri:")
         .attr("text-anchor", "left")
         .style("alignment-baseline", "middle")
