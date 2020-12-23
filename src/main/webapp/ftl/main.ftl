@@ -13,7 +13,7 @@
     }
 
     path {
-        fill: #ccc;
+        /*fill: #ccc;*/
         stroke: #fff;
         stroke-width: .5px;
         margin: 20px;
@@ -31,9 +31,9 @@
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
 <script src="https://d3js.org/d3.v5.js"></script>
+<script src="./static/js/brezposelni.js"></script>
 <script src="./static/js/labTests.js"></script>
 <script src="./static/js/bolnisnice.js"></script>
-<script src="./static/js/brezposelni.js"></script>
 <script src="./static/js/regionsData.js"></script>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="//d3js.org/topojson.v1.min.js"></script>
@@ -70,6 +70,7 @@
         </div>
         <div id="mapDiv" class="col-7 bg-light border-radius"></div>
         <div id="graphs" class="col-3 navbar-bg border-radius pt-5">
+<#--            TODO: zamenjat z drugim grafom-->
             <div id="labTestsGraph" class="row"></div>
             <div id="graph01" class="row">
                 <button class="reset" type="button" onclick="resetSlovenija()">Ponastavi grafa</button>
@@ -112,6 +113,28 @@
                     <img src="/static/images/nojob.png" width="30" height="30" alt="">
                     <h5 class="card-title text-white">Brezposelni:</h5>
                     <p class="card-text" id="brezposelni"></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row mt-5 backgroundColor">
+        <div class="col-6 flex-column">
+            <div class="card ml-5 navbar-bg border-radius">
+                <div class="card-body">
+                    <button type="button" onclick="labTestsGraph2()" class="btn btn-dark">Celotno obdobje</button>
+                    <button type="button" onclick="labTestsGraph2(7)" class="btn btn-dark">7 dni</button>
+                    <button type="button" onclick="labTestsGraph2(31)" class="btn btn-dark">31 dni</button>
+                    <div id="labTestsGraph2"></div>
+                    <div class="row"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card mr-5 navbar-bg border-radius">
+                <div class="card-body">
+                    <h5 class="card-title text-white">Se en graf</h5>
                 </div>
             </div>
         </div>
@@ -262,11 +285,16 @@
 
     //skupni podatki
 
-    d3.json("https://api.sledilnik.org/api/stats", function(err, splosno) {
-        let splosnoDanes = splosno[splosno.length - 2];
-        d3.select("#aktivni").text(splosnoDanes.cases.active).style("font-weight", "bold");
-        d3.select("#smrti").text(splosnoDanes.statePerTreatment.deceasedToDate).style("font-weight", "bold");
-        d3.select("#hospitalizirani").text(splosnoDanes.statePerTreatment.inHospital).style("font-weight", "bold");
+    d3.json("https://api.sledilnik.org/api/summary", function(err, podatki) {
+        d3.select("#aktivni").text(podatki.casesActive.value).style("font-weight", "bold");
+        var aktivni = document.getElementById("aktivni");
+        aktivni.textContent += " (" + podatki.casesActive.diffPercentage + "%)";
+        d3.select("#hospitalizirani").text(podatki.hospitalizedCurrent.value).style("font-weight", "bold");
+        var hospitalizirani = document.getElementById("hospitalizirani");
+        hospitalizirani.textContent += " (" + podatki.hospitalizedCurrent.diffPercentage + "%)";
+        d3.select("#smrti").text(podatki.deceasedToDate.value).style("font-weight", "bold");
+        var smrti = document.getElementById("smrti");
+        smrti.textContent += " (" + podatki.deceasedToDate.diffPercentage + "%)";
         d3.select("#brezposelni").text(getBrezposelni().get("oktober").get("Slovenija")[2]).style("font-weight", "bold");
     });
 
@@ -362,6 +390,7 @@
 
         map.selectAll("path").on('click', function (d, i) {
             // testiranje on click graf spremembe
+            /* NI VEC PODATKOV
             var pozitivni = chart.series[0];
             var negativni = chart.series[1];
 
@@ -403,6 +432,7 @@
                     krLabTests(pozitivni, negativni);
                     break;
             }
+            */
 
         // brezposelni on click graf spremembe
             let dataU = [{"people": getBrezposelni().get("januar").get(d.properties.SR_UIME)[2], "month":"jan"},

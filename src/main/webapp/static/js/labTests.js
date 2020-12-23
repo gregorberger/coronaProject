@@ -1,9 +1,31 @@
 let labTests;
 let chart;
+let testDays = [];
+let positiveLabTests = [];
+let negativeLabTests = [];
+var stDni;
+
 d3.json('https://api.sledilnik.org/api/lab-tests')
     .then(function(data) {
-        labTests = data.slice(data.length - 7, data.length);
+        labTests = data;
+        for (let i = 0; i < labTests.length; i++) {
+            testDays.push(labTests[i].day + "/" + labTests[i].month)
+            var rezPozitive = positiveTests(labTests[i]);
+            if(rezPozitive === undefined || isNaN(rezPozitive)) {
+                positiveLabTests.push(0);
+            } else {
+                positiveLabTests.push(rezPozitive)
+            }
+            var rezNegative = negativeTests(labTests[i]);
+            if(rezNegative === undefined || isNaN(rezNegative)) {
+                negativeLabTests.push(0);
+            } else {
+                negativeLabTests.push(rezNegative)
+            }
+        }
+        stDni = labTests.length;
         labTestsGraph();
+        labTestsGraph2();
     });
 
 
@@ -90,6 +112,95 @@ function labTestsGraph() {
             name: 'Negativni',
             data: [negativeTests(labTests[0]), negativeTests(labTests[1]), negativeTests(labTests[2]), negativeTests(labTests[3]),
                 negativeTests(labTests[4]), negativeTests(labTests[5]), negativeTests(labTests[6])],
+            color: "green"
+        }]
+    });
+}
+
+function labTestsGraph2(number) {
+    stDni = labTests.length;
+    if(number !== undefined) {
+        stDni = number;
+    }
+
+    chart = Highcharts.chart('labTestsGraph2', {
+        chart: {
+            type: 'area',
+            backgroundColor: "transparent"
+        },
+
+        title: {
+            text: 'Testiranje',
+            style: {
+                color: '#ffffff',
+                fontWeight: 'bold'
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        subtitle: {
+            text: 'vir: NIJZ, Ministrstvo za zdravje',
+            style: {
+                color: '#343434',
+                fontWeight: 'bold'
+            }
+        },
+        legend: {
+            // backgroundColor: '#3a434a',
+            // layout: 'vertical',
+            title: {
+                itemStyle: {
+                    color: '#ffffff',
+                    fontWeight: 'bold'
+                }
+            },
+        },
+        xAxis: {
+            categories: testDays.slice(testDays.length - stDni, testDays.length),
+            tickmarkPlacement: 'on',
+            title: {
+                enabled: false
+            },
+            labels: {
+                style: {
+                    color: 'white'
+                }
+            }
+        },
+        yAxis: {
+            labels: {
+                format: '{value}%',
+                style: {
+                    color: 'white'
+                }
+            },
+            title: {
+                enabled: false
+            }
+        },
+        tooltip: {
+            pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.percentage:.1f}%</b> ({point.y:,.0f} testov)<br/>',
+            split: true
+        },
+        plotOptions: {
+            area: {
+                stacking: 'percent',
+                lineColor: '#ffffff',
+                lineWidth: 1,
+                marker: {
+                    lineWidth: 1,
+                    lineColor: '#ffffff'
+                },
+            }
+        },
+        series: [{
+            name: 'Pozitivni',
+            data: positiveLabTests.slice(positiveLabTests.length - stDni, positiveLabTests.length),
+            color: "red",
+        }, {
+            name: 'Negativni',
+            data: negativeLabTests.slice(negativeLabTests.length - stDni, negativeLabTests.length),
             color: "green"
         }]
     });
