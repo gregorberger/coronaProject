@@ -32,6 +32,7 @@
 
 <script src="https://d3js.org/d3.v5.js"></script>
 <script src="./static/js/brezposelni.js"></script>
+<script src="./static/js/ageGroups.js"></script>
 <script src="./static/js/labTests.js"></script>
 <script src="./static/js/bolnisnice.js"></script>
 <script src="./static/js/regionsData.js"></script>
@@ -134,7 +135,8 @@
         <div class="col-6">
             <div class="card mr-5 navbar-bg border-radius">
                 <div class="card-body">
-                    <h5 class="card-title text-white">Se en graf</h5>
+                    <div id="statePerAge"></div>
+                    <div class="row"></div>
                 </div>
             </div>
         </div>
