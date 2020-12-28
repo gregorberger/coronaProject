@@ -32,6 +32,7 @@
 
 <script src="https://d3js.org/d3.v5.js"></script>
 <script src="./static/js/brezposelni.js"></script>
+<script src="./static/js/confirmedGraphData.js"></script>
 <script src="./static/js/ageGroups.js"></script>
 <script src="./static/js/labTests.js"></script>
 <script src="./static/js/bolnisnice.js"></script>
@@ -212,7 +213,11 @@
 
 
     var y = d3.scaleLinear()
-        .domain([76000, 92000])
+        .domain([76, 92])
+        .range([height1, 0]);
+
+    var y2 = d3.scaleLinear()
+        .domain([0, 8])
         .range([height1, 0]);
 
     graf.append("g")
@@ -222,14 +227,22 @@
             .style("font-size", "10px")
             .style("fill", "#FFFFFF");
 
+    graf.append("g")
+        .attr("class", "yaxis2")
+        .attr("transform", "translate(-32)")
+        .call(d3.axisLeft(y2))
+        .selectAll("text")
+        .style("font-size", "10px")
+        .style("fill", "red");
+
 
 
     graf.append("path")
         .attr("class", "prikaz")
-        .datum([{"people": 79841, "month":"jan"}, {"people": 77484, "month":"feb"}, {"people": 77855, "month":"mar"},
-            {"people": 88648, "month":"apr"}, {"people": 90415, "month":"maj"}, {"people": 89377, "month":"jun"},
-            {"people": 89397, "month":"jul"}, {"people": 88172, "month":"avg"}, {"people": 83766, "month":"sep"},
-            {"people": 83654, "month":"okt"}, {"people": 83654, "month":"nov"}])
+        .datum([{"people": 79.841, "month":"jan"}, {"people": 77.484, "month":"feb"}, {"people": 77.855, "month":"mar"},
+            {"people": 88.648, "month":"apr"}, {"people": 90.415, "month":"maj"}, {"people": 89.377, "month":"jun"},
+            {"people": 89.397, "month":"jul"}, {"people": 88.172, "month":"avg"}, {"people": 83.766, "month":"sep"},
+            {"people": 83.654, "month":"okt"}, {"people": 84.139, "month":"nov"}])
 
         .style("opacity", ".8")
         //.style("stroke", "black")
@@ -242,21 +255,49 @@
             .y1(function(d) { return this.y(d.people); })
         );
 
+    //ročno dodani začetni podatki za celo Slovenijo, ker se prepozno izvede json klic
+    graf.append("path")
+        .attr("class", "prikaz2")
+        .datum([{"people": 0, "month":"jan"}, {"people": 0.001, "month":"feb"}, {"people": 0.841, "month":"mar"},
+            {"people": 1.433, "month":"apr"}, {"people": 1.472, "month":"maj"}, {"people": 1.611, "month":"jun"},
+            {"people": 2.170, "month":"jul"}, {"people": 2.908, "month":"avg"}, {"people": 5.838, "month":"sep"},
+            {"people": 35.629, "month":"okt"}, {"people": 77.130, "month":"nov"}])
+
+        .style("opacity", ".8")
+        .style("stroke", "red")
+        .style("stroke-width", 3.5)
+        .style("stroke-linejoin", "round")
+        .attr("fill", "none")
+        .attr("d",  d3.line().curve(d3.curveNatural)
+            .x(function(d) { return this.x(d.month); })
+            .y(function(d) { return this.y2(d.people); })
+        );
+
     d3.selectAll('.axis path')
         .style("fill", "black");
 
     graf.append("text")
         .attr("transform", "rotate(-90)")
-        .attr("x", -85)
-        .attr("y", -50)
+        .attr("x", -120)
+        .attr("y", -68)
         .attr("fill", "white")
-        .style("font-size", "15px")
-        .text("brezposelni");
+        .style("font-size", "13px")
+        .text("potrjeni (na tisoč)");
+
+    graf.append("text")
+        .attr("x", -50)
+        .attr("y", -10)
+        .attr("fill", "white")
+        .style("font-size", "12px")
+        .text("brezposelni (na tisoč)");
 
     //reset button
     let resetSlovenija = function() {
         y = d3.scaleLinear()
-            .domain([76000, 92000])
+            .domain([76, 92])
+            .range([height1, 0]);
+        y2 = d3.scaleLinear()
+            .domain([0, 8])
             .range([height1, 0]);
 
         graf.select('.yaxis')
@@ -265,11 +306,18 @@
             .style("font-size", "10px")
             .style("fill", "#FFFFFF");
 
+        graf.select('.yaxis2')
+            .attr("transform", "translate(-32)")
+            .call(d3.axisLeft(y2))
+            .selectAll("text")
+            .style("font-size", "10px")
+            .style("fill", "red");
+
         graf.select(".prikaz")
-            .datum([{"people": 79841, "month":"jan"}, {"people": 77484, "month":"feb"}, {"people": 77855, "month":"mar"},
-                {"people": 88648, "month":"apr"}, {"people": 90415, "month":"maj"}, {"people": 89377, "month":"jun"},
-                {"people": 89397, "month":"jul"}, {"people": 88172, "month":"avg"}, {"people": 83766, "month":"sep"},
-                {"people": 83654, "month":"okt"}, {"people": 83654, "month":"nov"}])
+            .datum([{"people": 79.841, "month":"jan"}, {"people": 77.484, "month":"feb"}, {"people": 77.855, "month":"mar"},
+                {"people": 88.648, "month":"apr"}, {"people": 90.415, "month":"maj"}, {"people": 89.377, "month":"jun"},
+                {"people": 89.397, "month":"jul"}, {"people": 88.172, "month":"avg"}, {"people": 83.766, "month":"sep"},
+                {"people": 83.654, "month":"okt"}, {"people": 84.139, "month":"nov"}])
             .style("opacity", ".8")
             .style("stroke-width", 1)
             .style("stroke-linejoin", "round")
@@ -278,6 +326,21 @@
                 .x(function(d) { return this.x(d.month); })
                 .y0(height1)
                 .y1(function(d) { return this.y(d.people); })
+            );
+        graf.select(".prikaz2")
+            .datum([{"people": 0, "month":"jan"}, {"people": 0.001, "month":"feb"}, {"people": 0.841, "month":"mar"},
+                {"people": 1.433, "month":"apr"}, {"people": 1.472, "month":"maj"}, {"people": 1.611, "month":"jun"},
+                {"people": 2.170, "month":"jul"}, {"people": 2.908, "month":"avg"}, {"people": 5.838, "month":"sep"},
+                {"people": 35.629, "month":"okt"}, {"people": 77.130, "month":"nov"}])
+
+            .style("opacity", ".8")
+            .style("stroke", "red")
+            .style("stroke-width", 3.5)
+            .style("stroke-linejoin", "round")
+            .attr("fill", "none")
+            .attr("d",  d3.line().curve(d3.curveNatural)
+                .x(function(d) { return this.x(d.month); })
+                .y(function(d) { return this.y2(d.people); })
             );
 
         labTestsGraph();
@@ -435,44 +498,66 @@
                     break;
             }
             */
-
         // brezposelni on click graf spremembe
-            let dataU = [{"people": getBrezposelni().get("januar").get(d.properties.SR_UIME)[2], "month":"jan"},
-                {"people": getBrezposelni().get("februar").get(d.properties.SR_UIME)[2], "month":"feb"},
-                {"people": getBrezposelni().get("marec").get(d.properties.SR_UIME)[2], "month":"mar"},
-                {"people": getBrezposelni().get("april").get(d.properties.SR_UIME)[2], "month":"apr"},
-                {"people": getBrezposelni().get("maj").get(d.properties.SR_UIME)[2], "month":"maj"},
-                {"people": getBrezposelni().get("junij").get(d.properties.SR_UIME)[2], "month":"jun"},
-                {"people": getBrezposelni().get("julij").get(d.properties.SR_UIME)[2], "month":"jul"},
-                {"people": getBrezposelni().get("avgust").get(d.properties.SR_UIME)[2], "month":"avg"},
-                {"people": getBrezposelni().get("september").get(d.properties.SR_UIME)[2], "month":"sep"},
-                {"people": getBrezposelni().get("oktober").get(d.properties.SR_UIME)[2], "month":"okt"},
-                {"people": getBrezposelni().get("oktober").get(d.properties.SR_UIME)[2], "month":"nov"}]
-
+            let dataU = [{"confirmed": 0,"people": getBrezposelni().get("januar").get(d.properties.SR_UIME)[2]/1000, "month":"jan"},
+                {"confirmed": confirmedMap["feb"][d.properties.SR_UIME].confirmedToDate/1000, "people": getBrezposelni().get("februar").get(d.properties.SR_UIME)[2]/1000, "month":"feb"},
+                {"confirmed": confirmedMap["mar"][d.properties.SR_UIME].confirmedToDate/1000, "people": getBrezposelni().get("marec").get(d.properties.SR_UIME)[2]/1000, "month":"mar"},
+                {"confirmed": confirmedMap["apr"][d.properties.SR_UIME].confirmedToDate/1000, "people": getBrezposelni().get("april").get(d.properties.SR_UIME)[2]/1000, "month":"apr"},
+                {"confirmed": confirmedMap["maj"][d.properties.SR_UIME].confirmedToDate/1000, "people": getBrezposelni().get("maj").get(d.properties.SR_UIME)[2]/1000, "month":"maj"},
+                {"confirmed": confirmedMap["jun"][d.properties.SR_UIME].confirmedToDate/1000, "people": getBrezposelni().get("junij").get(d.properties.SR_UIME)[2]/1000, "month":"jun"},
+                {"confirmed": confirmedMap["jul"][d.properties.SR_UIME].confirmedToDate/1000, "people": getBrezposelni().get("julij").get(d.properties.SR_UIME)[2]/1000, "month":"jul"},
+                {"confirmed": confirmedMap["avg"][d.properties.SR_UIME].confirmedToDate/1000, "people": getBrezposelni().get("avgust").get(d.properties.SR_UIME)[2]/1000, "month":"avg"},
+                {"confirmed": confirmedMap["sep"][d.properties.SR_UIME].confirmedToDate/1000, "people": getBrezposelni().get("september").get(d.properties.SR_UIME)[2]/1000, "month":"sep"},
+                {"confirmed": confirmedMap["okt"][d.properties.SR_UIME].confirmedToDate/1000, "people": getBrezposelni().get("oktober").get(d.properties.SR_UIME)[2]/1000, "month":"okt"},
+                {"confirmed": confirmedMap["nov"][d.properties.SR_UIME].confirmedToDate/1000, "people": getBrezposelni().get("oktober").get(d.properties.SR_UIME)[2]/1000, "month":"nov"}]
+            console.log(confirmedMap["sep"][d.properties.SR_UIME].confirmedToDate/1000);
             let meja = function () {
-                let spodaj = parseInt(getBrezposelni().get("januar").get(d.properties.SR_UIME)[2]);
-                let zgoraj = parseInt(getBrezposelni().get("januar").get(d.properties.SR_UIME)[2]);
+                let spodaj = parseFloat(getBrezposelni().get("januar").get(d.properties.SR_UIME)[2]/1000);
+                let zgoraj = parseFloat(getBrezposelni().get("januar").get(d.properties.SR_UIME)[2]/1000);
                 for (el in dataU){
-                    if (parseInt(dataU[el].people) < spodaj) {
-                        spodaj = parseInt(dataU[el].people);
+                    if (parseFloat(dataU[el].people) < spodaj) {
+                        spodaj = parseFloat(dataU[el].people);
                     }
-                    if (parseInt(dataU[el].people) > zgoraj) {
-                        zgoraj = parseInt(dataU[el].people);
+                    if (parseFloat(dataU[el].people) > zgoraj) {
+                        zgoraj = parseFloat(dataU[el].people);
                     }
                 }
-                spodaj -= 200;
-                zgoraj += 200;
+                spodaj -= 0.2;
+                zgoraj += 0.2;
+
+                spodaj = Math.round(spodaj*10) / 10;
+                zgoraj = Math.round(zgoraj*10) / 10;
                 return [spodaj, zgoraj];
             }
 
             y = d3.scaleLinear()
                 .domain([meja()[0] , meja()[1]])
                 .range([height1, 0]);
+
+            if (d.properties.SR_UIME === "Gorenjska"){
+                y2 = d3.scaleLinear()
+                    .domain([0, parseFloat(confirmedMap["sep"][d.properties.SR_UIME].confirmedToDate)/1000 + 3.1])
+                    .range([height1, 0]);
+            }
+            else{
+                y2 = d3.scaleLinear()
+                    .domain([0, parseFloat(confirmedMap["sep"][d.properties.SR_UIME].confirmedToDate)/1000])
+                    .range([height1, 0]);
+            }
+
             graf.select('.yaxis')
                 .call(d3.axisLeft(y))
                 .selectAll("text")
                     .style("font-size", "10px")
                     .style("fill", "#FFFFFF");
+
+            graf.select('.yaxis2')
+                .attr("transform", "translate(-32)")
+                .call(d3.axisLeft(y2))
+                .selectAll("text")
+                .style("font-size", "10px")
+                .style("fill", "red");
+
 
             graf.select(".prikaz")
                 .datum(dataU)
@@ -484,6 +569,17 @@
                     .x(function(d) { return this.x(d.month); })
                     .y0(height1)
                     .y1(function(d) { return this.y(d.people); })
+                );
+            graf.select(".prikaz2")
+                .datum(dataU)
+                .style("opacity", ".8")
+                .style("stroke", "red")
+                .style("stroke-width", 3.5)
+                .style("stroke-linejoin", "round")
+                .attr("fill", "none")
+                .attr("d",  d3.line().curve(d3.curveNatural)
+                    .x(function(d) { return this.x(d.month); })
+                    .y(function(d) { return this.y2(d.confirmed); })
                 );
 
         })

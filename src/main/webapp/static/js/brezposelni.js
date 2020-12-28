@@ -1,5 +1,5 @@
 let brezposelni;
-d3.xml('./static/brezposelni_pospolu1.xml')
+d3.xml('./static/brezposelni_pospolu_nov.xml')
     .then(function(brezp) {
         let podatki = brezp.getElementsByTagName("Data");
         brezposelni = new Map();

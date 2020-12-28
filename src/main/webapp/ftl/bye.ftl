@@ -3,7 +3,7 @@
 <head>
     <title>Druga stran</title>
     <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="./static/js/brezposelni.js"></script>
+    <script src="./static/js/confirmedGraphData.js"></script>
 </head>
 
 <body>
