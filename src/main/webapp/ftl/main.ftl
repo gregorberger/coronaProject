@@ -87,7 +87,11 @@
                 <div class="card-body">
                     <img src="/static/images/virus.png" width="30" height="30" alt="">
                     <h5 class="card-title text-white">Aktivni primeri:</h5>
-                    <p class="card-text" id="aktivni"></p>
+                    <p>
+                        <span class="card-text" id="aktivni"></span>
+                        <span class="card-text" id="aktivni2"></span>
+                        <img src="/static/images/greenarrow.png" width="20" height="20" alt="" id="activeArrow">
+                    </p>
                 </div>
             </div>
         </div>
@@ -96,7 +100,11 @@
                 <div class="card-body">
                     <img src="/static/images/hospital.png" width="30" height="30" alt="">
                     <h5 class="card-title text-white">Hospitalizirani bolniki:</h5>
-                    <p class="card-text" id="hospitalizirani"></p>
+                    <p>
+                        <span class="card-text" id="hospitalizirani"></span>
+                        <span class="card-text" id="hospitalizirani2"></span>
+                        <img src="/static/images/greenarrow.png" width="20" height="20" alt="" id="hospitalizedArrow">
+                    </p>
                 </div>
             </div>
         </div>
@@ -105,7 +113,11 @@
                 <div class="card-body">
                     <img src="/static/images/cross.png" width="25" height="30" alt="">
                     <h5 class="card-title text-white">Število smrti:</h5>
-                    <p class="card-text" id="smrti"></p>
+                    <p>
+                        <span class="card-text" id="smrti"></span>
+                        <span class="card-text" id="smrti2"></span>
+                        <img src="/static/images/greenarrow.png" width="20" height="20" alt="" id="deathArrow">
+                    </p>
                 </div>
             </div>
         </div>
@@ -352,14 +364,48 @@
 
     d3.json("https://api.sledilnik.org/api/summary", function(err, podatki) {
         d3.select("#aktivni").text(podatki.casesActive.value).style("font-weight", "bold");
-        var aktivni = document.getElementById("aktivni");
-        aktivni.textContent += " (" + podatki.casesActive.diffPercentage + "%)";
+        /*var aktivni = document.getElementById("aktivni");
+        aktivni.textContent += " (" + podatki.casesActive.diffPercentage + "%)";*/
+        if (podatki.casesActive.diffPercentage > 0){
+            d3.select("#aktivni2").text(" (" + podatki.casesActive.diffPercentage + "%)")
+                .style("font-weight", "bold")
+                .style("color", "red");
+            //attr("src", "/static/images/redarrow.png")
+            document.getElementById("activeArrow").src = "/static/images/redarrow.png";
+        }
+        else{
+            d3.select("#aktivni2").text(" (" + podatki.casesActive.diffPercentage + "%)")
+                .style("font-weight", "bold")
+                .style("color", "green");
+        }
         d3.select("#hospitalizirani").text(podatki.hospitalizedCurrent.value).style("font-weight", "bold");
-        var hospitalizirani = document.getElementById("hospitalizirani");
-        hospitalizirani.textContent += " (" + podatki.hospitalizedCurrent.diffPercentage + "%)";
+
+        if (podatki.hospitalizedCurrent.diffPercentage > 0){
+            d3.select("#hospitalizirani2").text(" (" + podatki.hospitalizedCurrent.diffPercentage + "%)")
+                .style("font-weight", "bold")
+                .style("color", "red");
+            document.getElementById("hospitalizedArrow").src = "/static/images/redarrow.png";
+        }
+        else{
+            d3.select("#hospitalizirani2").text(" (" + podatki.hospitalizedCurrent.diffPercentage + "%)")
+                .style("font-weight", "bold")
+                .style("color", "green");
+        }
+
         d3.select("#smrti").text(podatki.deceasedToDate.value).style("font-weight", "bold");
-        var smrti = document.getElementById("smrti");
-        smrti.textContent += " (" + podatki.deceasedToDate.diffPercentage + "%)";
+
+        if (podatki.deceasedToDate.diffPercentage > 0){
+            d3.select("#smrti2").text(" (" + podatki.deceasedToDate.diffPercentage + "%)")
+                .style("font-weight", "bold")
+                .style("color", "red");
+            document.getElementById("deathArrow").src = "/static/images/redarrow.png";
+        }
+        else{
+            d3.select("#smrti2").text(" (" + podatki.deceasedToDate.diffPercentage + "%)")
+                .style("font-weight", "bold")
+                .style("color", "green");
+        }
+
         d3.select("#brezposelni").text(getBrezposelni().get("oktober").get("Slovenija")[2]).style("font-weight", "bold");
     });
 
