@@ -1,9 +1,15 @@
-function getDate() {
-    n =  new Date();
-    y = n.getFullYear();
-    m = n.getMonth() + 1;
-    d = n.getDate();
-    return  d + "." + m + "." + y;
+function getDate(vrstica) {
+    if(vrstica === undefined) {
+        n =  new Date();
+        y = n.getFullYear();
+        m = n.getMonth() + 1;
+        d = n.getDate();
+        return  d + "." + m + "." + y;
+    } else {
+        var podatki = regionData[vrstica];
+        return podatki.day + "." + podatki.month + "." + podatki.year;
+    }
+
 }
 
 
@@ -80,7 +86,9 @@ function sleep(ms) {
 
 async function updateMap() {
     for (let i = 200; i < regionData.length; i=i+10) {
-        console.log(i)
+        if(i+10 > regionData.length) {
+            i = regionData.length - 1;
+        }
         parseRegionsData(regionData[i]);
     d3.json("./static/SR.geojson")
         .then(function(geojson){
@@ -97,7 +105,7 @@ async function updateMap() {
                 .attr("id", function(d) { return d.properties.SR_UIME; })
                 .attr("class", function(d) { return pathColor(d.properties.SR_UIME); })
                 .attr("d", path);
-            bottomRightMapInfo();
+            bottomRightMapInfo(i);
 
             map.selectAll("path").on('mouseover', function (d, i) {
                 var x = d3.mouse(this)[0];

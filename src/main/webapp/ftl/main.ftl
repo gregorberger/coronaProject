@@ -185,13 +185,13 @@
         .attr('fill', 'none');
 
 
-    function bottomRightMapInfo() {
+    function bottomRightMapInfo(vrstica) {
         map.append("text")
             .attr('x', 900)
             .attr('y', 575)
             .attr('class', "text-muted")
             .attr('fill', "grey")
-            .text("Podatki za :" + getDate());
+            .text("Podatki za :" + getDate(vrstica));
         map.append("text")
             .attr('x', 845)
             .attr('y', 590)
