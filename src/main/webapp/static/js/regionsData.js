@@ -1,6 +1,8 @@
 let regionsMap;
+let regionData;
 d3.json('https://api.sledilnik.org/api/municipalities')
     .then(function(data) {
+        regionData = data;
         let todayData = data[data.length - 1];
         regionsMap = new Map();
         regionsMap = parseRegionsData(todayData);

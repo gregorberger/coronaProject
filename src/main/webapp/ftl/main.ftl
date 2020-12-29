@@ -72,10 +72,12 @@
         </div>
         <div id="mapDiv" class="col-7 bg-light border-radius"></div>
         <div id="graphs" class="col-3 navbar-bg border-radius pt-5">
-<#--            TODO: zamenjat z drugim grafom-->
-            <div id="labTestsGraph" class="row"></div>
+            <button type="button" onclick="updateMap()" class="btn btn-dark">Animacija</button>
+            <div id="labTestsGraph" class="row">
+
+            </div>
             <div id="graph01" class="row">
-                <button class="reset" type="button" onclick="resetSlovenija()">Ponastavi grafa</button>
+                <button class="reset" type="button" onclick="resetSlovenija()">Ponastavi graf</button>
             </div>
         </div>
     </div>
@@ -127,6 +129,7 @@
                     <img src="/static/images/nojob.png" width="30" height="30" alt="">
                     <h5 class="card-title text-white">Brezposelni:</h5>
                     <p class="card-text" id="brezposelni"></p>
+                    <p class="card-text" ></p>
                 </div>
             </div>
         </div>
@@ -137,9 +140,9 @@
         <div class="col-6 flex-column">
             <div class="card ml-5 navbar-bg border-radius">
                 <div class="card-body">
-                    <button type="button" onclick="labTestsGraph2()" class="btn btn-dark">Celotno obdobje</button>
-                    <button type="button" onclick="labTestsGraph2(7)" class="btn btn-dark">7 dni</button>
-                    <button type="button" onclick="labTestsGraph2(31)" class="btn btn-dark">31 dni</button>
+                    <button type="button" onclick="labTestsGraph()" class="btn btn-dark">Celotno obdobje</button>
+                    <button type="button" onclick="labTestsGraph(7)" class="btn btn-dark">7 dni</button>
+                    <button type="button" onclick="labTestsGraph(31)" class="btn btn-dark">31 dni</button>
                     <div id="labTestsGraph2"></div>
                     <div class="row"></div>
                 </div>
@@ -354,8 +357,6 @@
                 .x(function(d) { return this.x(d.month); })
                 .y(function(d) { return this.y2(d.people); })
             );
-
-        labTestsGraph();
 
     }
 
