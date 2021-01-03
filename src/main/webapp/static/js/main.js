@@ -84,10 +84,38 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+
 async function updateMap() {
-    for (let i = 200; i < regionData.length; i=i+10) {
-        if(i+10 > regionData.length) {
-            i = regionData.length - 1;
+    var startDate = document.getElementById("startDate").value;
+    var endDate = document.getElementById("endDate").value;
+
+    var startNumber = 200;
+    var endNumber = regionData.length;
+
+    for (let i = 0; i < regionData.length; i++) {
+        var date;
+        if(regionData[i].day.toString().length === 1 && regionData[i].month.toString().length === 1){
+            date = regionData[i].year + "-0" + regionData[i].month + "-0" + regionData[i].day;
+        } else if(regionData[i].month.toString().length === 1){
+            date = regionData[i].year + "-0" + regionData[i].month + "-" + regionData[i].day;
+        } else if(regionData[i].day.toString().length === 1){
+            date = regionData[i].year + "-" + regionData[i].month + "-0" + regionData[i].day;
+        }  else {
+            date = regionData[i].year + "-" + regionData[i].month + "-" + regionData[i].day;
+        }
+
+        if(date === startDate) {
+            startNumber = i;
+        }
+
+        if(date === endDate) {
+            endNumber = i;
+        }
+    }
+
+    for (let i = startNumber; i < endNumber; i=i+10) {
+        if(i+10 >= endNumber) {
+            i = endNumber;
         }
         parseRegionsData(regionData[i]);
     d3.json("./static/SR.geojson")

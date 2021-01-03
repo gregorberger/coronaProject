@@ -72,9 +72,18 @@
         </div>
         <div id="mapDiv" class="col-7 bg-light border-radius"></div>
         <div id="graphs" class="col-3 navbar-bg border-radius pt-5">
-            <button type="button" onclick="updateMap()" class="btn btn-dark">Animacija</button>
-            <div id="labTestsGraph" class="row">
-
+            <div id="animation">
+                <button type="button" onclick="updateMap()" class="btn btn-dark">Animacija</button>
+                <br>
+                <label class="mt-3 font-weight-bold text-white" for="startDate">Začetni datum:</label>
+                <input  type="date" id="startDate" name="trip-start"
+                       value="2020-09-20"
+                       min="2020-01-01" max="2021-02-31">
+                <br>
+                <label class="font-weight-bold text-white" for="endDate">Končni datum:</label>
+                <input type="date" id="endDate" name="trip-start"
+                       value="2021-01-01"
+                       min="2020-01-01" max="2021-02-31">
             </div>
             <div id="graph01" class="row">
                 <button class="reset" type="button" onclick="resetSlovenija()">Ponastavi graf</button>
