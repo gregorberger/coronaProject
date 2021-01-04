@@ -214,7 +214,12 @@
         }
         calculatePostelje(index-5);
         calculateRegionsData(index);
-        bottomRightMapInfo(index);
+        map.select("text")
+            .attr('x', 900)
+            .attr('y', 575)
+            .attr('class', "text-muted")
+            .attr('fill', "grey")
+            .text("Podatki za :" + getDate(index));
 
         map.select("g")
             .selectAll("path")
