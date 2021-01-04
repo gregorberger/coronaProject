@@ -26,7 +26,6 @@ public class MainController {
             feedSource = new URL("https://www.gov.si/novice/rss?tagID=596");
             SyndFeedInput input = new SyndFeedInput();
             SyndFeed feed = input.build(new XmlReader(feedSource));
-            System.out.println(feed);
             model.addAttribute("novice", feed);
         } catch (FeedException | IOException e) {
             e.printStackTrace();
