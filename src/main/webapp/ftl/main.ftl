@@ -57,7 +57,7 @@
 
 <div id="main" class="container-fluid text-center pt-4 backgroundColor h-100">
     <div class="d-inline-flex align-items-center">
-        <h1 class="text-white border-bottom">Zemljevid po regijah</h1>
+        <h1 class="text-white font-weight-bold">Zemljevid po regijah</h1>
 
     </div>
     <div class="row pt-2">
@@ -174,7 +174,25 @@
                 </div>
             </div>
         </div>
+    </div>
 
+    <div class="row p-5 backgroundColor">
+        <div class="col">
+            <div class="card navbar-bg border-radius">
+                <div class="card-body">
+                    <h1 class="text-white font-weight-bold">Najnovejše novice za prehajanje meja</h1>
+                    <ul class="list-group align-items-center">
+                    <#assign count=0>
+                    <#list novice.entries as novica>
+                        <#if count < 5>
+                            <a href="${novica.link}" class="list-group-item list-group-item-action">${novica.publishedDate?date} | ${novica.title}</a>
+                        </#if>
+                        <#assign count++>
+                    </#list>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 
 </div>
