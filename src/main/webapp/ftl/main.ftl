@@ -91,7 +91,7 @@
                 <input type="date" id="chosenDate" name="trip-start"
                        min="2020-02-20" max="2021-01-30">
                 <div>
-                    <button class="btn btn-dark" type="button" onclick="resetData()">Potrdi</button>
+                    <button id="buttonPotrdi" class="btn btn-dark" type="button" onclick="resetData()">Potrdi</button>
                 </div>
             </div>
             <div id="graph01" class="row">
@@ -196,6 +196,12 @@
         }
         calculatePostelje(index-5);
         calculateRegionsData(index);
+        bottomRightMapInfo(index);
+
+        map.select("g")
+            .selectAll("path")
+            .attr("class", function(d) { return pathColor(d.properties.SR_UIME); })
+            .attr("d", path);
     }
 
     //set date for data of region
@@ -492,6 +498,11 @@
             }
             let izbraniDatum = document.getElementById("chosenDate").value.split("-0").join("-").split("-");
             let mesec = getFullMonth(izbraniDatum[1]);
+
+            /*map.select("g")
+                .selectAll("path")
+                .attr("class", function(d) { return pathColor(d.properties.SR_UIME); })
+                .attr("d", path);*/
 
             var x = d3.mouse(this)[0];
             var y = d3.mouse(this)[1];
