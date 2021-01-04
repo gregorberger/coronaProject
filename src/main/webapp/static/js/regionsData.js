@@ -1,5 +1,6 @@
 let regionsMap;
 let regionData;
+let regionChangeData;
 d3.json('https://api.sledilnik.org/api/municipalities')
     .then(function(data) {
         regionData = data;
@@ -11,6 +12,11 @@ d3.json('https://api.sledilnik.org/api/municipalities')
 
 function getRegionsData(){
     return regionsMap;
+}
+
+function calculateRegionsData(part){
+    regionChangeData = regionData[part];
+    regionChangeData = parseRegionsData(regionChangeData);
 }
 
 function parseRegionsData(todayData) {

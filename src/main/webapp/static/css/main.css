@@ -46,6 +46,16 @@
     border-radius: 12px;
 }
 
+.reset2 {
+    position: absolute;
+    top: 270px;
+    right: 150px;
+    background-color: dimgray;
+    color:white;
+    border: none;
+    border-radius: 12px;
+}
+
 .border-radius {
     border-radius: 12px;
 }

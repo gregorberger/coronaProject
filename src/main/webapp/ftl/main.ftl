@@ -82,8 +82,17 @@
                 <br>
                 <label class="font-weight-bold text-white" for="endDate">Končni datum:</label>
                 <input type="date" id="endDate" name="trip-start"
-                       value="2021-01-01"
                        min="2020-01-01" max="2021-02-31">
+                <br>
+                <br>
+                <br>
+                <br>
+                <label class="font-weight-bold text-white" for="chosenDate">Podatki po regijah:</label>
+                <input type="date" id="chosenDate" name="trip-start"
+                       min="2020-02-20" max="2021-01-30">
+                <div>
+                    <button class="btn btn-dark" type="button" onclick="resetData()">Potrdi</button>
+                </div>
             </div>
             <div id="graph01" class="row">
                 <button class="reset" type="button" onclick="resetSlovenija()">Ponastavi graf</button>
@@ -172,6 +181,42 @@
 
 
 <script>
+
+    function resetData(){
+        let izbraniDatum = document.getElementById("chosenDate").value.split("-0").join("-").split("-");
+
+
+        let index = 0;
+        for (let j=0; j<regionData.length; j++){
+            if (regionData[j].year.toString() === izbraniDatum[0] && regionData[j].month.toString() === izbraniDatum[1] &&
+                regionData[j].day.toString() === izbraniDatum[2]) {
+                index = j;
+
+            }
+        }
+        calculatePostelje(index-5);
+        calculateRegionsData(index);
+    }
+
+    //set date for data of region
+    n =  new Date();
+    y = n.getFullYear();
+    m = n.getMonth() + 1;
+    d = n.getDate() - 1;
+
+    let nastaviDatum = y + "-" + m + "-" + d;
+    if (d < 10 && m < 10){
+        nastaviDatum = y + "-0" + m + "-0" + d;
+    }
+    else if (d < 10){
+        nastaviDatum = y + "-" + m + "-0" + d;
+    }
+    else if (m < 10){
+        nastaviDatum = y + "-0" + m + "-" + d;
+    }
+    document.getElementById("endDate").value = nastaviDatum;
+    document.getElementById("chosenDate").value = nastaviDatum;
+
     var width = 1070;
     var height = 600;
     var map = d3.select("#mapDiv")
@@ -415,8 +460,8 @@
                 .style("font-weight", "bold")
                 .style("color", "green");
         }
-
-        d3.select("#brezposelni").text(getBrezposelni().get("oktober").get("Slovenija")[2]).style("font-weight", "bold");
+        //console.log(getBrezposelni().get("november").get("Slovenija")[2]);
+        d3.select("#brezposelni").text(getBrezposelni().get("november").get("Slovenija")[2]).style("font-weight", "bold");
     });
 
     d3.json("./static/SR.geojson", function(err, geojson) {
@@ -433,7 +478,21 @@
 
         bottomRightMapInfo();
 
+        let index = regionData.length-1;
+        calculatePostelje(index-5);
+        calculateRegionsData(index);
+
         map.selectAll("path").on('mouseover', function (d, i) {
+
+            //funkcija za vračanje meseca pri regijah za brezposelnost
+            function getFullMonth(mes) {
+                let tab = ["november", "februar", "marec", "april", "maj", "junij", "julij", "avgust", "september"
+                    , "oktober", "november", "november"];
+                return tab[mes-1];
+            }
+            let izbraniDatum = document.getElementById("chosenDate").value.split("-0").join("-").split("-");
+            let mesec = getFullMonth(izbraniDatum[1]);
+
             var x = d3.mouse(this)[0];
             var y = d3.mouse(this)[1];
 
@@ -459,7 +518,8 @@
                 .attr('x', 30)
                 .attr('y', 70)
                 .text("Aktivni primeri: ");
-            document.getElementById("activeCases").innerHTML += "<a class='font-weight-bold'>"+regionsMap[d.properties.SR_UIME].activeCases+"</a>";
+            //document.getElementById("activeCases").innerHTML += "<a class='font-weight-bold'>"+regionsMap[d.properties.SR_UIME].activeCases+"</a>";
+            document.getElementById("activeCases").innerHTML += "<a class='font-weight-bold'>"+regionChangeData[d.properties.SR_UIME].activeCases+"</a>";
 
             mapData.append("text")
                 .attr('id', 'confirmedToDate')
@@ -468,7 +528,7 @@
                 .attr('x', 30)
                 .attr('y', 100)
                 .text("Potrjeni do danes: ");
-            document.getElementById("confirmedToDate").innerHTML += "<a class='font-weight-bold'>"+regionsMap[d.properties.SR_UIME].confirmedToDate+"</a>";
+            document.getElementById("confirmedToDate").innerHTML += "<a class='font-weight-bold'>"+regionChangeData[d.properties.SR_UIME].confirmedToDate+"</a>";
 
             mapData.append("text")
                 .attr('id', 'deceasedToDate')
@@ -477,7 +537,7 @@
                 .attr('x', 30)
                 .attr('y', 130)
                 .text("Smrti do danes: ");
-            document.getElementById("deceasedToDate").innerHTML += "<a class='font-weight-bold'>"+regionsMap[d.properties.SR_UIME].deceasedToDate+"</a>";
+            document.getElementById("deceasedToDate").innerHTML += "<a class='font-weight-bold'>"+regionChangeData[d.properties.SR_UIME].deceasedToDate+"</a>";
 
             mapData.append("text")
                 .attr('id', 'hospitalBeds')
@@ -486,8 +546,8 @@
                 .attr('x', 30)
                 .attr('y', 160)
                 .text("Postelje (Z/P): ");
-            document.getElementById("hospitalBeds").innerHTML += "<a class='text-danger'>"+getData().get(d.properties.SR_UIME).occupied+"</a>" +
-                "/<a class='font-weight-bold'>"+getData().get(d.properties.SR_UIME).max+"</a>";
+            document.getElementById("hospitalBeds").innerHTML += "<a class='text-danger'>"+changeDataPostelje.get(d.properties.SR_UIME).occupied+"</a>" +
+                "/<a class='font-weight-bold'>"+changeDataPostelje.get(d.properties.SR_UIME).max+"</a>";
 
             mapData.append("text")
                 .attr('id', 'unemployed')
@@ -496,7 +556,7 @@
                 .attr('x', 30)
                 .attr('y', 190)
                 .text("Brezposelni: ");
-            document.getElementById("unemployed").innerHTML += "<a class='font-weight-bold'>"+getBrezposelni().get("oktober").get(d.properties.SR_UIME)[2]+"</a>";
+            document.getElementById("unemployed").innerHTML += "<a class='font-weight-bold'>"+getBrezposelni().get(mesec).get(d.properties.SR_UIME)[2]+"</a>";
 
 
         });

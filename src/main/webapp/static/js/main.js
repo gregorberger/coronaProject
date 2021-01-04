@@ -118,6 +118,7 @@ async function updateMap() {
             i = endNumber;
         }
         parseRegionsData(regionData[i]);
+
     d3.json("./static/SR.geojson")
         .then(function(geojson){
             map.selectAll("g").remove();
