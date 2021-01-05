@@ -70,7 +70,7 @@
                 <div id="mapLegend"></div>
             </div>
         </div>
-        <div id="mapDiv" class="col-7 bg-light border-radius"></div>
+        <div id="mapDiv" class="col-7 bg-map border-radius"></div>
         <div id="graphs" class="col-3 navbar-bg border-radius pt-5">
             <div id="animation">
                 <button type="button" onclick="updateMap()" class="btn btn-dark">Animacija</button>

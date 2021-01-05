@@ -47,6 +47,10 @@
     /*#1b1501 !important*/
 }
 
+.bg-map {
+    background-color: #e0e0e0 !important;
+}
+
 .reset {
     position: absolute;
     top: 335px;
