@@ -1,29 +1,40 @@
 .navbar-bg {
     background-color: #4f5d75 !important;
 }
-
-.cases400 {
-    fill: #fce8e4;
+.cases50 {
+    fill: #fff5f0;
 }
 
-.cases600 {
-    fill: #fbd2d2;
+.cases100 {
+    fill: #fee0d2;
+}
+
+.cases200 {
+    fill: #fcbba1;
+}
+
+.cases400 {
+    fill: #fc9272;
 }
 
 .cases800 {
-    fill: #f6a5a5;
+    fill: #fb6a4a;
 }
 
 .cases1200 {
-    fill: #f27777;
+    fill: #ef3b2c;
 }
 
 .cases1600 {
-    fill: #ed4a4a;
+    fill: #cb181d;
 }
 
-.cases2000 {
-    fill: #E91D1D;
+.cases2200 {
+    fill: #a50f15;
+}
+
+.cases2300 {
+    fill: #67000d;
 }
 
 #animation {

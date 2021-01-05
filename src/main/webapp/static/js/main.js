@@ -14,33 +14,39 @@ function getDate(vrstica) {
 
 
 function pathColor(mapRegion) {
-    if(regionsMap[mapRegion].activeCases <= 400) {
+    if(regionsMap[mapRegion].activeCases <= 50) {
+        return "cases50";
+    } else if (regionsMap[mapRegion].activeCases > 50 && regionsMap[mapRegion].activeCases <= 100) {
+        return "cases100";
+    } else if (regionsMap[mapRegion].activeCases > 100 && regionsMap[mapRegion].activeCases <= 200) {
+        return "cases200";
+    } else if (regionsMap[mapRegion].activeCases > 200 && regionsMap[mapRegion].activeCases <= 400) {
         return "cases400";
-    } else if (regionsMap[mapRegion].activeCases > 401 && regionsMap[mapRegion].activeCases <= 800) {
-        return "cases600";
-    } else if (regionsMap[mapRegion].activeCases > 801 && regionsMap[mapRegion].activeCases <= 1200) {
+    } else if (regionsMap[mapRegion].activeCases > 400 && regionsMap[mapRegion].activeCases <= 800) {
         return "cases800";
-    } else if (regionsMap[mapRegion].activeCases > 1201 && regionsMap[mapRegion].activeCases <= 1600) {
+    } else if (regionsMap[mapRegion].activeCases > 800 && regionsMap[mapRegion].activeCases <= 1200) {
         return "cases1200";
-    } else if (regionsMap[mapRegion].activeCases > 1601 && regionsMap[mapRegion].activeCases <= 2000) {
+    } else if (regionsMap[mapRegion].activeCases > 1200 && regionsMap[mapRegion].activeCases <= 1600) {
         return "cases1600";
-    } else if (regionsMap[mapRegion].activeCases > 2001) {
-        return "cases2000";
+    } else if (regionsMap[mapRegion].activeCases > 1600 && regionsMap[mapRegion].activeCases <= 2200) {
+        return "cases2200";
+    } else if (regionsMap[mapRegion].activeCases > 2200) {
+        return "cases2300";
     }
 }
 
 function mapLegend() {
     // create a list of keys
-    var keys = ["<401", "402-800", "801-1200", "1201-1600", "1601-2000", ">2001"]
+    var keys = ["<50" , "51-100", "101-200", "201-400", "401-800", "801-1200", "1201-1600", "1601-2200", ">2201"]
 
     // Usually you have a color scale in your chart already
-    var color = ["#fce8e4","#fbd2d2","#f6a5a5","#f27777","#ed4a4a","#E91D1D"];
+    var color = ["#fff5f0","#fee0d2","#fcbba1","#fc9272","#fb6a4a","#ef3b2c", "#cb181d", "#a50f15", "#67000d"];
 
     var size = 20;
 
     var mapLegend = d3.select("#mapLegend").append("svg")
         .attr("width",170)
-        .attr("height",250)
+        .attr("height",275)
         .attr("class", "navbar-bg border-radius ml-5")
         .attr("style", "margin-left: 4.5rem!important;")
 
