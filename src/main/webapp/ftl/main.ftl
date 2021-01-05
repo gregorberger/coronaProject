@@ -154,7 +154,7 @@
 
     </div>
 
-    <div class="row mt-5 backgroundColor">
+    <div class="row pt-5 backgroundColor">
         <div class="col-6 flex-column">
             <div class="card ml-5 navbar-bg border-radius">
                 <div class="card-body">

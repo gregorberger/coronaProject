@@ -67,7 +67,7 @@ function mapLegend() {
         .enter()
         .append("rect")
         .attr("x", 20)
-        .attr("y", function(d,i){ return 50 + i*(size+5)}) // 100 is where the first dot appears. 25 is the distance between dots
+        .attr("y", function(d,i){ return 40 + i*(size+5)}) // 100 is where the first dot appears. 25 is the distance between dots
         .attr("width", size)
         .attr("height", size)
         .style("fill", function(d,i){ return color[i]})
@@ -77,7 +77,7 @@ function mapLegend() {
         .enter()
         .append("text")
         .attr("x", 20 + size*1.2)
-        .attr("y", function(d,i){ return 52 + i*(size+5) + (size/2)}) // 100 is where the first dot appears. 25 is the distance between dots
+        .attr("y", function(d,i){ return 42 + i*(size+5) + (size/2)}) // 100 is where the first dot appears. 25 is the distance between dots
         .style("fill", function(d,i){ return color[i]})
         .text(function(d){ return d})
         .attr("text-anchor", "left")
