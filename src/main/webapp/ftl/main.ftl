@@ -511,9 +511,58 @@
         calculatePostelje(index-5);
         calculateRegionsData(index);
 
-        map.selectAll("path").on('mouseover', function (d, i) {
+        map.selectAll("path").on('click', function (d, i) {
+            // testiranje on click graf spremembe
+            /* NI VEC PODATKOV
+            var pozitivni = chart.series[0];
+            var negativni = chart.series[1];
 
+            switch (d.properties.SR_UIME) {
+                case "Pomurska":
+                    msLabTests(pozitivni, negativni);
+                    break;
+                case "Podravska":
+                    mbLabTests(pozitivni, negativni);
+                    break;
+                case "Savinjska":
+                    ceLabTests(pozitivni, negativni);
+                    break;
+                case "Posavska":
+                    ukgLabTests(pozitivni, negativni);
+                    break;
+                case "Zasavska":
+                    ukgLabTests(pozitivni, negativni);
+                    break;
+                case "Koroška":
+                    sgLabTests(pozitivni, negativni);
+                    break;
+                case "Jugovzhodna Slovenija":
+                    nmLabTests(pozitivni, negativni);
+                    break;
+                case "Osrednjeslovenska":
+                    ljLabTests(pozitivni, negativni);
+                    break;
+                case "Primorsko-notranjska":
+                    kpLabTests(pozitivni, negativni);
+                    break;
+                case "Obalno-kraška":
+                    kpLabTests(pozitivni, negativni);
+                    break;
+                case "Goriška":
+                    krLabTests(pozitivni, negativni);
+                    break;
+                case "Gorenjska":
+                    krLabTests(pozitivni, negativni);
+                    break;
+            }
+            */
             //funkcija za vračanje meseca pri regijah za brezposelnost
+            mapData.select("rect").attr('fill', 'none');
+            mapData.select("rect").attr('stroke', 'none');
+            mapData.selectAll("text").remove();
+            mapData.selectAll("br").remove();
+            document.getElementById("titleInfoBox").classList.add("collapse");
+
             function getFullMonth(mes) {
                 let tab = ["november", "februar", "marec", "april", "maj", "junij", "julij", "avgust", "september"
                     , "oktober", "november", "november"];
@@ -522,13 +571,6 @@
             let izbraniDatum = document.getElementById("chosenDate").value.split("-0").join("-").split("-");
             let mesec = getFullMonth(izbraniDatum[1]);
 
-            /*map.select("g")
-                .selectAll("path")
-                .attr("class", function(d) { return pathColor(d.properties.SR_UIME); })
-                .attr("d", path);*/
-
-            var x = d3.mouse(this)[0];
-            var y = d3.mouse(this)[1];
 
             mapData.select("rect")
                 .attr('x', 15)
@@ -591,63 +633,6 @@
                 .attr('y', 190)
                 .text("Brezposelni: ");
             document.getElementById("unemployed").innerHTML += "<a class='font-weight-bold'>"+getBrezposelni().get(mesec).get(d.properties.SR_UIME)[2]+"</a>";
-
-
-        });
-
-        map.selectAll("path").on('mouseout', function (d, i) {
-            mapData.select("rect").attr('fill', 'none');
-            mapData.select("rect").attr('stroke', 'none');
-            mapData.selectAll("text").remove();
-            mapData.selectAll("br").remove();
-            document.getElementById("titleInfoBox").classList.add("collapse");
-        })
-
-        map.selectAll("path").on('click', function (d, i) {
-            // testiranje on click graf spremembe
-            /* NI VEC PODATKOV
-            var pozitivni = chart.series[0];
-            var negativni = chart.series[1];
-
-            switch (d.properties.SR_UIME) {
-                case "Pomurska":
-                    msLabTests(pozitivni, negativni);
-                    break;
-                case "Podravska":
-                    mbLabTests(pozitivni, negativni);
-                    break;
-                case "Savinjska":
-                    ceLabTests(pozitivni, negativni);
-                    break;
-                case "Posavska":
-                    ukgLabTests(pozitivni, negativni);
-                    break;
-                case "Zasavska":
-                    ukgLabTests(pozitivni, negativni);
-                    break;
-                case "Koroška":
-                    sgLabTests(pozitivni, negativni);
-                    break;
-                case "Jugovzhodna Slovenija":
-                    nmLabTests(pozitivni, negativni);
-                    break;
-                case "Osrednjeslovenska":
-                    ljLabTests(pozitivni, negativni);
-                    break;
-                case "Primorsko-notranjska":
-                    kpLabTests(pozitivni, negativni);
-                    break;
-                case "Obalno-kraška":
-                    kpLabTests(pozitivni, negativni);
-                    break;
-                case "Goriška":
-                    krLabTests(pozitivni, negativni);
-                    break;
-                case "Gorenjska":
-                    krLabTests(pozitivni, negativni);
-                    break;
-            }
-            */
         // brezposelni on click graf spremembe
             let dataU = [{"confirmed": 0,"people": getBrezposelni().get("januar").get(d.properties.SR_UIME)[2]/1000, "month":"jan"},
                 {"confirmed": confirmedMap["feb"][d.properties.SR_UIME].confirmedToDate/1000, "people": getBrezposelni().get("februar").get(d.properties.SR_UIME)[2]/1000, "month":"feb"},
@@ -660,7 +645,7 @@
                 {"confirmed": confirmedMap["sep"][d.properties.SR_UIME].confirmedToDate/1000, "people": getBrezposelni().get("september").get(d.properties.SR_UIME)[2]/1000, "month":"sep"},
                 {"confirmed": confirmedMap["okt"][d.properties.SR_UIME].confirmedToDate/1000, "people": getBrezposelni().get("oktober").get(d.properties.SR_UIME)[2]/1000, "month":"okt"},
                 {"confirmed": confirmedMap["nov"][d.properties.SR_UIME].confirmedToDate/1000, "people": getBrezposelni().get("oktober").get(d.properties.SR_UIME)[2]/1000, "month":"nov"}]
-            console.log(confirmedMap["sep"][d.properties.SR_UIME].confirmedToDate/1000);
+
             let meja = function () {
                 let spodaj = parseFloat(getBrezposelni().get("januar").get(d.properties.SR_UIME)[2]/1000);
                 let zgoraj = parseFloat(getBrezposelni().get("januar").get(d.properties.SR_UIME)[2]/1000);
