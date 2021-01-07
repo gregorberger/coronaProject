@@ -142,9 +142,12 @@ async function updateMap() {
                 .attr("d", path);
             bottomRightMapInfo(i);
 
-            map.selectAll("path").on('mouseover', function (d, i) {
-                var x = d3.mouse(this)[0];
-                var y = d3.mouse(this)[1];
+            map.selectAll("path").on('click', function (d, i) {
+                mapData.select("rect").attr('fill', 'none');
+                mapData.select("rect").attr('stroke', 'none');
+                mapData.selectAll("text").remove();
+                mapData.selectAll("br").remove();
+                document.getElementById("titleInfoBox").classList.add("collapse");
 
                 mapData.select("rect")
                     .attr('x', 15)
@@ -207,62 +210,6 @@ async function updateMap() {
                     .text("Brezposelni: ");
                 document.getElementById("unemployed").innerHTML += "<a class='font-weight-bold'>"+getBrezposelni().get("oktober").get(d.properties.SR_UIME)[2]+"</a>";
 
-
-            });
-
-            map.selectAll("path").on('mouseout', function (d, i) {
-                mapData.select("rect").attr('fill', 'none');
-                mapData.select("rect").attr('stroke', 'none');
-                mapData.selectAll("text").remove();
-                mapData.selectAll("br").remove();
-                document.getElementById("titleInfoBox").classList.add("collapse");
-            })
-
-            map.selectAll("path").on('click', function (d, i) {
-                // testiranje on click graf spremembe
-                /* NI VEC PODATKOV
-                var pozitivni = chart.series[0];
-                var negativni = chart.series[1];
-
-                switch (d.properties.SR_UIME) {
-                    case "Pomurska":
-                        msLabTests(pozitivni, negativni);
-                        break;
-                    case "Podravska":
-                        mbLabTests(pozitivni, negativni);
-                        break;
-                    case "Savinjska":
-                        ceLabTests(pozitivni, negativni);
-                        break;
-                    case "Posavska":
-                        ukgLabTests(pozitivni, negativni);
-                        break;
-                    case "Zasavska":
-                        ukgLabTests(pozitivni, negativni);
-                        break;
-                    case "Koroška":
-                        sgLabTests(pozitivni, negativni);
-                        break;
-                    case "Jugovzhodna Slovenija":
-                        nmLabTests(pozitivni, negativni);
-                        break;
-                    case "Osrednjeslovenska":
-                        ljLabTests(pozitivni, negativni);
-                        break;
-                    case "Primorsko-notranjska":
-                        kpLabTests(pozitivni, negativni);
-                        break;
-                    case "Obalno-kraška":
-                        kpLabTests(pozitivni, negativni);
-                        break;
-                    case "Goriška":
-                        krLabTests(pozitivni, negativni);
-                        break;
-                    case "Gorenjska":
-                        krLabTests(pozitivni, negativni);
-                        break;
-                }
-                */
                 // brezposelni on click graf spremembe
                 let dataU = [{"confirmed": 0,"people": getBrezposelni().get("januar").get(d.properties.SR_UIME)[2]/1000, "month":"jan"},
                     {"confirmed": confirmedMap["feb"][d.properties.SR_UIME].confirmedToDate/1000, "people": getBrezposelni().get("februar").get(d.properties.SR_UIME)[2]/1000, "month":"feb"},

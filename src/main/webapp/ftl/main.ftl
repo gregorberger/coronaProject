@@ -61,7 +61,7 @@
 
     </div>
     <div class="row pt-2">
-        <div id="infoBox" class="col-2">
+        <div id="infoBox" class="col-1">
             <div id="titleInfoBox" class="h4 text-white collapse"></div>
             <div class="row">
                 <div id="mapData"></div>
@@ -70,32 +70,33 @@
                 <div id="mapLegend"></div>
             </div>
         </div>
-        <div id="mapDiv" class="col-7 bg-map border-radius"></div>
-        <div id="graphs" class="col-3 navbar-bg border-radius pt-5">
+        <div id="mapDiv" class="col-7 bg-map border-radius" style="margin-left: 140px"></div>
+        <div id="graphs" class="col-2 navbar-bg border-radius pt-5" style="margin-left: 35px; max-width: 21% !important;">
             <div id="animation">
-                <button type="button" onclick="updateMap()" class="btn btn-dark">Animacija</button>
-                <br>
-                <label class="mt-3 font-weight-bold text-white" for="startDate">Začetni datum:</label>
+                <h3 class="text-white font-weight-bold">Animacija aktivnih primerov skozi čas</h3>
+                <label class="mt-3 font-weight-bold" for="startDate">Začetni datum:</label>
                 <input  type="date" id="startDate" name="trip-start"
                        value="2020-09-20"
                        min="2020-01-01" max="2021-02-31">
                 <br>
-                <label class="font-weight-bold text-white" for="endDate">Končni datum:</label>
+                <label class="font-weight-bold" for="endDate">Končni datum:</label>
                 <input type="date" id="endDate" name="trip-start"
                        min="2020-01-01" max="2021-02-31">
                 <br>
+                <button type="button" onclick="updateMap()" class="mt-2 btn btn-dark">Animacija</button>
                 <br>
                 <br>
-                <br>
-                <label class="font-weight-bold text-white" for="chosenDate">Podatki po regijah:</label>
+
+
+                <label class="font-weight-bold" for="chosenDate">Podatki po regijah:</label>
                 <input type="date" id="chosenDate" name="trip-start"
                        min="2020-02-20" max="2021-01-30">
                 <div>
-                    <button id="buttonPotrdi" class="btn btn-dark" type="button" onclick="resetData()">Potrdi</button>
+                    <button id="buttonPotrdi" class="mt-2 btn btn-dark" type="button" onclick="resetData()">Potrdi</button>
                 </div>
             </div>
             <div id="graph01" class="row">
-                <button class="reset" type="button" onclick="resetSlovenija()">Ponastavi graf</button>
+                <button class="reset btn btn-dark" type="button" onclick="resetSlovenija()">Ponastavi graf</button>
             </div>
         </div>
     </div>
@@ -287,7 +288,7 @@
 
 
     var margin = {top: 20, right: 30, bottom: 50, left: 100},
-        width1 = 485 - margin.left - margin.right,
+        width1 = 400 - margin.left - margin.right,
         height1 = 250 - margin.top - margin.bottom;
 
     var graf = d3.select("#graph01")
@@ -633,6 +634,7 @@
                 .attr('y', 190)
                 .text("Brezposelni: ");
             document.getElementById("unemployed").innerHTML += "<a class='font-weight-bold'>"+getBrezposelni().get(mesec).get(d.properties.SR_UIME)[2]+"</a>";
+
         // brezposelni on click graf spremembe
             let dataU = [{"confirmed": 0,"people": getBrezposelni().get("januar").get(d.properties.SR_UIME)[2]/1000, "month":"jan"},
                 {"confirmed": confirmedMap["feb"][d.properties.SR_UIME].confirmedToDate/1000, "people": getBrezposelni().get("februar").get(d.properties.SR_UIME)[2]/1000, "month":"feb"},

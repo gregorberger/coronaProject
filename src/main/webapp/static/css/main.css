@@ -53,12 +53,12 @@
 
 .reset {
     position: absolute;
-    top: 335px;
-    right: 350px;
-    background-color: dimgray;
-    color:white;
-    border: none;
-    border-radius: 12px;
+    top: 609px;
+    right: 130px;
+    /*background-color: dimgray;*/
+    /*color:white;*/
+    /*border: none;*/
+    /*border-radius: 12px;*/
 }
 
 .reset2 {
