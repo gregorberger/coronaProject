@@ -1,40 +1,41 @@
 .navbar-bg {
-    background-color: #4f5d75 !important;
+    background-color: #86B3D1 !important;
+    /*#4f5d75 opcija1:#5AB9EA  #84CEEB*/
 }
 .cases50 {
-    fill: #fff5f0;
-}
-
-.cases100 {
     fill: #fee0d2;
 }
 
-.cases200 {
+.cases100 {
     fill: #fcbba1;
 }
 
-.cases400 {
+.cases200 {
     fill: #fc9272;
 }
 
-.cases800 {
+.cases400 {
     fill: #fb6a4a;
 }
 
-.cases1200 {
+.cases800 {
     fill: #ef3b2c;
 }
 
-.cases1600 {
+.cases1200 {
     fill: #cb181d;
 }
 
-.cases2200 {
+.cases1600 {
     fill: #a50f15;
 }
 
-.cases2300 {
+.cases2200 {
     fill: #67000d;
+}
+
+.cases2300 {
+    fill: #480009;
 }
 
 #animation {
@@ -43,12 +44,14 @@
 }
 
 .backgroundColor {
-    background-color:#2d3142;
+    background-color:#e7f0f6;
+    /*#2d3142m, opcija1:#84CEEB #D2FDFF*/
     /*#1b1501 !important*/
 }
 
 .bg-map {
-    background-color: #e0e0e0 !important;
+    background-color: #86B3D1 !important;
+    /*prejsn: #e0e0e0*/
 }
 
 .reset {

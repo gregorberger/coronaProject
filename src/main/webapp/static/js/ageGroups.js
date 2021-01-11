@@ -37,7 +37,7 @@ function ageGroupGraph(podatek) {
         title: {
             text: 'Okuženi po starostnih skupinah',
             style: {
-                color: '#ffffff',
+                color: 'black',
                 fontWeight: 'bold'
             }
         },
@@ -47,7 +47,7 @@ function ageGroupGraph(podatek) {
         subtitle: {
             text: 'vir: NIJZ, Ministrstvo za zdravje',
             style: {
-                color: '#343434',
+                color: '#ffffff',
                 fontWeight: 'bold'
             }
         },

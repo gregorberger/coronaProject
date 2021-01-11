@@ -57,7 +57,7 @@
 
 <div id="main" class="container-fluid text-center pt-4 backgroundColor h-100">
     <div class="d-inline-flex align-items-center">
-        <h1 class="text-white font-weight-bold">Zemljevid po regijah</h1>
+        <h1 class="text-black font-weight-bold">Zemljevid po regijah</h1>
 
     </div>
     <div class="row pt-2">
@@ -73,7 +73,7 @@
         <div id="mapDiv" class="col-7 bg-map border-radius" style="margin-left: 140px"></div>
         <div id="graphs" class="col-2 navbar-bg border-radius pt-5" style="margin-left: 35px; max-width: 21% !important;">
             <div id="animation">
-                <h3 class="text-white font-weight-bold">Animacija aktivnih primerov skozi čas</h3>
+                <h4 class="text-black font-weight-bold">Animacija aktivnih primerov skozi čas</h4>
                 <label class="mt-3 font-weight-bold" for="startDate">Začetni datum:</label>
                 <input  type="date" id="startDate" name="trip-start"
                        value="2020-09-20"
@@ -107,9 +107,9 @@
             <div class="card ml-5 navbar-bg border-radius">
                 <div class="card-body">
                     <img src="/static/images/virus.png" width="30" height="30" alt="">
-                    <h5 class="card-title text-white">Aktivni primeri:</h5>
+                    <h5 class="card-title text-black font-weight-bold">Aktivni primeri:</h5>
                     <p>
-                        <span class="card-text" id="aktivni"></span>
+                        <span class="card-text text-white" id="aktivni"></span>
                         <span class="card-text" id="aktivni2"></span>
                         <img src="/static/images/greenarrow.png" width="20" height="20" alt="" id="activeArrow">
                     </p>
@@ -120,9 +120,9 @@
             <div class="card navbar-bg border-radius">
                 <div class="card-body">
                     <img src="/static/images/hospital.png" width="30" height="30" alt="">
-                    <h5 class="card-title text-white">Hospitalizirani bolniki:</h5>
+                    <h5 class="card-title text-black font-weight-bold">Hospitalizirani bolniki:</h5>
                     <p>
-                        <span class="card-text" id="hospitalizirani"></span>
+                        <span class="card-text text-white" id="hospitalizirani"></span>
                         <span class="card-text" id="hospitalizirani2"></span>
                         <img src="/static/images/greenarrow.png" width="20" height="20" alt="" id="hospitalizedArrow">
                     </p>
@@ -133,9 +133,9 @@
             <div class="card navbar-bg border-radius">
                 <div class="card-body">
                     <img src="/static/images/cross.png" width="25" height="30" alt="">
-                    <h5 class="card-title text-white">Število smrti:</h5>
+                    <h5 class="card-title text-black font-weight-bold">Število smrti:</h5>
                     <p>
-                        <span class="card-text" id="smrti"></span>
+                        <span class="card-text text-white" id="smrti"></span>
                         <span class="card-text" id="smrti2"></span>
                         <img src="/static/images/greenarrow.png" width="20" height="20" alt="" id="deathArrow">
                     </p>
@@ -146,8 +146,8 @@
             <div class="card mr-5 navbar-bg border-radius">
                 <div class="card-body">
                     <img src="/static/images/nojob.png" width="30" height="30" alt="">
-                    <h5 class="card-title text-white">Brezposelni:</h5>
-                    <p class="card-text" id="brezposelni"></p>
+                    <h5 class="card-title text-black font-weight-bold">Brezposelni:</h5>
+                    <p class="card-text text-white" id="brezposelni"></p>
                     <p class="card-text" ></p>
                 </div>
             </div>
@@ -159,10 +159,11 @@
         <div class="col-6 flex-column">
             <div class="card ml-5 navbar-bg border-radius">
                 <div class="card-body">
+                    <div id="labTestsGraph2"></div>
                     <button type="button" onclick="labTestsGraph()" class="btn btn-dark">Celotno obdobje</button>
                     <button type="button" onclick="labTestsGraph(7)" class="btn btn-dark">7 dni</button>
                     <button type="button" onclick="labTestsGraph(31)" class="btn btn-dark">31 dni</button>
-                    <div id="labTestsGraph2"></div>
+
                     <div class="row"></div>
                 </div>
             </div>
@@ -181,7 +182,7 @@
         <div class="col">
             <div class="card navbar-bg border-radius">
                 <div class="card-body">
-                    <h1 class="text-white font-weight-bold">Najnovejše novice za prehajanje meja</h1>
+                    <h1 class="text-black font-weight-bold">Najnovejše novice za prehajanje meja</h1>
                     <ul class="list-group align-items-center">
                     <#assign count=0>
                     <#list novice.entries as novica>
@@ -264,7 +265,7 @@
 
     var rect = mapData
         .append("rect")
-        .attr('width', 276)
+        .attr('width', 266)
         .attr('height', 200)
         .attr('fill', 'none');
 
@@ -274,13 +275,13 @@
             .attr('x', 900)
             .attr('y', 575)
             .attr('class', "text-muted")
-            .attr('fill', "grey")
+            .attr('fill', "white")
             .text("Podatki za :" + getDate(vrstica));
         map.append("text")
             .attr('x', 845)
             .attr('y', 590)
             .attr('class', "text-muted")
-            .attr('fill', "grey")
+            .attr('fill', "white")
             .text("vir: NIJZ, Ministrstvo za zdravje");
     }
 
@@ -308,7 +309,7 @@
         .selectAll("text")
             .style("font-size", "10px")
             .attr("transform", "translate(-10,10)rotate(-45)")
-            .style("fill", "#FFFFFF");
+            .style("fill", "black");
 
 
     var y = d3.scaleLinear()
@@ -324,7 +325,7 @@
         .call(d3.axisLeft(y))
         .selectAll("text")
             .style("font-size", "10px")
-            .style("fill", "#FFFFFF");
+            .style("fill", "black");
 
     graf.append("g")
         .attr("class", "yaxis2")
@@ -379,14 +380,14 @@
         .attr("transform", "rotate(-90)")
         .attr("x", -120)
         .attr("y", -68)
-        .attr("fill", "white")
-        .style("font-size", "13px")
+        .attr("fill", "black")
+        .style("font-size", "12px")
         .text("potrjeni (na tisoč)");
 
     graf.append("text")
         .attr("x", -50)
         .attr("y", -10)
-        .attr("fill", "white")
+        .attr("fill", "black")
         .style("font-size", "12px")
         .text("brezposelni (na tisoč)");
 
@@ -403,7 +404,7 @@
             .call(d3.axisLeft(y))
             .selectAll("text")
             .style("font-size", "10px")
-            .style("fill", "#FFFFFF");
+            .style("fill", "black");
 
         graf.select('.yaxis2')
             .attr("transform", "translate(-32)")
@@ -533,6 +534,7 @@
                     break;
                 case "Zasavska":
                     ukgLabTests(pozitivni, negativni);
+                    ukgLabTests(pozitivni, negativni);
                     break;
                 case "Koroška":
                     sgLabTests(pozitivni, negativni);
@@ -574,9 +576,9 @@
 
 
             mapData.select("rect")
-                .attr('x', 15)
+                .attr('x', 0)
                 .attr('y', 0)
-                .attr('fill', '#4f5d75')
+                .attr('fill', '#86B3D1')
                 .attr('stroke', 'black')
                 .attr('stroke-width', '1')
                 .attr('opacity', 1);
@@ -584,7 +586,7 @@
             mapData.append("text")
                 .attr('fill', 'black')
                 .attr('class', 'font-weight-bold h4')
-                .attr('x', 30)
+                .attr('x', 10)
                 .attr('y', 30)
                 .text(d.properties.SR_UIME);
 
@@ -592,7 +594,7 @@
                 .attr('id', 'activeCases')
                 .attr('fill', 'white')
                 .attr('class', 'h5')
-                .attr('x', 30)
+                .attr('x', 10)
                 .attr('y', 70)
                 .text("Aktivni primeri: ");
             //document.getElementById("activeCases").innerHTML += "<a class='font-weight-bold'>"+regionsMap[d.properties.SR_UIME].activeCases+"</a>";
@@ -602,7 +604,7 @@
                 .attr('id', 'confirmedToDate')
                 .attr('fill', 'white')
                 .attr('class', 'h5')
-                .attr('x', 30)
+                .attr('x', 10)
                 .attr('y', 100)
                 .text("Potrjeni do danes: ");
             document.getElementById("confirmedToDate").innerHTML += "<a class='font-weight-bold'>"+regionChangeData[d.properties.SR_UIME].confirmedToDate+"</a>";
@@ -611,7 +613,7 @@
                 .attr('id', 'deceasedToDate')
                 .attr('fill', 'white')
                 .attr('class', 'h5')
-                .attr('x', 30)
+                .attr('x', 10)
                 .attr('y', 130)
                 .text("Smrti do danes: ");
             document.getElementById("deceasedToDate").innerHTML += "<a class='font-weight-bold'>"+regionChangeData[d.properties.SR_UIME].deceasedToDate+"</a>";
@@ -620,7 +622,7 @@
                 .attr('id', 'hospitalBeds')
                 .attr('fill', 'white')
                 .attr('class', 'h5')
-                .attr('x', 30)
+                .attr('x', 10)
                 .attr('y', 160)
                 .text("Postelje (Z/P): ");
             document.getElementById("hospitalBeds").innerHTML += "<a class='text-danger'>"+changeDataPostelje.get(d.properties.SR_UIME).occupied+"</a>" +
@@ -630,7 +632,7 @@
                 .attr('id', 'unemployed')
                 .attr('fill', 'white')
                 .attr('class', 'h5')
-                .attr('x', 30)
+                .attr('x', 10)
                 .attr('y', 190)
                 .text("Brezposelni: ");
             document.getElementById("unemployed").innerHTML += "<a class='font-weight-bold'>"+getBrezposelni().get(mesec).get(d.properties.SR_UIME)[2]+"</a>";
@@ -686,7 +688,7 @@
                 .call(d3.axisLeft(y))
                 .selectAll("text")
                     .style("font-size", "10px")
-                    .style("fill", "#FFFFFF");
+                    .style("fill", "black");
 
             graf.select('.yaxis2')
                 .attr("transform", "translate(-32)")

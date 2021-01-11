@@ -43,7 +43,7 @@ function labTestsGraph(number) {
         title: {
             text: 'Testiranje',
             style: {
-                color: '#ffffff',
+                color: 'black',
                 fontWeight: 'bold'
             }
         },
@@ -53,7 +53,7 @@ function labTestsGraph(number) {
         subtitle: {
             text: 'vir: NIJZ, Ministrstvo za zdravje',
             style: {
-                color: '#343434',
+                color: '#ffffff',
                 fontWeight: 'bold'
             }
         },

@@ -40,7 +40,7 @@ function mapLegend() {
     var keys = ["<50" , "51-100", "101-200", "201-400", "401-800", "801-1200", "1201-1600", "1601-2200", ">2201"]
 
     // Usually you have a color scale in your chart already
-    var color = ["#fff5f0","#fee0d2","#fcbba1","#fc9272","#fb6a4a","#ef3b2c", "#cb181d", "#a50f15", "#67000d"];
+    var color = ["#fee0d2","#fcbba1","#fc9272","#fb6a4a","#ef3b2c", "#cb181d", "#a50f15", "#67000d", "#480009"];
 
     var size = 20;
 
@@ -57,7 +57,7 @@ function mapLegend() {
         .append("text")
         .attr("x", 20)
         .attr("y", 20) // 100 is where the first dot appears. 25 is the distance between dots
-        .style("fill", "white")
+        .style("fill", "black")
         .text("Aktivni primeri:")
         .attr("text-anchor", "left")
         .style("alignment-baseline", "middle")
@@ -150,9 +150,9 @@ async function updateMap() {
                 document.getElementById("titleInfoBox").classList.add("collapse");
 
                 mapData.select("rect")
-                    .attr('x', 15)
+                    .attr('x', 0)
                     .attr('y', 0)
-                    .attr('fill', '#4f5d75')
+                    .attr('fill', '#86B3D1')
                     .attr('stroke', 'black')
                     .attr('stroke-width', '1')
                     .attr('opacity', 1);
@@ -160,7 +160,7 @@ async function updateMap() {
                 mapData.append("text")
                     .attr('fill', 'black')
                     .attr('class', 'font-weight-bold h4')
-                    .attr('x', 30)
+                    .attr('x', 10)
                     .attr('y', 30)
                     .text(d.properties.SR_UIME);
 
@@ -168,7 +168,7 @@ async function updateMap() {
                     .attr('id', 'activeCases')
                     .attr('fill', 'white')
                     .attr('class', 'h5')
-                    .attr('x', 30)
+                    .attr('x', 10)
                     .attr('y', 70)
                     .text("Aktivni primeri: ");
                 document.getElementById("activeCases").innerHTML += "<a class='font-weight-bold'>"+regionsMap[d.properties.SR_UIME].activeCases+"</a>";
@@ -177,7 +177,7 @@ async function updateMap() {
                     .attr('id', 'confirmedToDate')
                     .attr('fill', 'white')
                     .attr('class', 'h5')
-                    .attr('x', 30)
+                    .attr('x', 10)
                     .attr('y', 100)
                     .text("Potrjeni do danes: ");
                 document.getElementById("confirmedToDate").innerHTML += "<a class='font-weight-bold'>"+regionsMap[d.properties.SR_UIME].confirmedToDate+"</a>";
@@ -186,7 +186,7 @@ async function updateMap() {
                     .attr('id', 'deceasedToDate')
                     .attr('fill', 'white')
                     .attr('class', 'h5')
-                    .attr('x', 30)
+                    .attr('x', 10)
                     .attr('y', 130)
                     .text("Smrti do danes: ");
                 document.getElementById("deceasedToDate").innerHTML += "<a class='font-weight-bold'>"+regionsMap[d.properties.SR_UIME].deceasedToDate+"</a>";
@@ -195,7 +195,7 @@ async function updateMap() {
                     .attr('id', 'hospitalBeds')
                     .attr('fill', 'white')
                     .attr('class', 'h5')
-                    .attr('x', 30)
+                    .attr('x', 10)
                     .attr('y', 160)
                     .text("Postelje (Z/P): ");
                 document.getElementById("hospitalBeds").innerHTML += "<a class='text-danger'>"+getData().get(d.properties.SR_UIME).occupied+"</a>" +
@@ -205,7 +205,7 @@ async function updateMap() {
                     .attr('id', 'unemployed')
                     .attr('fill', 'white')
                     .attr('class', 'h5')
-                    .attr('x', 30)
+                    .attr('x', 10)
                     .attr('y', 190)
                     .text("Brezposelni: ");
                 document.getElementById("unemployed").innerHTML += "<a class='font-weight-bold'>"+getBrezposelni().get("oktober").get(d.properties.SR_UIME)[2]+"</a>";
@@ -261,7 +261,7 @@ async function updateMap() {
                     .call(d3.axisLeft(y))
                     .selectAll("text")
                     .style("font-size", "10px")
-                    .style("fill", "#FFFFFF");
+                    .style("fill", "black");
 
                 graf.select('.yaxis2')
                     .attr("transform", "translate(-32)")
