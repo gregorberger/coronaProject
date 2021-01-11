@@ -220,7 +220,7 @@
             .attr('x', 900)
             .attr('y', 575)
             .attr('class', "text-muted")
-            .attr('fill', "grey")
+            .attr('fill', "white")
             .text("Podatki za :" + getDate(index));
 
         map.select("g")
